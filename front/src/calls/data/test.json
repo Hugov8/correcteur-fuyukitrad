@@ -1,0 +1,574 @@
+{
+    "title": "Trial quest bryhildr",
+    "sheets": [
+        {
+            "id": "9400170110",
+            "recordsLine": [
+                {
+                    "line": 4,
+                    "initialSentence": "Ah voil\u00e0, tu es enfin r\u00e9veill\u00e9. Bonjour. Le Soleil s'est d\u00e9j\u00e0 lev\u00e9 sur Hindarfjall.",
+                    "grammar": [],
+                    "spelling": [
+                        {
+                            "i": 18,
+                            "sType": "WORD",
+                            "sValue": "Hindarfjall",
+                            "nStart": 71,
+                            "nEnd": 82
+                        }
+                    ]
+                },
+                {
+                    "line": 15,
+                    "initialSentence": "[line 2] Je...je suis d\u00e9sol\u00e9e.",
+                    "grammar": [
+                        {
+                            "nStart": 3,
+                            "nEnd": 5,
+                            "sLineId": "#984p",
+                            "sRuleId": "typo_espace_manquant_apr\u00e8s4",
+                            "sType": "typo",
+                            "aColor": [
+                                217,
+                                128,
+                                38
+                            ],
+                            "sMessage": "Il manque un espace.",
+                            "aSuggestions": [
+                                " je"
+                            ],
+                            "URL": ""
+                        }
+                    ],
+                    "spelling": []
+                },
+                {
+                    "line": 30,
+                    "initialSentence": "Le Brouillard D\u00e9moniaque. Cette brume mortelle satur\u00e9e d'\u00e9nergie magique. Tout comme l'atmopsh\u00e8re durant l'\u00c2ge des Dieux.",
+                    "grammar": [],
+                    "spelling": [
+                        {
+                            "i": 16,
+                            "sType": "WORD",
+                            "sValue": "atmopsh\u00e8re",
+                            "nStart": 87,
+                            "nEnd": 97
+                        }
+                    ]
+                },
+                {
+                    "line": 31,
+                    "initialSentence": "Si c'est la fin du XIXe si\u00e8cle apr\u00e8s J-C.... L'atmosph\u00e8re devrait plut\u00f4t ressembler \u00e0 celle de Tokyo du XXe si\u00e8cle.",
+                    "grammar": [
+                        {
+                            "nStart": 19,
+                            "nEnd": 23,
+                            "sLineId": "#5215",
+                            "sRuleId": "g2__typo_ordinaux_chiffres_romains_exposants__b9_a1_1",
+                            "sType": "typo",
+                            "aColor": [
+                                217,
+                                128,
+                                38
+                            ],
+                            "sMessage": "Nombre ordinal romain singulier. Exemples\u00a0: II\u1d49, III\u1d49, IV\u1d49\u2026",
+                            "aSuggestions": [
+                                "XIX\u1d49"
+                            ],
+                            "URL": "http://bdl.oqlf.gouv.qc.ca/bdl/gabarit_bdl.asp?id=4271"
+                        },
+                        {
+                            "nStart": 101,
+                            "nEnd": 104,
+                            "sLineId": "#5215",
+                            "sRuleId": "g2__typo_ordinaux_chiffres_romains_exposants__b9_a1_1",
+                            "sType": "typo",
+                            "aColor": [
+                                217,
+                                128,
+                                38
+                            ],
+                            "sMessage": "Nombre ordinal romain singulier. Exemples\u00a0: II\u1d49, III\u1d49, IV\u1d49\u2026",
+                            "aSuggestions": [
+                                "XX\u1d49"
+                            ],
+                            "URL": "http://bdl.oqlf.gouv.qc.ca/bdl/gabarit_bdl.asp?id=4271"
+                        }
+                    ],
+                    "spelling": []
+                },
+                {
+                    "line": 34,
+                    "initialSentence": "[line 2] Je n'arrive pas \u00e0 coire que ces gens vont \u00eatre massacr\u00e9s de la sorte. Quelle cruelle et ironique punition.",
+                    "grammar": [],
+                    "spelling": [
+                        {
+                            "i": 6,
+                            "sType": "WORD",
+                            "sValue": "coire",
+                            "nStart": 18,
+                            "nEnd": 23
+                        }
+                    ]
+                },
+                {
+                    "line": 38,
+                    "initialSentence": "[line 2] Ahh [line 3]",
+                    "grammar": [],
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "sType": "WORD",
+                            "sValue": "Ahh",
+                            "nStart": 0,
+                            "nEnd": 3
+                        }
+                    ]
+                },
+                {
+                    "line": 39,
+                    "initialSentence": "Je suis d\u00e9sol\u00e9e de te causer du soucis[line 2]\nOn dirait que je suis affect\u00e9e par le Brouillard D\u00e9moniaque. Je...",
+                    "grammar": [
+                        {
+                            "nStart": 32,
+                            "nEnd": 38,
+                            "sLineId": "#24670",
+                            "sRuleId": "g3__gn_du_1m__b1_a3_1",
+                            "sType": "gn",
+                            "aColor": [
+                                64,
+                                127,
+                                191
+                            ],
+                            "sMessage": "Accord de nombre erron\u00e9\u00a0: \u00ab\u00a0soucis\u00a0\u00bb devrait \u00eatre au singulier.",
+                            "aSuggestions": [
+                                "souci"
+                            ],
+                            "URL": ""
+                        }
+                    ],
+                    "spelling": []
+                },
+                {
+                    "line": 40,
+                    "initialSentence": "Je n'arrive pas \u00e0 croire que...je me suis honteusement laiss\u00e9e surpasser...",
+                    "grammar": [
+                        {
+                            "nStart": 29,
+                            "nEnd": 31,
+                            "sLineId": "#984p",
+                            "sRuleId": "typo_espace_manquant_apr\u00e8s4",
+                            "sType": "typo",
+                            "aColor": [
+                                217,
+                                128,
+                                38
+                            ],
+                            "sMessage": "Il manque un espace.",
+                            "aSuggestions": [
+                                " je"
+                            ],
+                            "URL": ""
+                        }
+                    ],
+                    "spelling": []
+                },
+                {
+                    "line": 41,
+                    "initialSentence": "\u00catre prise dans les bras...d'un enfant humain...de toi... Je suis d\u00e9sol\u00e9e...",
+                    "grammar": [
+                        {
+                            "nStart": 44,
+                            "nEnd": 46,
+                            "sLineId": "#984p",
+                            "sRuleId": "typo_espace_manquant_apr\u00e8s4",
+                            "sType": "typo",
+                            "aColor": [
+                                217,
+                                128,
+                                38
+                            ],
+                            "sMessage": "Il manque un espace.",
+                            "aSuggestions": [
+                                " de"
+                            ],
+                            "URL": ""
+                        }
+                    ],
+                    "spelling": []
+                },
+                {
+                    "line": 42,
+                    "initialSentence": "Ohh... Pauvre de moi... Ta... ta...",
+                    "grammar": [],
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "sType": "WORD",
+                            "sValue": "Ohh",
+                            "nStart": 0,
+                            "nEnd": 3
+                        }
+                    ]
+                },
+                {
+                    "line": 46,
+                    "initialSentence": "Je suis toute pertub\u00e9e... Ta chaleur alimente la flamme qui br\u00fble en moi.",
+                    "grammar": [],
+                    "spelling": [
+                        {
+                            "i": 4,
+                            "sType": "WORD",
+                            "sValue": "pertub\u00e9e",
+                            "nStart": 14,
+                            "nEnd": 22
+                        }
+                    ]
+                },
+                {
+                    "line": 51,
+                    "initialSentence": "Tu verras cela...bien assez t\u00f4t.",
+                    "grammar": [
+                        {
+                            "nStart": 15,
+                            "nEnd": 19,
+                            "sLineId": "#984p",
+                            "sRuleId": "typo_espace_manquant_apr\u00e8s4",
+                            "sType": "typo",
+                            "aColor": [
+                                217,
+                                128,
+                                38
+                            ],
+                            "sMessage": "Il manque un espace.",
+                            "aSuggestions": [
+                                " bien"
+                            ],
+                            "URL": ""
+                        }
+                    ],
+                    "spelling": []
+                },
+                {
+                    "line": 55,
+                    "initialSentence": "On dirait un Helter Skelter !",
+                    "grammar": [],
+                    "spelling": [
+                        {
+                            "i": 4,
+                            "sType": "WORD",
+                            "sValue": "Helter",
+                            "nStart": 13,
+                            "nEnd": 19
+                        },
+                        {
+                            "i": 5,
+                            "sType": "WORD",
+                            "sValue": "Skelter",
+                            "nStart": 20,
+                            "nEnd": 27
+                        }
+                    ]
+                },
+                {
+                    "line": 58,
+                    "initialSentence": "Idiot ! C'est une vierge de Heorot. Sa beaut\u00e9 est relative. Rapproche-toi d'elle, et tu auras des probl\u00e8mes.",
+                    "grammar": [],
+                    "spelling": [
+                        {
+                            "i": 8,
+                            "sType": "WORD",
+                            "sValue": "Heorot",
+                            "nStart": 28,
+                            "nEnd": 34
+                        }
+                    ]
+                },
+                {
+                    "line": 61,
+                    "initialSentence": "Alors je suppose que tu ne nous causeras aucun mal... Whoa !",
+                    "grammar": [],
+                    "spelling": [
+                        {
+                            "i": 12,
+                            "sType": "WORD",
+                            "sValue": "Whoa",
+                            "nStart": 52,
+                            "nEnd": 56
+                        }
+                    ]
+                },
+                {
+                    "line": 65,
+                    "initialSentence": "Hahahah ! Peu importe l'\u00e8re ou le lieu, il n'y a qu'une voie pour les honorables Chevaliers de Fianna !",
+                    "grammar": [],
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "sType": "WORD",
+                            "sValue": "Hahahah",
+                            "nStart": 0,
+                            "nEnd": 7
+                        },
+                        {
+                            "i": 23,
+                            "sType": "WORD",
+                            "sValue": "Fianna",
+                            "nStart": 95,
+                            "nEnd": 101
+                        }
+                    ]
+                },
+                {
+                    "line": 68,
+                    "initialSentence": "Quand la Grande-Bretagne appartiendra \u00e0 \u00c9irinn, je devrai \u00e9galement faire preuve de droiture.",
+                    "grammar": [],
+                    "spelling": [
+                        {
+                            "i": 6,
+                            "sType": "WORD",
+                            "sValue": "\u00c9irinn",
+                            "nStart": 40,
+                            "nEnd": 46
+                        }
+                    ]
+                },
+                {
+                    "line": 69,
+                    "initialSentence": "Aah [line 2] C'est d'une logique et d'une intelligence ! En plus, c'est un jeune homme au sommet de sa beaut\u00e9 qui parle ! Que pourrait-il y avoir de mieux !?",
+                    "grammar": [],
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "sType": "WORD",
+                            "sValue": "Aah",
+                            "nStart": 0,
+                            "nEnd": 3
+                        }
+                    ]
+                },
+                {
+                    "line": 74,
+                    "initialSentence": "C'est une sacr\u00e9e co\u00efncidence de nous rencontrer en ces circonstances. Hahahahahaha ! Quelle aubaine !",
+                    "grammar": [],
+                    "spelling": [
+                        {
+                            "i": 13,
+                            "sType": "WORD",
+                            "sValue": "Hahahahahaha",
+                            "nStart": 70,
+                            "nEnd": 82
+                        }
+                    ]
+                },
+                {
+                    "line": 82,
+                    "initialSentence": "Durant ces nombreux Rayshifts, qui continueront aujourd'hui, demain, et pour toujours, quel est ton but ?",
+                    "grammar": [],
+                    "spelling": [
+                        {
+                            "i": 4,
+                            "sType": "WORD",
+                            "sValue": "Rayshifts",
+                            "nStart": 20,
+                            "nEnd": 29
+                        }
+                    ]
+                },
+                {
+                    "line": 85,
+                    "initialSentence": "[line 2] Je ne sais...que dire...",
+                    "grammar": [
+                        {
+                            "nStart": 11,
+                            "nEnd": 14,
+                            "sLineId": "#984p",
+                            "sRuleId": "typo_espace_manquant_apr\u00e8s4",
+                            "sType": "typo",
+                            "aColor": [
+                                217,
+                                128,
+                                38
+                            ],
+                            "sMessage": "Il manque un espace.",
+                            "aSuggestions": [
+                                " que"
+                            ],
+                            "URL": ""
+                        }
+                    ],
+                    "spelling": []
+                },
+                {
+                    "line": 90,
+                    "initialSentence": "Car, pour cette fois uniquement, je vais t'accorder la protection de la grande guerrri\u00e8re Valkyrie[line 3]",
+                    "grammar": [],
+                    "spelling": [
+                        {
+                            "i": 17,
+                            "sType": "WORD",
+                            "sValue": "guerrri\u00e8re",
+                            "nStart": 79,
+                            "nEnd": 89
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "9400170120",
+            "recordsLine": [
+                {
+                    "line": 19,
+                    "initialSentence": "Tu peux te tenir aux c\u00f4t\u00e9s de Beowulf, le tueur de dragons. Tu peux te battre avec Fionn man Cumhaill, le tueur de dieux, \u00e0 tes c\u00f4t\u00e9s.",
+                    "grammar": [],
+                    "spelling": [
+                        {
+                            "i": 8,
+                            "sType": "WORD",
+                            "sValue": "Beowulf",
+                            "nStart": 30,
+                            "nEnd": 37
+                        },
+                        {
+                            "i": 20,
+                            "sType": "WORD",
+                            "sValue": "Fionn",
+                            "nStart": 83,
+                            "nEnd": 88
+                        },
+                        {
+                            "i": 22,
+                            "sType": "WORD",
+                            "sValue": "Cumhaill",
+                            "nStart": 93,
+                            "nEnd": 101
+                        }
+                    ]
+                },
+                {
+                    "line": 27,
+                    "initialSentence": "J-Je suis...d\u00e9sol\u00e9e... [line 2] Je vais essayer... de faire plus attention.",
+                    "grammar": [
+                        {
+                            "nStart": 10,
+                            "nEnd": 17,
+                            "sLineId": "#984p",
+                            "sRuleId": "typo_espace_manquant_apr\u00e8s4",
+                            "sType": "typo",
+                            "aColor": [
+                                217,
+                                128,
+                                38
+                            ],
+                            "sMessage": "Il manque un espace.",
+                            "aSuggestions": [
+                                " d\u00e9sol\u00e9e"
+                            ],
+                            "URL": ""
+                        },
+                        {
+                            "nStart": 0,
+                            "nEnd": 4,
+                            "sLineId": "#2366",
+                            "sRuleId": "g0__inte_verbes_compos\u00e9s_interrogatifs__b1_a2_1",
+                            "sType": "inte",
+                            "aColor": [
+                                133,
+                                71,
+                                133
+                            ],
+                            "sMessage": "Forme interrogative. D\u00e9saccord avec \u201cje\u201d. Le verbe n\u2019est pas \u00e0 la 1\u02b3\u1d49 personne du singulier.",
+                            "aSuggestions": [],
+                            "URL": ""
+                        },
+                        {
+                            "nStart": 5,
+                            "nEnd": 9,
+                            "sLineId": "#32792",
+                            "sRuleId": "gv1__conf_vc_int_imp_verbe__b1_a1_1",
+                            "sType": "conf",
+                            "aColor": [
+                                89,
+                                49,
+                                129
+                            ],
+                            "sMessage": "Incoh\u00e9rence probable. Apr\u00e8s une forme verbale comme \u201cJ-Je\u201d, il ne faut pas une forme verbale comme \u201csuis\u201d.",
+                            "aSuggestions": [],
+                            "URL": ""
+                        }
+                    ],
+                    "spelling": []
+                },
+                {
+                    "line": 29,
+                    "initialSentence": "[line 2] Mais, ohh... Non, non...Tu me rends toute chose, ohh...",
+                    "grammar": [],
+                    "spelling": [
+                        {
+                            "i": 3,
+                            "sType": "WORD",
+                            "sValue": "ohh",
+                            "nStart": 6,
+                            "nEnd": 9
+                        },
+                        {
+                            "i": 15,
+                            "sType": "WORD",
+                            "sValue": "ohh",
+                            "nStart": 46,
+                            "nEnd": 49
+                        }
+                    ]
+                },
+                {
+                    "line": 31,
+                    "initialSentence": "Mon vrai nom est Brynhildr. \nOui, c'est la v\u00e9rit\u00e9. Je ne suis pas Mash Kyrielight.",
+                    "grammar": [],
+                    "spelling": [
+                        {
+                            "i": 5,
+                            "sType": "WORD",
+                            "sValue": "Brynhildr",
+                            "nStart": 17,
+                            "nEnd": 26
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "9400170121",
+            "recordsLine": [
+                {
+                    "line": 3,
+                    "initialSentence": "[line 2] Aah, je l'ai tu\u00e9.",
+                    "grammar": [],
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "sType": "WORD",
+                            "sValue": "Aah",
+                            "nStart": 0,
+                            "nEnd": 3
+                        }
+                    ]
+                },
+                {
+                    "line": 4,
+                    "initialSentence": "Le villain qui se tenait entre nous est mort. Tout est termin\u00e9 maintenant.",
+                    "grammar": [],
+                    "spelling": [
+                        {
+                            "i": 2,
+                            "sType": "WORD",
+                            "sValue": "villain",
+                            "nStart": 3,
+                            "nEnd": 10
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

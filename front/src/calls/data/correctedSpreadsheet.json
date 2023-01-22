@@ -1,0 +1,3544 @@
+{
+    "sheets": [
+        {
+            "id": "9400110110",
+            "recordsLine": [
+                {
+                    "grammar": [],
+                    "initialSentence": "[line 2]Sen... pai ?",
+                    "line": 3,
+                    "spelling": [
+                        {
+                            "i": 3,
+                            "nEnd": 8,
+                            "nStart": 5,
+                            "sType": "WORD",
+                            "sValue": "pai"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "C'est... On dirait Fuyuki... Mais je ne me rapelle pas avoir Rayshift...",
+                    "line": 4,
+                    "spelling": [
+                        {
+                            "i": 12,
+                            "nEnd": 46,
+                            "nStart": 39,
+                            "sType": "WORD",
+                            "sValue": "rapelle"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Fô, fôfôôôô !",
+                    "line": 7,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 2,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Fô"
+                        },
+                        {
+                            "i": 3,
+                            "nEnd": 11,
+                            "nStart": 4,
+                            "sType": "WORD",
+                            "sValue": "fôfôôôô"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Fô !? Quand es-tu entré dans l'espace de stockage de mon bouclier ?",
+                    "line": 8,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 2,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Fô"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Fô, kyaau ?",
+                    "line": 9,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 2,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Fô"
+                        },
+                        {
+                            "i": 3,
+                            "nEnd": 9,
+                            "nStart": 4,
+                            "sType": "WORD",
+                            "sValue": "kyaau"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "http://bdl.oqlf.gouv.qc.ca/bdl/gabarit_bdl.asp?id=3445",
+                            "aColor": [
+                                217,
+                                128,
+                                38
+                            ],
+                            "aSuggestions": [
+                                ", mais"
+                            ],
+                            "nEnd": 20,
+                            "nStart": 15,
+                            "sLineId": "#1818",
+                            "sMessage": "Si « mais » est la conjonction de coordination, une virgule est souhaitable si elle introduit une nouvelle proposition.",
+                            "sRuleId": "g0__virg_virgules_manquantes__b3_a1_1",
+                            "sType": "virg"
+                        }
+                    ],
+                    "initialSentence": "Tant de flammes mais je ne ressens pas la chaleur.",
+                    "line": 15,
+                    "spelling": []
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                64,
+                                127,
+                                191
+                            ],
+                            "aSuggestions": [
+                                "un"
+                            ],
+                            "nEnd": 19,
+                            "nStart": 16,
+                            "sLineId": "#24570",
+                            "sMessage": "Accord de genre erroné : « Servants » est masculin.",
+                            "sRuleId": "g3__gn_une_des_1m__b1_a1_1",
+                            "sType": "gn"
+                        },
+                        {
+                            "URL": "",
+                            "aColor": [
+                                64,
+                                127,
+                                191
+                            ],
+                            "aSuggestions": [
+                                "Servantes"
+                            ],
+                            "nEnd": 32,
+                            "nStart": 24,
+                            "sLineId": "#24570",
+                            "sMessage": "Accord de genre erroné : « une » est un déterminant féminin.",
+                            "sRuleId": "g3__gn_une_des_1m__b1_a2_1",
+                            "sType": "gn"
+                        },
+                        {
+                            "URL": "http://fr.wikipedia.org/wiki/Accord_du_participe_pass%C3%A9_en_fran%C3%A7ais",
+                            "aColor": [
+                                133,
+                                71,
+                                133
+                            ],
+                            "aSuggestions": [
+                                "vus"
+                            ],
+                            "nEnd": 50,
+                            "nStart": 48,
+                            "sLineId": "#31875",
+                            "sMessage": "Si “des Servants…” est bien le COD du participe passé “vu”, celui-ci devrait être au masculin pluriel.",
+                            "sRuleId": "gv1__ppas_det_plur_COD_que_avoir__b1_a2_1",
+                            "sType": "ppas"
+                        }
+                    ],
+                    "initialSentence": "Vous n'êtes pas une des Servants que nous avons vu à Fuyuki... Ça, et je ne pense pas",
+                    "line": 25,
+                    "spelling": []
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                217,
+                                128,
+                                38
+                            ],
+                            "aSuggestions": [
+                                "Que"
+                            ],
+                            "nEnd": 3,
+                            "nStart": 0,
+                            "sLineId": "#943p",
+                            "sMessage": "Majuscule en début de phrase, sauf éventuellement lors d’une énumération.",
+                            "sRuleId": "majuscule_début_paragraphe",
+                            "sType": "maj"
+                        }
+                    ],
+                    "initialSentence": "que nous nous soyons rencontrées auparavant. Enfin... je ne pense pas... Ma mémoire est floue. ",
+                    "line": 26,
+                    "spelling": []
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                217,
+                                128,
+                                38
+                            ],
+                            "aSuggestions": [
+                                "n’est-ce pas"
+                            ],
+                            "nEnd": 94,
+                            "nStart": 82,
+                            "sLineId": "#5752",
+                            "sMessage": "Un trait d’union.",
+                            "sRuleId": "g2__tu_locutions__b17_a1_1",
+                            "sType": "tu"
+                        }
+                    ],
+                    "initialSentence": "Tu n'es pas un rescapé de mon royaume, dis-moi ? Tu n'es pas non plus un fantôme, n'est ce pas ?",
+                    "line": 31,
+                    "spelling": []
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Cela remonterait à la naissance du Christ... Voulez-vous dire que vous êtiez vivante à cette période ?",
+                    "line": 33,
+                    "spelling": [
+                        {
+                            "i": 13,
+                            "nEnd": 74,
+                            "nStart": 69,
+                            "sType": "WORD",
+                            "sValue": "êtiez"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Mais ce n'est pas ce que tu crois. Ce n'est pas un Armement divin forgé par le Dieu des Océans, Manannan.",
+                    "line": 37,
+                    "spelling": [
+                        {
+                            "i": 25,
+                            "nEnd": 104,
+                            "nStart": 96,
+                            "sType": "WORD",
+                            "sValue": "Manannan"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Héhé. Tu n'as jamais rencontré de femme de l'Ulster je suppose ?",
+                    "line": 41,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 4,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Héhé"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Fôô !",
+                    "line": 44,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 3,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Fôô"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Cela fait longtemps que vous[line 3]non, que des gens comme vous me demandent mon nom sans crainte.",
+                    "line": 48,
+                    "spelling": [
+                        {
+                            "i": 5,
+                            "nEnd": 31,
+                            "nStart": 24,
+                            "sType": "WORD",
+                            "sValue": "vousnon"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Mon nom est Scáthach, la souveraine de Dún Scáith, la Contrée des Ombres. Bien que je me sente un peu mal à l'aise de l'annoncer de cette façon.",
+                    "line": 52,
+                    "spelling": [
+                        {
+                            "i": 4,
+                            "nEnd": 20,
+                            "nStart": 12,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        },
+                        {
+                            "i": 9,
+                            "nEnd": 42,
+                            "nStart": 39,
+                            "sType": "WORD",
+                            "sValue": "Dún"
+                        },
+                        {
+                            "i": 10,
+                            "nEnd": 49,
+                            "nStart": 43,
+                            "sType": "WORD",
+                            "sValue": "Scáith"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Kya[line 4]u !?",
+                    "line": 54,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 4,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Kyau"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Scáthach ! La tueuse de Dieux surhumaine qui est pratiquement une divinité ?",
+                    "line": 55,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 8,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Une guerrière invincible, la souveraine d'un royaume surnaturel comparable à l'au-delà. Elle a même entrainé le grand héros Cú Chulainn !",
+                    "line": 57,
+                    "spelling": [
+                        {
+                            "i": 23,
+                            "nEnd": 126,
+                            "nStart": 124,
+                            "sType": "WORD",
+                            "sValue": "Cú"
+                        },
+                        {
+                            "i": 24,
+                            "nEnd": 135,
+                            "nStart": 127,
+                            "sType": "WORD",
+                            "sValue": "Chulainn"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Je vois. Scáthach, hum...",
+                    "line": 60,
+                    "spelling": [
+                        {
+                            "i": 4,
+                            "nEnd": 17,
+                            "nStart": 9,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "AAAAAA...",
+                    "line": 73,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 6,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "AAAAAA"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "[fontSize large]AAAAAAAA !",
+                    "line": 74,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 8,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "AAAAAAAA"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Quoi !? Scáthach !?",
+                    "line": 80,
+                    "spelling": [
+                        {
+                            "i": 4,
+                            "nEnd": 16,
+                            "nStart": 8,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "YEAHH !",
+                    "line": 89,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 5,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "YEAHH"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "9400110111",
+            "recordsLine": [
+                {
+                    "grammar": [],
+                    "initialSentence": "Nous les avons combattus plusieurs fois... Ils vous ont paru différent pour vous Scáthach ?",
+                    "line": 5,
+                    "spelling": [
+                        {
+                            "i": 15,
+                            "nEnd": 87,
+                            "nStart": 79,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Fô-fô, fô ?",
+                    "line": 8,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 5,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Fô-fô"
+                        },
+                        {
+                            "i": 3,
+                            "nEnd": 9,
+                            "nStart": 7,
+                            "sType": "WORD",
+                            "sValue": "fô"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                133,
+                                71,
+                                133
+                            ],
+                            "aSuggestions": [
+                                "est"
+                            ],
+                            "nEnd": 35,
+                            "nStart": 31,
+                            "sLineId": "#34206",
+                            "sMessage": "Conjugaison erronée. Accord avec “Ce que vous voyez…”. Le verbe devrait être à la 3ᵉ personne du singulier.",
+                            "sRuleId": "gv2__conj_ce_que__b1_a1_1",
+                            "sType": "conj"
+                        }
+                    ],
+                    "initialSentence": "En effet. Ce que vous voyez ne sont pas les vestiges de votre passé...",
+                    "line": 10,
+                    "spelling": []
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                133,
+                                71,
+                                133
+                            ],
+                            "aSuggestions": [
+                                "dignes"
+                            ],
+                            "nEnd": 50,
+                            "nStart": 45,
+                            "sLineId": "#30502",
+                            "sMessage": "Accord avec le sujet “Ils” : “digne” devrait être au masculin pluriel.",
+                            "sRuleId": "gv1__ppas_3pl_mas_verbe_état__b1_a1_1",
+                            "sType": "ppas"
+                        }
+                    ],
+                    "initialSentence": "Mais je m'en suis occupée. Ils n'étaient pas digne de mes enseignements. Ils étaient bien trop faibles.",
+                    "line": 17,
+                    "spelling": []
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Hahaha ; je suis ravie de te voir surprise, mais tu aurais pu juste en rire, Mash.",
+                    "line": 19,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 6,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Hahaha"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                64,
+                                127,
+                                191
+                            ],
+                            "aSuggestions": [
+                                "celte"
+                            ],
+                            "nEnd": 23,
+                            "nStart": 17,
+                            "sLineId": "#24599",
+                            "sMessage": "Accord de nombre erroné avec « guerrier » : « celtes » devrait être au singulier.",
+                            "sRuleId": "g3__gn_un_2m__b1_a4_1",
+                            "sType": "gn"
+                        }
+                    ],
+                    "initialSentence": "Pour un guerrier celtes, le nombre ne signifie rien.",
+                    "line": 20,
+                    "spelling": []
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                133,
+                                71,
+                                133
+                            ],
+                            "aSuggestions": [
+                                "convenir"
+                            ],
+                            "nEnd": 80,
+                            "nStart": 68,
+                            "sLineId": "#27753",
+                            "sMessage": "Après “de”, le verbe devrait être à l’infinitif.",
+                            "sRuleId": "g3__infi_de_verbe__b5_a1_1",
+                            "sType": "infi"
+                        }
+                    ],
+                    "initialSentence": "J'en suis certaine. Un Esprit Héroïque qui apporte la mort de ne te conviendrait pas du tout. Ce phénomème prend place à l'intérieur de vous...",
+                    "line": 29,
+                    "spelling": [
+                        {
+                            "i": 22,
+                            "nEnd": 106,
+                            "nStart": 97,
+                            "sType": "WORD",
+                            "sValue": "phénomème"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Fô... Fôôôôôôôô...",
+                    "line": 34,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 2,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Fô"
+                        },
+                        {
+                            "i": 3,
+                            "nEnd": 13,
+                            "nStart": 4,
+                            "sType": "WORD",
+                            "sValue": "Fôôôôôôôô"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                133,
+                                71,
+                                133
+                            ],
+                            "aSuggestions": [
+                                "proches"
+                            ],
+                            "nEnd": 74,
+                            "nStart": 68,
+                            "sLineId": "#30926",
+                            "sMessage": "Accord erroné : “vestiges” et “proche” ne sont pas accordés. Mettez au pluriel.",
+                            "sRuleId": "gv1__ppas_sujet_être_accord_pluriel__b1_a4_1",
+                            "sType": "ppas"
+                        }
+                    ],
+                    "initialSentence": "C'est vrai dans un sens, mais pas tellement. Ces vestiges sont plus proche que vous l'imaginez.",
+                    "line": 43,
+                    "spelling": []
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                133,
+                                71,
+                                133
+                            ],
+                            "aSuggestions": [],
+                            "nEnd": 6,
+                            "nStart": 0,
+                            "sLineId": "#2477",
+                            "sMessage": "Forme interrogative ou impérative. Désaccord avec “vous”. Le verbe n’est pas à la 2ᵉ personne du pluriel.",
+                            "sRuleId": "g0__inte_verbes_composés_interrogatifs_impératifs__b2_a3_1",
+                            "sType": "inte"
+                        },
+                        {
+                            "URL": "",
+                            "aColor": [
+                                89,
+                                49,
+                                129
+                            ],
+                            "aSuggestions": [],
+                            "nEnd": 13,
+                            "nStart": 7,
+                            "sLineId": "#32792",
+                            "sMessage": "Incohérence probable. Après une forme verbale comme “V-Vous”, il ne faut pas une forme verbale comme “voulez”.",
+                            "sRuleId": "gv1__conf_vc_int_imp_verbe__b1_a1_1",
+                            "sType": "conf"
+                        }
+                    ],
+                    "initialSentence": "V-Vous voulez dire... Ces vestiges nous ont déjà corrompus !?",
+                    "line": 49,
+                    "spelling": []
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Héhé. Je pensais que vous auriez eu peur, mais vous vous accrochez à l'espoir. Je n'arrive pas à croire à quel point vous êtes pur[&s:es], mais cette pureté est souvent la plus puissante.",
+                    "line": 52,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 4,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Héhé"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                133,
+                                71,
+                                133
+                            ],
+                            "aSuggestions": [
+                                "allons-nous"
+                            ],
+                            "nEnd": 41,
+                            "nStart": 30,
+                            "sLineId": "#6545",
+                            "sMessage": "Forme interrogative ? Mettez un trait d’union.",
+                            "sRuleId": "g2__inte_union_nous1__b4_a1_1",
+                            "sType": "inte"
+                        }
+                    ],
+                    "initialSentence": "D-D'accord... [charaFace A 6]Non, attendez. Où allons nous ?",
+                    "line": 58,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 10,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "D-D’accord"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "YEAHH !",
+                    "line": 67,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 5,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "YEAHH"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "9400110210",
+            "recordsLine": [
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                64,
+                                127,
+                                191
+                            ],
+                            "aSuggestions": [
+                                "la"
+                            ],
+                            "nEnd": 52,
+                            "nStart": 50,
+                            "sLineId": "#24142",
+                            "sMessage": "Accord de genre erroné : « première » est féminin.",
+                            "sRuleId": "g3__gn_le_1m__b3_a2_1",
+                            "sType": "gn"
+                        },
+                        {
+                            "URL": "",
+                            "aColor": [
+                                64,
+                                127,
+                                191
+                            ],
+                            "aSuggestions": [
+                                "premier"
+                            ],
+                            "nEnd": 61,
+                            "nStart": 53,
+                            "sLineId": "#24142",
+                            "sMessage": "Accord de genre erroné : « le » est un déterminant masculin.",
+                            "sRuleId": "g3__gn_le_1m__b3_a3_1",
+                            "sType": "gn"
+                        }
+                    ],
+                    "initialSentence": "Oui. La ville de Fuyuki, en Extrême-Orient. C'est le première endroit où nous sommes arrivés durant une guerre du Saint Graal.",
+                    "line": 7,
+                    "spelling": []
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                217,
+                                128,
+                                38
+                            ],
+                            "aSuggestions": [
+                                "11 ans"
+                            ],
+                            "nEnd": 38,
+                            "nStart": 32,
+                            "sLineId": "#1117p",
+                            "sMessage": "Avec une unité de mesure, mettez un espace insécable.",
+                            "sRuleId": "unit_nbsp_avant_unités1",
+                            "sType": "unit"
+                        }
+                    ],
+                    "initialSentence": "Nous étions en 2004 après J.-C. 11 ans dans le passé. C'est très proche du présent, mais cela reste dans le passé.",
+                    "line": 8,
+                    "spelling": []
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                133,
+                                71,
+                                133
+                            ],
+                            "aSuggestions": [
+                                "morts"
+                            ],
+                            "nEnd": 46,
+                            "nStart": 42,
+                            "sLineId": "#30430",
+                            "sMessage": "Accord avec le sujet “nous” : “mort” devrait être au pluriel.",
+                            "sRuleId": "gv1__ppas_nous_verbe_état__b1_a1_1",
+                            "sType": "ppas"
+                        }
+                    ],
+                    "initialSentence": "[line 2]C'est vrai Senpai. Sans lui, nous serions mort[&s:es].",
+                    "line": 12,
+                    "spelling": []
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Fô, kyau !",
+                    "line": 14,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 2,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Fô"
+                        },
+                        {
+                            "i": 3,
+                            "nEnd": 8,
+                            "nStart": 4,
+                            "sType": "WORD",
+                            "sValue": "kyau"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "C'est vrai, Fô. Il est celui qui m'a appris à pseudo-déployer mon Noble Phantasme qui était trop lourd pour moi.",
+                    "line": 15,
+                    "spelling": [
+                        {
+                            "i": 5,
+                            "nEnd": 14,
+                            "nStart": 12,
+                            "sType": "WORD",
+                            "sValue": "Fô"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Caster Cú Chulainn. Je ne pourrai jamais assez le remercier.",
+                    "line": 16,
+                    "spelling": [
+                        {
+                            "i": 2,
+                            "nEnd": 9,
+                            "nStart": 7,
+                            "sType": "WORD",
+                            "sValue": "Cú"
+                        },
+                        {
+                            "i": 3,
+                            "nEnd": 18,
+                            "nStart": 10,
+                            "sType": "WORD",
+                            "sValue": "Chulainn"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                64,
+                                127,
+                                191
+                            ],
+                            "aSuggestions": [
+                                "un"
+                            ],
+                            "nEnd": 28,
+                            "nStart": 25,
+                            "sLineId": "#24563",
+                            "sMessage": "Accord de genre erroné : « mentor » est masculin.",
+                            "sRuleId": "g3__gn_une_1m__b1_a1_1",
+                            "sType": "gn"
+                        }
+                    ],
+                    "initialSentence": "Scáthach, une guerrière, une mentor pour de nombreux héros. Vous êtes la femme ayant entraîné Cú Chulainn !",
+                    "line": 22,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 8,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        },
+                        {
+                            "i": 19,
+                            "nEnd": 96,
+                            "nStart": 94,
+                            "sType": "WORD",
+                            "sValue": "Cú"
+                        },
+                        {
+                            "i": 20,
+                            "nEnd": 105,
+                            "nStart": 97,
+                            "sType": "WORD",
+                            "sValue": "Chulainn"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                133,
+                                71,
+                                133
+                            ],
+                            "aSuggestions": [],
+                            "nEnd": 4,
+                            "nStart": 0,
+                            "sLineId": "#2366",
+                            "sMessage": "Forme interrogative. Désaccord avec “je”. Le verbe n’est pas à la 1ʳᵉ personne du singulier.",
+                            "sRuleId": "g0__inte_verbes_composés_interrogatifs__b1_a2_1",
+                            "sType": "inte"
+                        },
+                        {
+                            "URL": "",
+                            "aColor": [
+                                89,
+                                49,
+                                129
+                            ],
+                            "aSuggestions": [],
+                            "nEnd": 9,
+                            "nStart": 5,
+                            "sLineId": "#32792",
+                            "sMessage": "Incohérence probable. Après une forme verbale comme “J-Je”, il ne faut pas une forme verbale comme “suis”.",
+                            "sRuleId": "gv1__conf_vc_int_imp_verbe__b1_a1_1",
+                            "sType": "conf"
+                        }
+                    ],
+                    "initialSentence": "J-Je suis désolée. Je le savais pourtant, mais cela reste difficile pour moi de me rappeler que ce Caster nous ayant sauvé...",
+                    "line": 23,
+                    "spelling": []
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                217,
+                                128,
+                                38
+                            ],
+                            "aSuggestions": [
+                                "d donc"
+                            ],
+                            "nEnd": 69,
+                            "nStart": 63,
+                            "sLineId": "#6400",
+                            "sMessage": "Pas de trait d’union.",
+                            "sRuleId": "g2__tu_pas_de_trait_d_union__b9_a1_1",
+                            "sType": "tu"
+                        }
+                    ],
+                    "initialSentence": "... est le même Cú Chulainn faisant partie du Cycle d'Ulster, et d-donc...",
+                    "line": 24,
+                    "spelling": [
+                        {
+                            "i": 5,
+                            "nEnd": 16,
+                            "nStart": 14,
+                            "sType": "WORD",
+                            "sValue": "Cú"
+                        },
+                        {
+                            "i": 6,
+                            "nEnd": 25,
+                            "nStart": 17,
+                            "sType": "WORD",
+                            "sValue": "Chulainn"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Fôfô.",
+                    "line": 26,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 4,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Fôfô"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "http://bdl.oqlf.gouv.qc.ca/bdl/gabarit_bdl.asp?id=4206",
+                            "aColor": [
+                                133,
+                                71,
+                                133
+                            ],
+                            "aSuggestions": [
+                                "calme-toi"
+                            ],
+                            "nEnd": 15,
+                            "nStart": 6,
+                            "sLineId": "#32340",
+                            "sMessage": "S’il s’agit d’un impératif, mettez un trait d’union.",
+                            "sRuleId": "gv1__imp_union_toi__b1_a1_1",
+                            "sType": "imp"
+                        }
+                    ],
+                    "initialSentence": "Mash, calme toi !",
+                    "line": 27,
+                    "spelling": []
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "YEAH ! [line 2][charaFace A 6]Heu ?",
+                    "line": 28,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 4,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "YEAH"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                133,
+                                71,
+                                133
+                            ],
+                            "aSuggestions": [],
+                            "nEnd": 4,
+                            "nStart": 0,
+                            "sLineId": "#2366",
+                            "sMessage": "Forme interrogative. Désaccord avec “je”. Le verbe n’est pas à la 1ʳᵉ personne du singulier.",
+                            "sRuleId": "g0__inte_verbes_composés_interrogatifs__b1_a2_1",
+                            "sType": "inte"
+                        },
+                        {
+                            "URL": "",
+                            "aColor": [
+                                89,
+                                49,
+                                129
+                            ],
+                            "aSuggestions": [],
+                            "nEnd": 9,
+                            "nStart": 5,
+                            "sLineId": "#32792",
+                            "sMessage": "Incohérence probable. Après une forme verbale comme “J-Je”, il ne faut pas une forme verbale comme “suis”.",
+                            "sRuleId": "gv1__conf_vc_int_imp_verbe__b1_a1_1",
+                            "sType": "conf"
+                        }
+                    ],
+                    "initialSentence": "J-Je suis désolée. J'aurais dû le réaliser plus tôt... Il a sauvé nos vies.",
+                    "line": 29,
+                    "spelling": []
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Je ne sais pas quoi dire... Um... V-Votre élève nous a vraiment aidé.",
+                    "line": 30,
+                    "spelling": [
+                        {
+                            "i": 8,
+                            "nEnd": 28,
+                            "nStart": 26,
+                            "sType": "WORD",
+                            "sValue": "Um"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "YEAH !",
+                    "line": 31,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 4,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "YEAH"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "http://fr.wikipedia.org/wiki/Accord_du_participe_pass%C3%A9_en_fran%C3%A7ais",
+                            "aColor": [
+                                133,
+                                71,
+                                133
+                            ],
+                            "aSuggestions": [
+                                "sauvés",
+                                "sauvées"
+                            ],
+                            "nEnd": 67,
+                            "nStart": 62,
+                            "sLineId": "#31875",
+                            "sMessage": "Si “les enfants…” est bien le COD du participe passé “sauvé”, celui-ci devrait être au pluriel.",
+                            "sRuleId": "gv1__ppas_det_plur_COD_que_avoir__b1_a4_1",
+                            "sType": "ppas"
+                        }
+                    ],
+                    "initialSentence": "Autrement, je devrai lui dire que j'ai vu les enfants qu'il a sauvé...",
+                    "line": 36,
+                    "spelling": []
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "[fontSize large]GAAAAAA !",
+                    "line": 38,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 7,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "GAAAAAA"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                217,
+                                128,
+                                38
+                            ],
+                            "aSuggestions": [
+                                "grand-chose"
+                            ],
+                            "nEnd": 36,
+                            "nStart": 25,
+                            "sLineId": "#5740",
+                            "sMessage": "Il manque un trait d’union.",
+                            "sRuleId": "g2__tu_locutions__b13_a1_1",
+                            "sType": "tu"
+                        }
+                    ],
+                    "initialSentence": "Le temps ne signifie pas grand chose en ce lieu. Tout comme le Trône des Héros.",
+                    "line": 41,
+                    "spelling": []
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Fô, fôô ! Kyau !",
+                    "line": 45,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 2,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Fô"
+                        },
+                        {
+                            "i": 3,
+                            "nEnd": 7,
+                            "nStart": 4,
+                            "sType": "WORD",
+                            "sValue": "fôô"
+                        },
+                        {
+                            "i": 5,
+                            "nEnd": 14,
+                            "nStart": 10,
+                            "sType": "WORD",
+                            "sValue": "Kyau"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "O-Oui... Tu as raison Fô. Je pense que cela peut être...",
+                    "line": 46,
+                    "spelling": [
+                        {
+                            "i": 6,
+                            "nEnd": 22,
+                            "nStart": 20,
+                            "sType": "WORD",
+                            "sValue": "Fô"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Que cela peut être un peu trop gros ! S-Senpai !",
+                    "line": 47,
+                    "spelling": [
+                        {
+                            "i": 10,
+                            "nEnd": 46,
+                            "nStart": 38,
+                            "sType": "WORD",
+                            "sValue": "S-Senpai"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Scáthach !",
+                    "line": 50,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 8,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "L-Les circuits magiques de Senpai sont activés d'une étrange manière ! Scáthach, que faites-vous ?",
+                    "line": 52,
+                    "spelling": [
+                        {
+                            "i": 13,
+                            "nEnd": 79,
+                            "nStart": 71,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Cette réponse innocente est vraiment[line 3]Oh, non. Laissez-tomber. C'est un contrat temporaire.",
+                    "line": 54,
+                    "spelling": [
+                        {
+                            "i": 5,
+                            "nEnd": 38,
+                            "nStart": 28,
+                            "sType": "WORD",
+                            "sValue": "vraimentOh"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Hahahahaha ! Enfin voici venu mon heure, hum ? Je suis heureux que cela soit arrivé avant que je m'ennuie et que j'aille dormir !",
+                    "line": 58,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 10,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Hahahahaha"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Le jeune chef des Chevaliers de la Branche Rouge d'Ulster ! Fergus mac Róich, à votre service !",
+                    "line": 59,
+                    "spelling": [
+                        {
+                            "i": 15,
+                            "nEnd": 76,
+                            "nStart": 71,
+                            "sType": "WORD",
+                            "sValue": "Róich"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "J'ai attendu ça depuis si longtemps, Madame Scáthach ! Hahahahahahaha ! Purée, il fait vraiment chaud ici !",
+                    "line": 60,
+                    "spelling": [
+                        {
+                            "i": 10,
+                            "nEnd": 52,
+                            "nStart": 44,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        },
+                        {
+                            "i": 12,
+                            "nEnd": 69,
+                            "nStart": 55,
+                            "sType": "WORD",
+                            "sValue": "Hahahahahahaha"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Oh, oui. C'est vrai, c'est vrai. Désolé. Vous êtes toujours aussi jeune, mademoiselle Scáthach.",
+                    "line": 62,
+                    "spelling": [
+                        {
+                            "i": 22,
+                            "nEnd": 94,
+                            "nStart": 86,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Je ne peux pas appeler le mentor que je respecte une petite fille ! Ce n'est pas la voie de la Branche Rouge ! Désolé, Madame Scáthach !",
+                    "line": 64,
+                    "spelling": [
+                        {
+                            "i": 29,
+                            "nEnd": 134,
+                            "nStart": 126,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "En effet ! Hey, nous avons quelques jeunes fougueux, hein ?",
+                    "line": 66,
+                    "spelling": [
+                        {
+                            "i": 4,
+                            "nEnd": 14,
+                            "nStart": 11,
+                            "sType": "WORD",
+                            "sValue": "Hey"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Je suppose que vous êtes les derniers élèves de Madame Scáthach. Voyons voir. Une jolie jeune fille et [&un garçon:une fille]... Elle a déjà mis le grappin sur vous ?",
+                    "line": 67,
+                    "spelling": [
+                        {
+                            "i": 11,
+                            "nEnd": 63,
+                            "nStart": 55,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "YEAHH !",
+                    "line": 71,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 5,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "YEAHH"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Je vois ! Oh [&mon cher:ma chère], je suis désolé. Hahahaha ! Alors, [charaFace E 1]commençons par boire ! Trinque avec moi !",
+                    "line": 72,
+                    "spelling": [
+                        {
+                            "i": 18,
+                            "nEnd": 61,
+                            "nStart": 53,
+                            "sType": "WORD",
+                            "sValue": "Hahahaha"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                217,
+                                128,
+                                38
+                            ],
+                            "aSuggestions": [
+                                "je.",
+                                "je !",
+                                "je ?"
+                            ],
+                            "nEnd": 40,
+                            "nStart": 38,
+                            "sLineId": "#959p",
+                            "sMessage": "Il semble manquer une ponctuation finale (s’il s’agit d’un titre, le point final n’est pas requis).",
+                            "sRuleId": "poncfin_règle1",
+                            "sType": "poncfin"
+                        }
+                    ],
+                    "initialSentence": "Oh, uh. Hum ! N-[charaFace A 12]Non, je suis désolée, je[line 3]",
+                    "line": 74,
+                    "spelling": [
+                        {
+                            "i": 3,
+                            "nEnd": 6,
+                            "nStart": 4,
+                            "sType": "WORD",
+                            "sValue": "uh"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "[fontSize x-large]GAAAA !",
+                    "line": 76,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 5,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "GAAAA"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Hey, il faisait chaud tout à l'heure, mais maintenant, il fait encore plus chaud ! Aussi, je vois quelque chose de gros, et digne d'être frappé ! Même mieux que ça !",
+                    "line": 77,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 3,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Hey"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                51,
+                                153,
+                                153
+                            ],
+                            "aSuggestions": [
+                                "ainsi",
+                                "donc",
+                                "c’est pourquoi"
+                            ],
+                            "nEnd": 19,
+                            "nStart": 0,
+                            "sLineId": "#6990",
+                            "sMessage": "Pléonasme.",
+                            "sRuleId": "g2__pleo_locutions__b5_a1_1",
+                            "sType": "pleo"
+                        }
+                    ],
+                    "initialSentence": "donc c'est pourquoi je suis ici, eh ? Vous avez besoin du plus grand épéiste de l'Ulster !",
+                    "line": 78,
+                    "spelling": []
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Il est temps pour moi de sortir mon épée ! Madame Scáthach, laissez-moi faire !",
+                    "line": 79,
+                    "spelling": [
+                        {
+                            "i": 12,
+                            "nEnd": 58,
+                            "nStart": 50,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Hahaha! Quoi ? Vous ne connaissez pas mon Noble Phantasme ?",
+                    "line": 80,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 6,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Hahaha"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Hahahaha ! Donc vous connaissez mon Noble Phantasme ?",
+                    "line": 81,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 8,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Hahahaha"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "[&D-D'accord...:Non merci !]",
+                    "line": 83,
+                    "spelling": [
+                        {
+                            "i": 3,
+                            "nEnd": 12,
+                            "nStart": 2,
+                            "sType": "WORD",
+                            "sValue": "D-D’accord"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Alors admirez mon Épée Arc-en-ciel ! Caladbolg, l'épée à la fois arc-en-ciel et lumière !",
+                    "line": 84,
+                    "spelling": [
+                        {
+                            "i": 7,
+                            "nEnd": 46,
+                            "nStart": 37,
+                            "sType": "WORD",
+                            "sValue": "Caladbolg"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                133,
+                                71,
+                                133
+                            ],
+                            "aSuggestions": [
+                                "déchirerait",
+                                "déchirera"
+                            ],
+                            "nEnd": 103,
+                            "nStart": 93,
+                            "sLineId": "#7915",
+                            "sMessage": "Incohérence. Ceci est un verbe à la 1ʳᵉ personne du singulier. Sujet (“je” ou “moi qui”) introuvable.",
+                            "sRuleId": "g2__conj_1s_sans_sujet_xxxai__b4_a1_1",
+                            "sType": "conj"
+                        }
+                    ],
+                    "initialSentence": "Si Cú Chulainn des Chevaliers de la Branche Rouge empale ses ennemis, alors moi, Fergus, les déchirerai en morceaux !",
+                    "line": 85,
+                    "spelling": [
+                        {
+                            "i": 2,
+                            "nEnd": 5,
+                            "nStart": 3,
+                            "sType": "WORD",
+                            "sValue": "Cú"
+                        },
+                        {
+                            "i": 3,
+                            "nEnd": 14,
+                            "nStart": 6,
+                            "sType": "WORD",
+                            "sValue": "Chulainn"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "L'épée mystique Caladbolg ! Une épée légendaire, dont on dit qu'elle est le modèle de nombreuses autres épées mystiques et saintes !",
+                    "line": 86,
+                    "spelling": [
+                        {
+                            "i": 4,
+                            "nEnd": 25,
+                            "nStart": 16,
+                            "sType": "WORD",
+                            "sValue": "Caladbolg"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "9400110211",
+            "recordsLine": [
+                {
+                    "grammar": [],
+                    "initialSentence": "Hmm... On aurait dit un celèbre dragon, mais il ne semblait pas très fort.",
+                    "line": 3,
+                    "spelling": [
+                        {
+                            "i": 7,
+                            "nEnd": 29,
+                            "nStart": 22,
+                            "sType": "WORD",
+                            "sValue": "celèbre"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                133,
+                                71,
+                                133
+                            ],
+                            "aSuggestions": [
+                                "peuvent"
+                            ],
+                            "nEnd": 75,
+                            "nStart": 69,
+                            "sLineId": "#8031",
+                            "sMessage": "Ceci est un verbe à la 2ᵉ personne du pluriel. Sujet (“vous” ou équivalent) introuvable.",
+                            "sRuleId": "g2__conj_2p_sans_sujet__b1_a1_1",
+                            "sType": "conj"
+                        }
+                    ],
+                    "initialSentence": "Hahaha ! Comme attendu de vous, Madame Scáthach ! Jusqu'à quel point pouvez vous être stricte ?",
+                    "line": 7,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 6,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Hahaha"
+                        },
+                        {
+                            "i": 9,
+                            "nEnd": 47,
+                            "nStart": 39,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Un des héros décrits dans le Cycle d'Ulster, un grand guerrier des Chevaliers de la Branche Rouge, Fergus mac Róich...",
+                    "line": 8,
+                    "spelling": [
+                        {
+                            "i": 23,
+                            "nEnd": 115,
+                            "nStart": 110,
+                            "sType": "WORD",
+                            "sValue": "Róich"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Um, Fergus. Vous êtiez un autre professeur de Cú Chulainn, n'est-ce pas ?",
+                    "line": 9,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 2,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Um"
+                        },
+                        {
+                            "i": 6,
+                            "nEnd": 22,
+                            "nStart": 17,
+                            "sType": "WORD",
+                            "sValue": "êtiez"
+                        },
+                        {
+                            "i": 11,
+                            "nEnd": 48,
+                            "nStart": 46,
+                            "sType": "WORD",
+                            "sValue": "Cú"
+                        },
+                        {
+                            "i": 12,
+                            "nEnd": 57,
+                            "nStart": 49,
+                            "sType": "WORD",
+                            "sValue": "Chulainn"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Fôfô.",
+                    "line": 10,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 4,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Fôfô"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Hmm ? Tu parles de Sétanta ? Je lui ai appris un ou deux trucs sur le maniement de l'épée, mais...",
+                    "line": 11,
+                    "spelling": [
+                        {
+                            "i": 6,
+                            "nEnd": 26,
+                            "nStart": 19,
+                            "sType": "WORD",
+                            "sValue": "Sétanta"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "http://bdl.oqlf.gouv.qc.ca/bdl/gabarit_bdl.asp?id=3445",
+                            "aColor": [
+                                217,
+                                128,
+                                38
+                            ],
+                            "aSuggestions": [
+                                ", mais"
+                            ],
+                            "nEnd": 21,
+                            "nStart": 16,
+                            "sLineId": "#1818",
+                            "sMessage": "Si « mais » est la conjonction de coordination, une virgule est souhaitable si elle introduit une nouvelle proposition.",
+                            "sRuleId": "g0__virg_virgules_manquantes__b3_a1_1",
+                            "sType": "virg"
+                        }
+                    ],
+                    "initialSentence": "Je l'ai entrainé mais j'ai aussi veillé sur lui. Je le considère presque comme mon fils.",
+                    "line": 13,
+                    "spelling": []
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "[line 2]QUOOOII !? C'était un gage, n'est-ce pas ?",
+                    "line": 20,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 7,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "QUOOOII"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Hahaha ! Oui, c'est la réaction que j'attendais. Rien n'est plus drôle que ça. ",
+                    "line": 23,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 6,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Hahaha"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Fô, fôfôô, kyu ?",
+                    "line": 24,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 2,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Fô"
+                        },
+                        {
+                            "i": 3,
+                            "nEnd": 9,
+                            "nStart": 4,
+                            "sType": "WORD",
+                            "sValue": "fôfôô"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Um, merci, Fergus. Vous nous avez aidé alors que nous vous avons invoqué sans prévenir...",
+                    "line": 25,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 2,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Um"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Ne t'en fais pas. Ce n'est qu'un contrat temporaire. En plus, je ne peux pas refuser l'appel de Madame Scáthach.",
+                    "line": 26,
+                    "spelling": [
+                        {
+                            "i": 27,
+                            "nEnd": 111,
+                            "nStart": 103,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "D'ailleurs, quel genre de sorcellerie avez-vous utilisé Madame Scáthach ? Comment ai-je été invoqué durant mon repas ?",
+                    "line": 27,
+                    "spelling": [
+                        {
+                            "i": 11,
+                            "nEnd": 71,
+                            "nStart": 63,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Fôô ! Kyaau !",
+                    "line": 33,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 3,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Fôô"
+                        },
+                        {
+                            "i": 3,
+                            "nEnd": 11,
+                            "nStart": 6,
+                            "sType": "WORD",
+                            "sValue": "Kyaau"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Je vois, mais je ne comprends pas du tout. Madame Scáthach en connaît vraiment tout un rayon ! Je rêve que l'un de nous dans la Branche Rouge puisse avoir une fraction de son intellect.",
+                    "line": 37,
+                    "spelling": [
+                        {
+                            "i": 13,
+                            "nEnd": 58,
+                            "nStart": 50,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Mais cela explique quelque chose qui me tracassait, Scáthach.",
+                    "line": 43,
+                    "spelling": [
+                        {
+                            "i": 10,
+                            "nEnd": 60,
+                            "nStart": 52,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Et voilà ! Du Scáthach tout craché.",
+                    "line": 45,
+                    "spelling": [
+                        {
+                            "i": 5,
+                            "nEnd": 22,
+                            "nStart": 14,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "J'ai enfin compris pourquoi Cú Chulainn utilisait des runes. Il a appris à s'en servir avec vous.",
+                    "line": 46,
+                    "spelling": [
+                        {
+                            "i": 6,
+                            "nEnd": 30,
+                            "nStart": 28,
+                            "sType": "WORD",
+                            "sValue": "Cú"
+                        },
+                        {
+                            "i": 7,
+                            "nEnd": 39,
+                            "nStart": 31,
+                            "sType": "WORD",
+                            "sValue": "Chulainn"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Une Rune Originelle. Le sort utilme créé par le grand Dieu Nordique.",
+                    "line": 47,
+                    "spelling": [
+                        {
+                            "i": 7,
+                            "nEnd": 35,
+                            "nStart": 29,
+                            "sType": "WORD",
+                            "sValue": "utilme"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                133,
+                                71,
+                                133
+                            ],
+                            "aSuggestions": [],
+                            "nEnd": 4,
+                            "nStart": 0,
+                            "sLineId": "#2366",
+                            "sMessage": "Forme interrogative. Désaccord avec “je”. Le verbe n’est pas à la 1ʳᵉ personne du singulier.",
+                            "sRuleId": "g0__inte_verbes_composés_interrogatifs__b1_a2_1",
+                            "sType": "inte"
+                        },
+                        {
+                            "URL": "",
+                            "aColor": [
+                                89,
+                                49,
+                                129
+                            ],
+                            "aSuggestions": [],
+                            "nEnd": 9,
+                            "nStart": 5,
+                            "sLineId": "#32792",
+                            "sMessage": "Incohérence probable. Après une forme verbale comme “J-Je”, il ne faut pas une forme verbale comme “vois”.",
+                            "sRuleId": "gv1__conf_vc_int_imp_verbe__b1_a1_1",
+                            "sType": "conf"
+                        }
+                    ],
+                    "initialSentence": "J-Je vois... Je comprends que les lettres du dieu celte Ogham",
+                    "line": 50,
+                    "spelling": []
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                217,
+                                128,
+                                38
+                            ],
+                            "aSuggestions": [
+                                "Soient"
+                            ],
+                            "nEnd": 6,
+                            "nStart": 0,
+                            "sLineId": "#943p",
+                            "sMessage": "Majuscule en début de phrase, sauf éventuellement lors d’une énumération.",
+                            "sRuleId": "majuscule_début_paragraphe",
+                            "sType": "maj"
+                        }
+                    ],
+                    "initialSentence": "soient difficiles à utiliser à moins d'être un véritable druide. Votre pouvoir ne dépend donc pas de son origine ?",
+                    "line": 51,
+                    "spelling": []
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Fô, fôfôô, kyaau !",
+                    "line": 57,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 2,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Fô"
+                        },
+                        {
+                            "i": 3,
+                            "nEnd": 9,
+                            "nStart": 4,
+                            "sType": "WORD",
+                            "sValue": "fôfôô"
+                        },
+                        {
+                            "i": 5,
+                            "nEnd": 16,
+                            "nStart": 11,
+                            "sType": "WORD",
+                            "sValue": "kyaau"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "YEAHH !",
+                    "line": 59,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 5,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "YEAHH"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "9400110310",
+            "recordsLine": [
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                133,
+                                71,
+                                133
+                            ],
+                            "aSuggestions": [
+                                "aimerais"
+                            ],
+                            "nEnd": 9,
+                            "nStart": 2,
+                            "sLineId": "#34851",
+                            "sMessage": "Si vous exprimez un souhait, utilisez le conditionnel et non le futur.",
+                            "sRuleId": "gv2__vmode_j_aimerais_vinfi__b1_a1_1",
+                            "sType": "vmode"
+                        }
+                    ],
+                    "initialSentence": "J'aimerai aussi trouver une jolie demoiselle, mais vu la situation, il n'y en a aucune en vue ! Ni d'hommes d'ailleurs !",
+                    "line": 5,
+                    "spelling": []
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Hah, la luxure est ce qui fait un héros, mais tu es à un autre niveau.",
+                    "line": 6,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 3,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Hah"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "H-Huh ? Quoi ? Pourquoi m'inclure dans cette conversation, Scáthach ?",
+                    "line": 9,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 5,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "H-Huh"
+                        },
+                        {
+                            "i": 12,
+                            "nEnd": 67,
+                            "nStart": 59,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "O-Oui... Um...",
+                    "line": 14,
+                    "spelling": [
+                        {
+                            "i": 3,
+                            "nEnd": 9,
+                            "nStart": 7,
+                            "sType": "WORD",
+                            "sValue": "Um"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Je ne sais... pas... quoi dire... Um... Senpai...",
+                    "line": 15,
+                    "spelling": [
+                        {
+                            "i": 10,
+                            "nEnd": 30,
+                            "nStart": 28,
+                            "sType": "WORD",
+                            "sValue": "Um"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Hahaha ! Bon esprit gamin, si je puis me permettre !",
+                    "line": 17,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 6,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Hahaha"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Fôfô. Fô.",
+                    "line": 18,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 4,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Fôfô"
+                        },
+                        {
+                            "i": 3,
+                            "nEnd": 8,
+                            "nStart": 6,
+                            "sType": "WORD",
+                            "sValue": "Fô"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Fiou... Au point où j'en suis, il ne me reste plus qu'à risquer ma vie et de demander à Madame Scáthach.",
+                    "line": 20,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 4,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Fiou"
+                        },
+                        {
+                            "i": 25,
+                            "nEnd": 101,
+                            "nStart": 93,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Huh ?",
+                    "line": 21,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 3,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Huh"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                217,
+                                128,
+                                38
+                            ],
+                            "aSuggestions": [
+                                "Mais"
+                            ],
+                            "nEnd": 4,
+                            "nStart": 0,
+                            "sLineId": "#943p",
+                            "sMessage": "Majuscule en début de phrase, sauf éventuellement lors d’une énumération.",
+                            "sRuleId": "majuscule_début_paragraphe",
+                            "sType": "maj"
+                        }
+                    ],
+                    "initialSentence": "[line 2]mais vous êtes guidé[&s:es] par Madame Scáthach en ce moment. Dans un sens, vous êtes des enfants.",
+                    "line": 23,
+                    "spelling": [
+                        {
+                            "i": 13,
+                            "nEnd": 49,
+                            "nStart": 41,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Ooooh ! Quelle chance !!",
+                    "line": 27,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 5,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Ooooh"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Fôfôfô !",
+                    "line": 28,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 6,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Fôfôfô"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "http://bdl.oqlf.gouv.qc.ca/bdl/gabarit_bdl.asp?T1=h%C3%A9&T3.x=0&T3.y=0",
+                            "aColor": [
+                                89,
+                                49,
+                                129
+                            ],
+                            "aSuggestions": [
+                                "Eh bien",
+                                "Hé bien"
+                            ],
+                            "nEnd": 15,
+                            "nStart": 8,
+                            "sLineId": "#11068",
+                            "sMessage": "Confusion probable.",
+                            "sRuleId": "g2__conf_eh_bien__b1_a1_1",
+                            "sType": "conf"
+                        }
+                    ],
+                    "initialSentence": "Oh... Um... Et bien... Enfin...",
+                    "line": 30,
+                    "spelling": [
+                        {
+                            "i": 3,
+                            "nEnd": 6,
+                            "nStart": 4,
+                            "sType": "WORD",
+                            "sValue": "Um"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                133,
+                                71,
+                                133
+                            ],
+                            "aSuggestions": [],
+                            "nEnd": 4,
+                            "nStart": 0,
+                            "sLineId": "#2366",
+                            "sMessage": "Forme interrogative. Désaccord avec “je”. Le verbe n’est pas à la 1ʳᵉ personne du singulier.",
+                            "sRuleId": "g0__inte_verbes_composés_interrogatifs__b1_a2_1",
+                            "sType": "inte"
+                        },
+                        {
+                            "URL": "",
+                            "aColor": [
+                                89,
+                                49,
+                                129
+                            ],
+                            "aSuggestions": [],
+                            "nEnd": 12,
+                            "nStart": 5,
+                            "sLineId": "#32792",
+                            "sMessage": "Incohérence probable. Après une forme verbale comme “J-Je”, il ne faut pas une forme verbale comme “suppose”.",
+                            "sRuleId": "gv1__conf_vc_int_imp_verbe__b1_a1_1",
+                            "sType": "conf"
+                        }
+                    ],
+                    "initialSentence": "J-Je suppose que l'on est pas pressé. Tout d'abord, nous devons ramener ces enfants en sécurité !",
+                    "line": 31,
+                    "spelling": []
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "C-C'est vrai Senpai. Je pense qu'il est 100% sérieux. Je ne sais pas si je dois être en admiration ou terrifiée...",
+                    "line": 34,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 7,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "C-C’est"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "YEAH !",
+                    "line": 36,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 4,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "YEAH"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Héhé. L'audace, le désir, la vigueur et le manque d'avarice. Un héros doit avoir toutes ces choses.",
+                    "line": 37,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 4,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Héhé"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "[line 2]Quoi ? Pourquoi être aussi embarassé ?",
+                    "line": 45,
+                    "spelling": [
+                        {
+                            "i": 6,
+                            "nEnd": 36,
+                            "nStart": 27,
+                            "sType": "WORD",
+                            "sValue": "embarassé"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "https://fr.wiktionary.org/wiki/moi-m%C3%AAme",
+                            "aColor": [
+                                217,
+                                128,
+                                38
+                            ],
+                            "aSuggestions": [
+                                "toi-même"
+                            ],
+                            "nEnd": 98,
+                            "nStart": 90,
+                            "sLineId": "#5678",
+                            "sMessage": "Il manque un trait d’union si “même” se rapporte à “toi”.",
+                            "sRuleId": "g2__tu_mots_grammaticaux__b5_a1_1",
+                            "sType": "tu"
+                        }
+                    ],
+                    "initialSentence": "Les Hommes ne peuvent devenir ce qu'ils deviennent. Tu ne peux être quelqu'un d'autre que toi même. Jamais.",
+                    "line": 46,
+                    "spelling": []
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "C-C'est une quantité d'énergie magique exceptionnelle ! Il absorbe tout le mana ambiant automatiquement ?",
+                    "line": 51,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 7,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "C-C’est"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Humph. Même si un jour le combat venait à prendre ta vie ?",
+                    "line": 61,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 5,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Humph"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                133,
+                                71,
+                                133
+                            ],
+                            "aSuggestions": [
+                                "rempli",
+                                "remplie"
+                            ],
+                            "nEnd": 74,
+                            "nStart": 67,
+                            "sLineId": "#31316",
+                            "sMessage": "Après “être”, il faut un participe passé, pas un verbe à la 3ᵉ personne du singulier.",
+                            "sRuleId": "gv1__ppas_être_confusion__b6_a2_1",
+                            "sType": "ppas"
+                        }
+                    ],
+                    "initialSentence": "Si tu meurs ici, tu seras détruite de l'intérieur, et Chaldea sera remplit des vestiges de la mort.",
+                    "line": 67,
+                    "spelling": []
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Fô, faau ! Kyau !",
+                    "line": 70,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 2,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Fô"
+                        },
+                        {
+                            "i": 3,
+                            "nEnd": 8,
+                            "nStart": 4,
+                            "sType": "WORD",
+                            "sValue": "faau"
+                        },
+                        {
+                            "i": 5,
+                            "nEnd": 15,
+                            "nStart": 11,
+                            "sType": "WORD",
+                            "sValue": "Kyau"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "9400110311",
+            "recordsLine": [
+                {
+                    "grammar": [],
+                    "initialSentence": "Fô, fô ! Kyau, kyauu !",
+                    "line": 4,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 2,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Fô"
+                        },
+                        {
+                            "i": 3,
+                            "nEnd": 6,
+                            "nStart": 4,
+                            "sType": "WORD",
+                            "sValue": "fô"
+                        },
+                        {
+                            "i": 5,
+                            "nEnd": 13,
+                            "nStart": 9,
+                            "sType": "WORD",
+                            "sValue": "Kyau"
+                        },
+                        {
+                            "i": 7,
+                            "nEnd": 20,
+                            "nStart": 15,
+                            "sType": "WORD",
+                            "sValue": "kyauu"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": null,
+                            "aSuggestions": [
+                                "un"
+                            ],
+                            "nEnd": 93,
+                            "nStart": 88,
+                            "sLineId": "#1621s",
+                            "sMessage": "Doublon.",
+                            "sRuleId": "doublon",
+                            "sType": "notype"
+                        }
+                    ],
+                    "initialSentence": "Ce n'était pas un dragon, ni un sanglier, ou un serpent géant... Humph. Je n'ai jamais vu un un monstre pillier pareil.",
+                    "line": 5,
+                    "spelling": [
+                        {
+                            "i": 17,
+                            "nEnd": 68,
+                            "nStart": 63,
+                            "sType": "WORD",
+                            "sValue": "Humph"
+                        },
+                        {
+                            "i": 27,
+                            "nEnd": 109,
+                            "nStart": 102,
+                            "sType": "WORD",
+                            "sValue": "pillier"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Scáthach, vous connaissiez déjà ce qu'était cette chose ?",
+                    "line": 9,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 8,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Fô ! Kyu, kyaau !",
+                    "line": 19,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 2,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Fô"
+                        },
+                        {
+                            "i": 5,
+                            "nEnd": 15,
+                            "nStart": 10,
+                            "sType": "WORD",
+                            "sValue": "kyaau"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "https://fr.wiktionary.org/wiki/soi-disant",
+                            "aColor": [
+                                89,
+                                49,
+                                129
+                            ],
+                            "aSuggestions": [
+                                "soi-disant"
+                            ],
+                            "nEnd": 17,
+                            "nStart": 6,
+                            "sLineId": "#13643",
+                            "sMessage": "Confusion : “soi-disant” est un adjectif invariable.",
+                            "sRuleId": "g2__conf_soi_disant__b1_a1_1",
+                            "sType": "conf"
+                        }
+                    ],
+                    "initialSentence": "Cette soi-disante machine de guerre est un peu trop dangereuse pour apparaître comme vestige de mort !",
+                    "line": 25,
+                    "spelling": [
+                        {
+                            "i": 2,
+                            "nEnd": 17,
+                            "nStart": 6,
+                            "sType": "WORD",
+                            "sValue": "soi-disante"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "C'est vrai. En effet, Madame Scáthach a raison ! Mais j'aime les corps sveltes, bien que...",
+                    "line": 26,
+                    "spelling": [
+                        {
+                            "i": 9,
+                            "nEnd": 37,
+                            "nStart": 29,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Je peux sentir mon coeur se reserrer quand je la regarde ! Elle peut être une meilleure femme que Madame Scáthach !",
+                    "line": 27,
+                    "spelling": [
+                        {
+                            "i": 7,
+                            "nEnd": 35,
+                            "nStart": 27,
+                            "sType": "WORD",
+                            "sValue": "reserrer"
+                        },
+                        {
+                            "i": 21,
+                            "nEnd": 112,
+                            "nStart": 104,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Hahahah, mais mon intuition me dit que l'intérieur n'est pas comme l'extérieur !",
+                    "line": 28,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 7,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Hahahah"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Mon Caladbolg est suffisant pour retarder l'incarnation du Roi de la Destruction !",
+                    "line": 30,
+                    "spelling": [
+                        {
+                            "i": 2,
+                            "nEnd": 13,
+                            "nStart": 4,
+                            "sType": "WORD",
+                            "sValue": "Caladbolg"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Madame Scáthach a la tâche de vous guider ! Donc allez-y !",
+                    "line": 33,
+                    "spelling": [
+                        {
+                            "i": 2,
+                            "nEnd": 15,
+                            "nStart": 7,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "YEAH !",
+                    "line": 35,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 4,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "YEAH"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Fô, fôô !",
+                    "line": 39,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 2,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Fô"
+                        },
+                        {
+                            "i": 3,
+                            "nEnd": 7,
+                            "nStart": 4,
+                            "sType": "WORD",
+                            "sValue": "fôô"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "9400110410",
+            "recordsLine": [
+                {
+                    "grammar": [],
+                    "initialSentence": "Fô, fôô... Fôô...",
+                    "line": 5,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 2,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Fô"
+                        },
+                        {
+                            "i": 3,
+                            "nEnd": 7,
+                            "nStart": 4,
+                            "sType": "WORD",
+                            "sValue": "fôô"
+                        },
+                        {
+                            "i": 5,
+                            "nEnd": 12,
+                            "nStart": 9,
+                            "sType": "WORD",
+                            "sValue": "Fôô"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                133,
+                                71,
+                                133
+                            ],
+                            "aSuggestions": [
+                                "sommes-nous"
+                            ],
+                            "nEnd": 20,
+                            "nStart": 9,
+                            "sLineId": "#33626",
+                            "sMessage": "Forme interrogative ? Mettez un trait d’union.",
+                            "sRuleId": "gv2__inte_union_nous2__b4_a1_1",
+                            "sType": "inte"
+                        }
+                    ],
+                    "initialSentence": "Pourquoi sommes nous revenu[&s:es] ici ?",
+                    "line": 15,
+                    "spelling": []
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Donc tu es ici. Le dernier Esprit Héroïque que j'ai préparé. La première lance des grands chevaliers du Cycle Fenian.",
+                    "line": 20,
+                    "spelling": [
+                        {
+                            "i": 23,
+                            "nEnd": 116,
+                            "nStart": 110,
+                            "sType": "WORD",
+                            "sValue": "Fenian"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Fô !?",
+                    "line": 21,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 2,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Fô"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Mon vrai nom est Diarmuid Ua Duibhne. J'ai été invoqué en tant que Lancer pour ce contrat temporaire.",
+                    "line": 22,
+                    "spelling": [
+                        {
+                            "i": 7,
+                            "nEnd": 36,
+                            "nStart": 29,
+                            "sType": "WORD",
+                            "sValue": "Duibhne"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Je me battrai à vos côtés dans cette dernière épreuve. Scáthach, jeune fille au bouclier, et mon Master temporaire.",
+                    "line": 23,
+                    "spelling": [
+                        {
+                            "i": 12,
+                            "nEnd": 63,
+                            "nStart": 55,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Diarmuid Ua Duibhne ! Un héros du second âge des mythes celtes, le Cycle Fenian.",
+                    "line": 24,
+                    "spelling": [
+                        {
+                            "i": 3,
+                            "nEnd": 19,
+                            "nStart": 12,
+                            "sType": "WORD",
+                            "sValue": "Duibhne"
+                        },
+                        {
+                            "i": 16,
+                            "nEnd": 79,
+                            "nStart": 73,
+                            "sType": "WORD",
+                            "sValue": "Fenian"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Il a apporté la gloire aux chevaliers de Fianna, avec le héros tueur de dieux, Fionn mac Cumhaill. Alors...",
+                    "line": 25,
+                    "spelling": [
+                        {
+                            "i": 9,
+                            "nEnd": 47,
+                            "nStart": 41,
+                            "sType": "WORD",
+                            "sValue": "Fianna"
+                        },
+                        {
+                            "i": 18,
+                            "nEnd": 84,
+                            "nStart": 79,
+                            "sType": "WORD",
+                            "sValue": "Fionn"
+                        },
+                        {
+                            "i": 20,
+                            "nEnd": 97,
+                            "nStart": 89,
+                            "sType": "WORD",
+                            "sValue": "Cumhaill"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Uh...",
+                    "line": 27,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 2,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Uh"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                133,
+                                71,
+                                133
+                            ],
+                            "aSuggestions": [
+                                "veux-tu"
+                            ],
+                            "nEnd": 11,
+                            "nStart": 4,
+                            "sLineId": "#33536",
+                            "sMessage": "Forme interrogative ? Mettez un trait d’union.",
+                            "sRuleId": "gv2__inte_union_tu__b1_a1_1",
+                            "sType": "inte"
+                        },
+                        {
+                            "URL": "",
+                            "aColor": [
+                                133,
+                                71,
+                                133
+                            ],
+                            "aSuggestions": [
+                                "dis",
+                                "disais"
+                            ],
+                            "nEnd": 16,
+                            "nStart": 12,
+                            "sLineId": "#7347",
+                            "sMessage": "Conjugaison erronée. Accord avec “tu”. Le verbe devrait être à la 2ᵉ personne du singulier.",
+                            "sRuleId": "g2__conj_tu__b1_a1_1",
+                            "sType": "conj"
+                        }
+                    ],
+                    "initialSentence": "Que veux tu dire ?",
+                    "line": 30,
+                    "spelling": []
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                217,
+                                128,
+                                38
+                            ],
+                            "aSuggestions": [
+                                "Le"
+                            ],
+                            "nEnd": 2,
+                            "nStart": 0,
+                            "sLineId": "#943p",
+                            "sMessage": "Majuscule en début de phrase, sauf éventuellement lors d’une énumération.",
+                            "sRuleId": "majuscule_début_paragraphe",
+                            "sType": "maj"
+                        }
+                    ],
+                    "initialSentence": "le plus probable est qu'il rencontre une fin tragique. Je n'ai pas de fin, donc cela ne me concerne pas.",
+                    "line": 34,
+                    "spelling": []
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "En y repensant, oui... Même la fin de Sétanta n'est pas heureuse.",
+                    "line": 35,
+                    "spelling": [
+                        {
+                            "i": 11,
+                            "nEnd": 43,
+                            "nStart": 36,
+                            "sType": "WORD",
+                            "sValue": "Sétanta"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Scáthach...",
+                    "line": 36,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 8,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                133,
+                                71,
+                                133
+                            ],
+                            "aSuggestions": [
+                                "donnerait",
+                                "donnera"
+                            ],
+                            "nEnd": 44,
+                            "nStart": 36,
+                            "sLineId": "#7905",
+                            "sMessage": "Incohérence. Ceci est un verbe à la 1ʳᵉ personne du singulier. Sujet (“je” ou “moi qui”) introuvable.",
+                            "sRuleId": "g2__conj_1s_sans_sujet_xxxai__b2_a1_1",
+                            "sType": "conj"
+                        }
+                    ],
+                    "initialSentence": "Alors, moi, Diarmuid Ua Duibhne, me donnerai corps et âme pour vous défendre !",
+                    "line": 42,
+                    "spelling": [
+                        {
+                            "i": 7,
+                            "nEnd": 31,
+                            "nStart": 24,
+                            "sType": "WORD",
+                            "sValue": "Duibhne"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Heh. C'est une idée intéressante [%1]. Déesse des relations... J'y penserai...",
+                    "line": 48,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 3,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Heh"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "S-Senpai ! N-N-Non ! C'est malpoli...",
+                    "line": 49,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 8,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "S-Senpai"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                217,
+                                128,
+                                38
+                            ],
+                            "aSuggestions": [
+                                "2 000 ans"
+                            ],
+                            "nEnd": 64,
+                            "nStart": 56,
+                            "sLineId": "#1117p",
+                            "sMessage": "Avec une unité de mesure, mettez un espace insécable.",
+                            "sRuleId": "unit_nbsp_avant_unités1",
+                            "sType": "unit"
+                        }
+                    ],
+                    "initialSentence": "Enfin, la chose est que, en année humaine, j'ai plus de 2000 ans. Cela ne me dérange pas tant que ça, et je n'en ai jamais eu la chance de toute façon.",
+                    "line": 55,
+                    "spelling": []
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Héhéhé. Ne te tracasse pas pour ça. Peut-être qu'un jour, je te le dirai, mais pas maintenant.",
+                    "line": 57,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 6,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Héhéhé"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Fô, fôôô ! Kyu !",
+                    "line": 59,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 2,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Fô"
+                        },
+                        {
+                            "i": 3,
+                            "nEnd": 8,
+                            "nStart": 4,
+                            "sType": "WORD",
+                            "sValue": "fôôô"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "L'Esprit Héroïque Orion. Ou pas, ton vrai nom est[line 3]l'une des anciennes divinités du Mont Olympe. Artémis, la déesse de la Lune.",
+                    "line": 62,
+                    "spelling": [
+                        {
+                            "i": 12,
+                            "nEnd": 54,
+                            "nStart": 46,
+                            "sType": "WORD",
+                            "sValue": "estl'une"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Fô, fôôôô ! Kyu !",
+                    "line": 65,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 2,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Fô"
+                        },
+                        {
+                            "i": 3,
+                            "nEnd": 9,
+                            "nStart": 4,
+                            "sType": "WORD",
+                            "sValue": "fôôôô"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                64,
+                                127,
+                                191
+                            ],
+                            "aSuggestions": [
+                                "leurs"
+                            ],
+                            "nEnd": 101,
+                            "nStart": 97,
+                            "sLineId": "#24374",
+                            "sMessage": "Accord de nombre erroné avec « crocs ».",
+                            "sRuleId": "g3__gn_leur_1m__b2_a1_1",
+                            "sType": "gn"
+                        },
+                        {
+                            "URL": "",
+                            "aColor": [
+                                64,
+                                127,
+                                191
+                            ],
+                            "aSuggestions": [
+                                "croc"
+                            ],
+                            "nEnd": 107,
+                            "nStart": 102,
+                            "sLineId": "#24374",
+                            "sMessage": "Accord de nombre erroné : « crocs » devrait être au singulier.",
+                            "sRuleId": "g3__gn_leur_1m__b2_a2_1",
+                            "sType": "gn"
+                        }
+                    ],
+                    "initialSentence": "Les dieux ne sont pas toujours des bénédictions pour l'humanité. Parfois, comme ici, ils sortent leur crocs comme Mère-Nature.",
+                    "line": 69,
+                    "spelling": []
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Qu'y a-t-il Fô ?",
+                    "line": 70,
+                    "spelling": [
+                        {
+                            "i": 4,
+                            "nEnd": 14,
+                            "nStart": 12,
+                            "sType": "WORD",
+                            "sValue": "Fô"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "F-Fô ne tient pas en place !",
+                    "line": 71,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 4,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "F-Fô"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "C'est pourquoi nous, les anciens chevaliers de Fianna, étions requis dans l'ancien Erin.",
+                    "line": 72,
+                    "spelling": [
+                        {
+                            "i": 10,
+                            "nEnd": 53,
+                            "nStart": 47,
+                            "sType": "WORD",
+                            "sValue": "Fianna"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Hahahaha ! Ça fait si longtemps que je n'ai pas tué un dieu ! Mon sang est en ébullition !",
+                    "line": 78,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 8,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Hahahaha"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Scáthach, vous êtes vraiment survoltée !",
+                    "line": 86,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 8,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "YEAH !",
+                    "line": 88,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 4,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "YEAH"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "http://bdl.oqlf.gouv.qc.ca/bdl/gabarit_bdl.asp?id=4206",
+                            "aColor": [
+                                133,
+                                71,
+                                133
+                            ],
+                            "aSuggestions": [
+                                "Calme-toi"
+                            ],
+                            "nEnd": 21,
+                            "nStart": 12,
+                            "sLineId": "#32340",
+                            "sMessage": "S’il s’agit d’un impératif, mettez un trait d’union.",
+                            "sRuleId": "gv1__imp_union_toi__b1_a1_1",
+                            "sType": "imp"
+                        }
+                    ],
+                    "initialSentence": "C'est rien. Calme toi et fais comme d'habitude.",
+                    "line": 89,
+                    "spelling": []
+                }
+            ]
+        },
+        {
+            "id": "9400110411",
+            "recordsLine": [
+                {
+                    "grammar": [],
+                    "initialSentence": "Je suis désolée. Je ne voulais pas. Même si Darling ne me l'a pas dit, je...",
+                    "line": 5,
+                    "spelling": [
+                        {
+                            "i": 12,
+                            "nEnd": 51,
+                            "nStart": 44,
+                            "sType": "WORD",
+                            "sValue": "Darling"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Adieu. Scáthach... Un million de fois merci pour votre compassion.",
+                    "line": 8,
+                    "spelling": [
+                        {
+                            "i": 3,
+                            "nEnd": 15,
+                            "nStart": 7,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Merci, Diarmuid Ua Duibhne.",
+                    "line": 9,
+                    "spelling": [
+                        {
+                            "i": 5,
+                            "nEnd": 26,
+                            "nStart": 19,
+                            "sType": "WORD",
+                            "sValue": "Duibhne"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Scáthach a dit que c'était le dernier vestige. Ce qui veut dire que nous avons fini ?",
+                    "line": 12,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 8,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [
+                        {
+                            "URL": "",
+                            "aColor": [
+                                64,
+                                127,
+                                191
+                            ],
+                            "aSuggestions": [
+                                "cœurs"
+                            ],
+                            "nEnd": 88,
+                            "nStart": 84,
+                            "sLineId": "#25212",
+                            "sMessage": "Accord de nombre erroné : « cœur » devrait être au pluriel.",
+                            "sRuleId": "g3__gn_det_epi_plur_1m__b1_a1_1",
+                            "sType": "gn"
+                        }
+                    ],
+                    "initialSentence": "C'est là que nos chemins se séparent. Ces nombreux vestiges ont été purifiés de vos coeur.",
+                    "line": 14,
+                    "spelling": []
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Fôô, fô...",
+                    "line": 16,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 3,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Fôô"
+                        },
+                        {
+                            "i": 3,
+                            "nEnd": 7,
+                            "nStart": 5,
+                            "sType": "WORD",
+                            "sValue": "fô"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Scáthach...",
+                    "line": 17,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 8,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Je ne peux pas le refaire cent fois, Scáthach !",
+                    "line": 23,
+                    "spelling": [
+                        {
+                            "i": 10,
+                            "nEnd": 45,
+                            "nStart": 37,
+                            "sType": "WORD",
+                            "sValue": "Scáthach"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "YEAH !",
+                    "line": 24,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 4,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "YEAH"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Fôô !",
+                    "line": 25,
+                    "spelling": [
+                        {
+                            "i": 1,
+                            "nEnd": 3,
+                            "nStart": 0,
+                            "sType": "WORD",
+                            "sValue": "Fôô"
+                        }
+                    ]
+                },
+                {
+                    "grammar": [],
+                    "initialSentence": "Oh, oui. Et avec l'aide de Fô aussi !",
+                    "line": 26,
+                    "spelling": [
+                        {
+                            "i": 10,
+                            "nEnd": 29,
+                            "nStart": 27,
+                            "sType": "WORD",
+                            "sValue": "Fô"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "title": "Copie de TQ Scathach"
+}

@@ -1,0 +1,27 @@
+services:
+  correcteur:
+    build: ./backend/correcteur
+    ports:
+      - "8080:8080"
+
+  connecteur:
+    build: ./backend/correction-sheets
+    ports:
+      - "3030:3030"
+
+  client:
+    build: ./front
+    ports:
+      - "3000:3000"
+  
+  nginx:
+    depends_on:
+      - connecteur
+      - correcteur
+      - client
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    ports:
+      - "80:80"
