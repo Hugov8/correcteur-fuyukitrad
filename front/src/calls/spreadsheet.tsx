@@ -1,7 +1,7 @@
 import axios from "axios"
 import { CorrectionSheet, SpreadSheetIds } from "./correctionType"
 
-const URL_CONNECTEUR = "http://localhost:3030"//"http://localhost:80/connecteur"
+const URL_CONNECTEUR = window.location.origin+"/connecteur"//"http://localhost:3030"
 
 export const getIdSheets: (s: String) => Promise<SpreadSheetIds> = async (link: String) => {
     return await axios.get<SpreadSheetIds>(URL_CONNECTEUR+'/getIdSheet', {
