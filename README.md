@@ -33,4 +33,4 @@ Voir [ici](./front/README.md) pour la page web et [ici](./backend/README.md) pou
 [voir README correspondant](/backend/correction-sheets/README.md)
 
 # Attention
-Pour fonctionner, il faut mettre un fichier client_secret.json dans le dossier [correction-sheets](/backend/correction-sheets/). Celui-ci peut être généré en passant par [le cloud google](https://console.cloud.google.com)
+Pour fonctionner, il faut mettre un fichier client_secret.json dans le dossier [correction-sheets](/backend/correction-sheets/). Celui-ci peut être généré en passant par [la console cloud google](https://console.cloud.google.com)
