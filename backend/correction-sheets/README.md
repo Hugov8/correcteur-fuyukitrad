@@ -34,3 +34,5 @@ python correcteur.py --all
 
 Le rapport se trouvera dans le dossier [rapport](/rapport)
 
+# Attention
+Pour que le service fonctionne, il faut lancer le correcteur orthographique, voir [ici](../README.md#correcteur-orthographique)
