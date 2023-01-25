@@ -1,6 +1,6 @@
 services:
   correcteur:
-    build: ./Grammalecte-fr-v2.1.1
+    build: ./correcteur
     ports:
       - "8080:8080"
 

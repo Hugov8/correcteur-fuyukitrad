@@ -11,7 +11,7 @@
     "num": true,
     "virg": true,
     "poncfin": true,
-    "unit": true,
+    "unit": false,
     "nf": true,
     "liga": true,
     "mapos": true,
