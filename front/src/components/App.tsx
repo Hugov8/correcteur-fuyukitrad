@@ -2,6 +2,7 @@ import React from "react";
 import FormLink from "./FormLink";
 import CorrectSpreadsheet from "./CorrectSpreadsheet";
 import '../styles/App.css'
+import '../styles/Boutton.css'
 import { Link } from "./types";
 import scroll_top from '../assets/scroll_top.svg'
 
@@ -29,7 +30,7 @@ class App extends React.Component<{}, { url: Link }> {
         {this.state.url ?
           (<div>
             <CorrectSpreadsheet urlSheet={this.state.url} />
-            <div className="boutton-container"><button className="boutton-retour" onClick={() => this.setState({ url: null })}>Revenir au choix du lien</button></div>
+            <div className="boutton-container"><button className="boutton-re" onClick={() => this.setState({ url: null })}>Revenir au choix du lien</button></div>
             <div id="scroll_to_top">
               <a href="#top"><img alt="Retourner en haut" src={scroll_top} /></a>
             </div>

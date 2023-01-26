@@ -5,6 +5,7 @@ import { getCorrectedSheet } from "../calls/spreadsheet";
 import { sendToDrive } from "../calls/spreadsheet";
 import Loader from "./Loader";
 import "../styles/CorrectRow.css"
+import '../styles/Boutton.css'
 
 type CorrectRowProps = {
     idSheet: String,
@@ -16,7 +17,7 @@ const CorrectRow = ({ idSheet, spreadSheetLink }: CorrectRowProps) => {
     const [finish, setFinish] = React.useState<boolean>(false)
     const [error, setError] = React.useState<boolean>(false)
 
-    React.useEffect(() => {
+    const loadCorrection = () => {
         setFinish(false)
         getCorrectedSheet(idSheet, spreadSheetLink).then((res) => {
             changeCorrectedSheet(res)
@@ -27,7 +28,9 @@ const CorrectRow = ({ idSheet, spreadSheetLink }: CorrectRowProps) => {
             setError(true)
             setFinish(true)
         })
-    }, [idSheet])
+    }
+
+    React.useEffect(loadCorrection, [idSheet])
 
     if (!finish) {
         return <Loader />
@@ -40,12 +43,14 @@ const CorrectRow = ({ idSheet, spreadSheetLink }: CorrectRowProps) => {
 
 
     return (
-
-        <ul className="correct-row-all-lines">
-            {correctedSheet.recordsLine.map((corr, index) => {
-                return <li key={index}> <CorrectionView handleClick={(value: String, line: number) => sendToDrive(value, line, idSheet, spreadSheetLink)} correction={corr} /> </li>
-            })}
-        </ul>
+        <div>
+            <div className="boutton-container"><button className="boutton-re" onClick={() => loadCorrection()}>Recharger</button> </div>
+            <ul className="correct-row-all-lines">
+                {correctedSheet.recordsLine.map((corr, index) => {
+                    return <li key={index}> <CorrectionView handleClick={(value: String, line: number) => sendToDrive(value, line, idSheet, spreadSheetLink)} correction={corr} /> </li>
+                })}
+            </ul>
+        </div>
 
     )
 }

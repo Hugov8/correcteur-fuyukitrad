@@ -13,6 +13,7 @@ const CorrectionView = ({ correction, handleClick }: CorrectionViewProps) => {
     return <div>
         <div className="fautes-vue">
             <div>
+                <h2>Ligne {correction.line}</h2>
                 <h3 className="titre-faute">Fautes de grammaire : </h3>
                 <ul>
                     {correction.grammar.map((grammar, index) => {
