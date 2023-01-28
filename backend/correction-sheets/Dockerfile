@@ -3,4 +3,4 @@ WORKDIR /app
 COPY requirements.txt /app
 RUN pip install -r requirements.txt
 ADD . /app/
-CMD ["python","-u","index.py"]
+CMD ["waitress-serve","--port=3030","index:app"]
