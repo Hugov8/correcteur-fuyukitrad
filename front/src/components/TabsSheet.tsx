@@ -13,15 +13,14 @@ const Tab = ({ title, onClick, isActive }: TabProps) => {
 
 type SheetTabsProps = {
     sheets: String[],
-    onClick: (sheet:String) => void
+    onClick: (sheet:String) => void,
+    activeSheet : String,
 }
 
-const SheetTabs = ({ sheets, onClick}: SheetTabsProps) => {
-    const [activeSheet, setActiveSheet] = React.useState<String>(sheets[0])
+const SheetTabs = ({ sheets, onClick, activeSheet}: SheetTabsProps) => {
     return (<div className="sheet-tabs">
         {sheets.map((sheet) => {
                 return <div key={sheet.toString()}><Tab onClick={()=>{
-                    setActiveSheet(sheet)
                     onClick(sheet)
                 }}
                 title={sheet}
