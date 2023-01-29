@@ -1,5 +1,6 @@
 import {useState} from "react"
 import "../styles/ModifierView.css"
+import '../styles/Boutton.css'
 import Loader from "./Loader"
 import EnvoyeNotif from "./EnvoyeNotif"
 
@@ -38,7 +39,7 @@ const ModifierView = ({line, defaultText, onClick} : ModifierViewProps) => {
             cols={100}
             defaultValue={corrige.toString()}
             onChange={(event) => {
-                changeCorrection(event.target.value)
+                changeCorrection(event.target.value.trim())
             }}></textarea>
             <input className="boutton-envoyer"
             onClick={() => {

@@ -1,0 +1,11 @@
+.numero-ligne {
+    font-size: large;
+}
+
+.liste-fautes {
+    list-style: disc;
+}
+
+.titre-faute {
+    font-size: large;
+}

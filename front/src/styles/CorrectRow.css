@@ -1,14 +1,12 @@
-.correct-row-all-lines {
-    
+.scroll-content {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    height: 518px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.id-sheet-view {
-    border: 1px solid;
-    cursor: pointer;
-    opacity: 0.8;
-    background-color: rgba(145, 145, 145, 0.19);
-    position: fixed;
-    padding: 5px 10px;
-    top: 30px;
-    right: 10px;
+.correct-row-all-lines {
+    list-style: none;
+    margin: 0px;
 }

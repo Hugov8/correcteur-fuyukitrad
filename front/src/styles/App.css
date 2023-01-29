@@ -1,5 +1,14 @@
 .main-title {
     text-align: center;
+    height: fit-content;
+    font-size: x-large;
+    margin: 0.3rem;
+}
+
+.app {
+  display: flow;
+  overflow-y: hidden;
+  
 }
 
 #scroll_to_top {

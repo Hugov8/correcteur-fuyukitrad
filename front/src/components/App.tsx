@@ -41,13 +41,6 @@ class App extends React.Component<{}, { url: Link }> {
               }}>Revenir au choix du lien
               </button>
             </div>
-
-            <div id="scroll_to_top" onClick={() => {
-              window.scrollTo(0, 0)
-            }}>
-              <img alt="Retourner en haut" src={scroll_top} />
-            </div>
-
           </div>)
 
           : <FormLink onClick={(s: Link) => {

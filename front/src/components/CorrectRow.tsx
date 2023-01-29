@@ -44,13 +44,14 @@ const CorrectRow = ({ idSheet, spreadSheetLink }: CorrectRowProps) => {
 
     return (
         <div>
-            <div className="id-sheet-view" onClick={()=>{window.scrollTo(0,0)}}>{correctedSheet.id}</div>
-            <div className="boutton-container"><button className="boutton-re" onClick={() => loadCorrection()}>Recharger</button> </div>
-            <ul className="correct-row-all-lines">
-                {correctedSheet.recordsLine.map((corr, index) => {
-                    return <li key={index}> <CorrectionView handleClick={(value: String, line: number) => sendToDrive(value, line, idSheet, spreadSheetLink)} correction={corr} /> </li>
-                })}
-            </ul>
+            <div className="boutton-container"><button className="boutton-re" onClick={() => loadCorrection()}>Recharger la sheet</button> </div>
+            <div className="scroll-content">
+                <ul className="correct-row-all-lines">
+                    {correctedSheet.recordsLine.map((corr, index) => {
+                        return <li key={index}> <CorrectionView handleClick={(value: String, line: number) => sendToDrive(value, line, idSheet, spreadSheetLink)} correction={corr} /> </li>
+                    })}
+                </ul>
+            </div>
         </div>
 
     )
