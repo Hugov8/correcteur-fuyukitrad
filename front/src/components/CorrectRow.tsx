@@ -44,6 +44,7 @@ const CorrectRow = ({ idSheet, spreadSheetLink }: CorrectRowProps) => {
 
     return (
         <div>
+            <div className="id-sheet-view" onClick={()=>{window.scrollTo(0,0)}}>{correctedSheet.id}</div>
             <div className="boutton-container"><button className="boutton-re" onClick={() => loadCorrection()}>Recharger</button> </div>
             <ul className="correct-row-all-lines">
                 {correctedSheet.recordsLine.map((corr, index) => {

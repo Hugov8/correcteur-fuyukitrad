@@ -1,3 +1,14 @@
 .correct-row-all-lines {
     
 }
+
+.id-sheet-view {
+    border: 1px solid;
+    cursor: pointer;
+    opacity: 0.8;
+    background-color: rgba(145, 145, 145, 0.19);
+    position: fixed;
+    padding: 5px 10px;
+    top: 30px;
+    right: 10px;
+}

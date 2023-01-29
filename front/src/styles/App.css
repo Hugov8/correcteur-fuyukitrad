@@ -8,6 +8,7 @@
     height: 50px;
     bottom: 30px;
     right: 40px;
+    cursor: pointer;
   }
   #scroll_to_top img {
     width: 50px;
