@@ -18,7 +18,7 @@ input[type="url"] {
     font-size: 1.1em;
     width: 70%;
     padding: 0.25em 0.375em;
-    margin: 1em 10em;
+    margin: 10px auto;
     background-color: #fdfdfd;
     border: 0.0625em solid;
     border-color: #ccc;

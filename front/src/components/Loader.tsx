@@ -1,8 +1,8 @@
 import "../styles/Loader.css"
 const Loader = () => {
-    return (<div className="three col">
-    <div className="loader" id="loader-1"></div>
-  </div>)
+    return (
+    <div className="loader" id="loader-fou"><img alt="Loading" src={require('../assets/fou.gif')} /></div>
+  )
 }
 
 export default Loader

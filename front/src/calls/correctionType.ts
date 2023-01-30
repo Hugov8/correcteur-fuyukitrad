@@ -36,3 +36,12 @@ export type SpellingError = {
     nStart: number,
     nEnd: number,
 }
+
+export type Erreur = {
+    status: number,
+    messageErreur: String,
+}
+
+export const determineIsErrorOrNot = <T>(value: Erreur | T): value is Erreur => {
+    return (value as Erreur).messageErreur && true
+}

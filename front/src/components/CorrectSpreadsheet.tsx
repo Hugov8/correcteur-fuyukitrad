@@ -3,7 +3,7 @@ import React from "react"
 import CorrectRow from "./CorrectRow"
 import { CorrectSpreadsheetProps } from "./types"
 import SheetTabs from "./TabsSheet"
-import { SpreadSheetIds } from "../calls/correctionType"
+import { Erreur, SpreadSheetIds, determineIsErrorOrNot } from "../calls/correctionType"
 import Loader from "./Loader"
 import { getCookie, setCookie } from "../calls/cookie"
 
@@ -12,22 +12,27 @@ const CorrectSpreadsheet = (props: CorrectSpreadsheetProps) =>{
     const [finish, setFinish] = React.useState<boolean>(false)
     const [currentSheet, setCurrentSheet] = React.useState<String>(getCookie("idSheet", spreadSheet.sheets[0]) as String)
     const [error, setError] = React.useState<boolean>(false)
-    const [messageError, setMessageError] = React.useState<{
-        data: {message: String},
-        status: number
-    }>({data:{message:"En cours"}, status:400})
+    const [messageError, setMessageError] = React.useState<Erreur>({messageErreur: "En cours", status:400})
 
     React.useEffect(()=>{
         setFinish(false)
         getIdSheets(props.urlSheet as String).then((value)=>{
-            setSpreadSheet(value)
-            setCurrentSheet(getCookie("idSheet",value.sheets[0]) as String)
-            setFinish(true)
-            setError(false)
+            if (determineIsErrorOrNot<SpreadSheetIds>(value)){
+                console.log(value.status)
+                setError(true)
+                setMessageError(value)
+                setFinish(true)
+            } else {
+                setSpreadSheet(value)
+                setCurrentSheet(getCookie("idSheet",value.sheets[0]) as String)
+                setFinish(true)
+                setError(false)
+            }
+            
         }).catch((err)=>{
             console.log(err)
             setError(true)
-            setMessageError(err.response)
+            setMessageError({status: err.response.status, messageErreur: err.data.messageErreur})
             setFinish(true)
         })
     }, [props.urlSheet])
@@ -39,7 +44,7 @@ const CorrectSpreadsheet = (props: CorrectSpreadsheetProps) =>{
         return <div>
             <h1>Erreur</h1>
             <div>Message failed with error {messageError.status}</div>
-            <div>Message content : {messageError.data.message}</div>
+            <div>Message content : {messageError.messageErreur}</div>
         </div>
     }
 
