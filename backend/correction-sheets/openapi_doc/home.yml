@@ -1,0 +1,13 @@
+tags:
+  - Service
+summary: home page of the service
+description: |
+  Nothing to do
+operationId: home
+responses:
+  "200":
+    description: welcome message
+    content: text/html
+    schema:
+          type: string
+          example: <h1>Test</h1>

@@ -1,23 +1,43 @@
-from flask import Flask, render_template, request, jsonify, make_response
-import requests
-import json
+from flask import Flask, request, jsonify, make_response
+
 import correcteur
-import os
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
+from flasgger import swag_from, Swagger
 
 app = Flask(__name__)
+
+app.config['SWAGGER'] = {
+    "swagger_version": "2.0",
+    "title": "Flasgger",
+    "headers": [
+        ('Access-Control-Allow-Origin', '*'),
+        ('Access-Control-Allow-Methods', "GET, POST, PUT, DELETE, OPTIONS"),
+        ('Access-Control-Allow-Credentials', "true"),
+    ],
+    "specs": [
+        {
+            "version": "0.0.1",
+            "title": "Api connecteur",
+            "endpoint": 'v1_spec',
+            "description": 'This is the version 1 of our API',
+            "route": '/v1/spec',
+        }
+    ]
+}
+
 CORS(app)
+Swagger(app)
 
 PORT = 3030
 HOST = '0.0.0.0'
-app.config['CORS_HEADERS'] = 'Content-Type'
 
+@swag_from('./openapi_doc/home.yml')
 @app.route("/", methods=['GET'])
 def home():
     return "<h1 style='color:blue'>Connexion réussi!</h1>"
 
+@swag_from('./openapi_doc/get-id-sheet.yml')
 @app.route('/getIdSheet', methods=['GET'])
-@cross_origin()
 def getIdSheets():
     if 'urlSheet' not in request.headers:
         return make_response(jsonify({"messageErreur": "urlSheet not found"}), 400)
@@ -30,7 +50,7 @@ def getIdSheets():
     return make_response(jsonify({"title": wksheet.title, "sheets": rows}), 200)
 
 @app.route('/getCorrectedSheet', methods=['GET'])
-@cross_origin()
+@swag_from('openapi_doc/get-corrected-sheet.yml')
 def getCorrectedSheet():
     if 'urlSheet' not in request.headers:
         return make_response(jsonify({"messageErreur": "Fournir le lien de la sheet"}), 400)
@@ -49,18 +69,18 @@ def getCorrectedSheet():
                 return make_response(jsonify({"messageErreur":"erreur inconnue"}), 400)
     return make_response(jsonify({"messageErreur": "Sheet not found"}, 404))
 
+@swag_from('openapi_doc/get-corrected-spreadsheet.yml')
 @app.route("/getCorrectedSpreadsheet", methods=['GET'])
 def getCorrectedSpreadsheet():
     if 'urlSheet' not in request.headers:
         return make_response(jsonify({"messageErreur": "Fournir le lien de la sheet"}), 400)
-    
     try:
         return make_response(jsonify(correcteur.checkOrthographeWorksheet(request.headers["urlSheet"])), 200)
     except:
-        return make_response(jsonify({"messageErreur":"Vérifier le lien"}))
+        return make_response(jsonify({"messageErreur":"Vérifier le lien"}), 400)
 
 @app.route('/modifySheet', methods=['POST'])
-@cross_origin()
+@swag_from('openapi_doc/modify-sheet.yml')
 def modifySheet():
     if 'urlSheet' not in request.headers:
         return make_response(jsonify({"messageErreur": "Fournir le lien de la sheet"}), 400)
@@ -80,7 +100,7 @@ def modifySheet():
         if row.title==request.args['idSheet']:
             try:
                 row.update_cell(data["line"], 8, data["value"])
-                return make_response(jsonify({"state": "success"}), 200)
+                return make_response(jsonify({"state": "success"}), 202)
             except:
                 return make_response(jsonify({"messageErreur":"Veuillez réessayer plus tard"}), 400)
     return make_response(jsonify({"messageErreur": "error, sheet not found"}, 404))

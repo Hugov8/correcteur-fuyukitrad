@@ -1,0 +1,89 @@
+tags:
+  - Service
+summary: Return correction of all sheets of the spreadsheet
+parameters:
+  - in: header
+    name: urlSheet
+    schema:
+      type: string
+      description: Url of the spreadsheet
+    required: true
+responses:
+  "200":
+    description: Return the corrected spreadsheet
+    schema:
+          type: object
+          properties:
+            title:
+              type: string
+              description: title of the spreadsheet
+            sheets:
+              type: object
+              properties:
+                id:
+                  type: string
+                  description: id of the sheet
+                recordsLine:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      line:
+                        type: number
+                        description: Number of the line on the sheet
+                      initialSentence:
+                        type: string
+                        description: Sentence in the sheet at the line
+                      grammar:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            nStart:
+                              type: number
+                              description: Error beginning at character
+                            nEnd:
+                              type: number
+                              description: Error ending at character
+                            sRuleId:
+                              type: string
+                              description: Id of the sRuleId
+                            sType:
+                              type: string
+                              description: Type of the Error
+                            sMessage:
+                              type: string
+                              description: Description of the type of the Error
+                            aSuggestions:
+                              type: array
+                              items:
+                                type: string
+                              description: List of suggestions
+                            URL:
+                              type: string
+                              description: URL of the rule
+                      spelling:
+                        type: array
+                        items:
+                            type: object
+                            properties:
+                              sType:
+                                type: string
+                                description: Type of the Error
+                              sValue:
+                                type: string
+                                description: Value of the Error
+                              nStart:
+                                type: number
+                                description: Error beginning at character
+                              nEnd:
+                                type: number
+                                description: Error finishing at character
+  "400":
+    description: Bad request
+    schema:
+      type: object
+      properties:
+        messageErreur:
+          type: string
+          description: Description of the failure

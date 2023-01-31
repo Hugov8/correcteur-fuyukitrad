@@ -1,0 +1,34 @@
+summary: Get a list of sheet names
+tags:
+  - Service
+parameters:
+  - in: header
+    name: urlSheet
+    description: Url of the google spreadsheet
+    schema:
+      type: string
+    required: true
+
+responses:
+  "200":
+    description: Return the list of sheet's name
+    schema:
+          type: object
+          properties:
+            title:
+              type: string
+              description: Title of the spreadsheet
+            sheets:
+              type: array
+              items:
+                type: string
+              description: the list of ids
+
+  "400":
+    description: Bad request
+    schema:
+      type: object
+      properties:
+        messageErreur:
+          type: string
+          description: Description of the failure

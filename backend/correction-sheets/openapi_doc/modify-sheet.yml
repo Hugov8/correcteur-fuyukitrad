@@ -1,0 +1,46 @@
+tags:
+  - Service
+
+summary: modify a value in the spreadsheet
+
+parameters:
+  - in: header
+    name: urlSheet
+    description: URL of the spreadsheet
+    schema:
+      type: string
+    required: true
+  - in: query
+    name: idSheet
+    description: ID of the sheet on the spreadsheets
+    schema:
+      type: string
+    required: true
+
+responses:
+  "202":
+    description: Value replace success
+    schema:
+          type: object
+          properties:
+            state:
+              type: string
+              description: Success
+
+  "404":
+    description: Sheet does not exist
+    schema:
+          type: object
+          properties:
+            messageErreur:
+              type: string
+              description: Description of the failure
+
+  "400":
+    description: Bad request
+    schema:
+          type: object
+          properties:
+            messageErreur:
+              type: string
+              description: Description of the failure
