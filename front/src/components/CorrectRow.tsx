@@ -6,6 +6,7 @@ import { sendToDrive } from "../calls/spreadsheet";
 import Loader from "./Loader";
 import "../styles/CorrectRow.css"
 import '../styles/Boutton.css'
+import ErreurView from "./ErreurView";
 
 type CorrectRowProps = {
     idSheet: String,
@@ -16,12 +17,12 @@ const CorrectRow = ({ idSheet, spreadSheetLink }: CorrectRowProps) => {
     const [correctedSheet, changeCorrectedSheet] = React.useState<CorrectionSheet>({ id: "0000", recordsLine: [] })
     const [finish, setFinish] = React.useState<boolean>(false)
     const [error, setError] = React.useState<boolean>(false)
-    const [messageError, setMessageError] = React.useState<Erreur>({status:400, messageErreur: "En cours"})
+    const [messageError, setMessageError] = React.useState<Erreur>({ status: 400, messageErreur: "En cours" })
 
     const loadCorrection = () => {
         setFinish(false)
         getCorrectedSheet(idSheet, spreadSheetLink).then((res) => {
-            if (determineIsErrorOrNot<CorrectionSheet>(res)){
+            if (determineIsErrorOrNot<CorrectionSheet>(res)) {
                 setError(true)
                 setMessageError(res)
                 setFinish(true)
@@ -31,11 +32,11 @@ const CorrectRow = ({ idSheet, spreadSheetLink }: CorrectRowProps) => {
                 setError(false)
                 setFinish(true)
             }
-            
+
         }).catch((err) => {
             console.log(err)
             setError(true)
-            setMessageError({status: err.response.status, messageErreur: err.data.messageErreur})
+            setMessageError({ status: err.response.status, messageErreur: err.data.messageErreur })
             setFinish(true)
         })
     }
@@ -47,11 +48,7 @@ const CorrectRow = ({ idSheet, spreadSheetLink }: CorrectRowProps) => {
     }
 
     if (error) {
-        return <div>
-        <h1>Erreur</h1>
-        <div>Message failed with error {messageError.status}</div>
-        <div>Message content : {messageError.messageErreur}</div>
-    </div>
+        return <ErreurView messageError={messageError} />
     }
 
 
@@ -60,11 +57,19 @@ const CorrectRow = ({ idSheet, spreadSheetLink }: CorrectRowProps) => {
         <div>
             <div className="boutton-container"><button className="boutton-re" onClick={() => loadCorrection()}>Recharger la sheet</button> </div>
             <div className="scroll-content">
-                <ul className="correct-row-all-lines">
-                    {correctedSheet.recordsLine.map((corr, index) => {
-                        return <li key={index}> <CorrectionView handleClick={(value: String, line: number) => sendToDrive(value, line, idSheet, spreadSheetLink)} correction={corr} /> </li>
-                    })}
-                </ul>
+                {
+                    correctedSheet.recordsLine.length === 0 ?
+                        <div className="ras-container">
+                            <h1 className="ras-text">RAS</h1>
+                            <img id="saber" src={require('../assets/saber-fatestaynight.gif')}/>
+                        </div>
+                        :
+                        <ul className="correct-row-all-lines">
+                            {correctedSheet.recordsLine.map((corr, index) => {
+                                return <li key={index}> <CorrectionView handleClick={(value: String, line: number) => sendToDrive(value, line, idSheet, spreadSheetLink)} correction={corr} /> </li>
+                            })}
+                        </ul>
+                }
             </div>
         </div>
 

@@ -7,13 +7,6 @@
     font-size: large;
 }
 
-.boutton-link {
-    height: max-content;
-    width: max-content;
-    margin: auto;
-    vertical-align: middle;
-}
-
 input[type="url"] {
     font-size: 1.1em;
     width: 70%;

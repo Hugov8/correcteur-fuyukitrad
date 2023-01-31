@@ -29,8 +29,15 @@
     touch-action: manipulation;
 }
 
+#boutton-link {
+  margin: 6px auto;
+  height: max-content;
+  width: max-content;
+  vertical-align: middle;
+}
+
 .boutton-envoyer {
-    margin: 6px auto;
+    margin: 6px 2px 6px 6px;
     appearance: none;
     background-color: #FAFBFC;
     border: 1px solid rgba(27, 31, 35, 0.15);

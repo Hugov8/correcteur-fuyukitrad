@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Link } from "./types"
+import { Link } from "./App"
 import '../styles/FormLink.css'
 
 const FormLink = ({onClick}: {onClick: (s:Link)=>void}) => {
@@ -13,7 +13,7 @@ const FormLink = ({onClick}: {onClick: (s:Link)=>void}) => {
                     onClick(url)
                 }
             }} className="url-input" type="url" id="sheet_link" placeholder="https://docs.google.com/" onChange={(e)=>{changeUrl(e.target.value)}}/>
-            <button className="boutton-envoyer boutton-link" onClick={() => onClick(url)}> Envoyer </button>
+            <button id="boutton-link" className="boutton-envoyer" onClick={() => onClick(url)}> Envoyer </button>
         </div>
     )
 }

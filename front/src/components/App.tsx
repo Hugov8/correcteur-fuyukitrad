@@ -3,10 +3,9 @@ import FormLink from "./FormLink";
 import CorrectSpreadsheet from "./CorrectSpreadsheet";
 import '../styles/App.css'
 import '../styles/Boutton.css'
-import { Link } from "./types";
-import scroll_top from '../assets/scroll_top.svg'
 import { deleteCookie, getCookie, setCookie } from "../calls/cookie";
 
+export type Link = String | null
 class App extends React.Component<{}, { url: Link }> {
 
   state: { url: Link } = {
