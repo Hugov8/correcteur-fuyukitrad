@@ -47,7 +47,7 @@ export const sendToDrive = async (value: String, line: number, idSheet: String, 
     }, {headers:{
         "urlSheet": link.toString(),
     }}).then((data)=>{
-        return data.status===200
+        return data.status===202
     }).catch((e)=>{
         console.log(e)
         return false
