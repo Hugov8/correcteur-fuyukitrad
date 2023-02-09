@@ -5,7 +5,10 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'build')));
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  let index = path.join(__dirname, 'build', 'index.html') 
+  if (isValidPath(index)) {
+    res.sendFile(index);
+  }
 });
 
 app.listen(3000);
