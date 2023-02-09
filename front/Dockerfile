@@ -1,4 +1,4 @@
-FROM node:16
+FROM node:current-slime
 ENV NODE_ENV production
 WORKDIR /app
 
