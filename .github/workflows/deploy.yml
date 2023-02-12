@@ -25,7 +25,7 @@ jobs:
           key: ${{ secrets.SSHKEY }}
           passphrase: ${{ secrets.SSHKEY_PASSPHRASE }}
           source: "."
-          target: "/home/${{ secrets.USERNAME }}/correcteur-fuyuki"
+          target: "/home/${{ secrets.USERNAME }}/correcteur-fuyukitrad"
 
       - name: Executing remote command
         uses: appleboy/ssh-action@master
@@ -38,4 +38,4 @@ jobs:
           KEY: ${{ secrets.SSHKEY }}
           envs: LARGE_SECRET_PASSPHRASE
           passphrase: ${{ secrets.SSHKEY_PASSPHRASE }}
-          script: cd /home/${{ secrets.USERNAME }}/correcteur-fuyuki && chmod +x ./decrypt.sh && ./decrypt.sh && docker-compose down && docker-compose up --build -d && sleep 5s && docker ps
+          script: cd /home/${{ secrets.USERNAME }}/correcteur-fuyukitrad && chmod +x ./decrypt.sh && ./decrypt.sh && docker-compose down && docker-compose up --build -d && sleep 5s && docker ps
