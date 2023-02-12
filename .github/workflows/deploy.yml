@@ -28,7 +28,7 @@ jobs:
           target: "/home/${{ secrets.USERNAME }}/correcteur-fuyuki"
 
       - name: Decrypt large secret
-        run: ./decrypt_secret.sh
+        run: ./decrypt.sh
         env:
           LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
 
