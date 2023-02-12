@@ -37,4 +37,4 @@ jobs:
           PORT: ${{ secrets.PORT }}
           KEY: ${{ secrets.SSHKEY }}
           passphrase: ${{ secrets.SSHKEY_PASSPHRASE }}
-          script: cd /home/${{ secrets.USERNAME }}/correcteur-fuyuki && ./decrypt.sh && docker-compose down && docker-compose up --build -d && sleep 5s && docker ps
+          script: cd /home/${{ secrets.USERNAME }}/correcteur-fuyuki && chmod +x ./decrypt.sh && ./decrypt.sh && docker-compose down && docker-compose up --build -d && sleep 5s && docker ps
