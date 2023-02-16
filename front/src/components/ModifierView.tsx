@@ -45,7 +45,7 @@ const ModifierView = ({line, defaultText, onClick} : ModifierViewProps) => {
             onClick={() => {
                 handleClick()
             }}
-                 type="submit" name="submitCorrection" value="Envoyer" />
+                 type="submit" name="submitCorrection" value="Modifier sur la sheet" />
 
             {
                 finished ? <EnvoyeNotif send={send} />: <Loader />
