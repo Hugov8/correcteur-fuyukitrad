@@ -32,7 +32,7 @@ export const getCorrectedSheet = async (id: String, link: String): Promise<Corre
     }).catch((e)=>{
         console.log(e)
          return e.response ?
-            {status: e.response.status, messageErreur: e.status.messageErreur}
+            {status: e.response.status, messageErreur: e.response.data.messageErreur}
         :
             {status:502, messageErreur:"Axios erreur: "+e.message}
         
