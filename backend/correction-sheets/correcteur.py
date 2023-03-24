@@ -46,11 +46,16 @@ def preprocessPhrase(p):
             start = i
         else:
             j = i+1
-            while(res[j]!=']'):
+            while(j<len(res) and res[j]!=']'):
                 j+=1
-            res = res[:i]+res[j+1:]
+
+            if(j<len(res)):
+                res = res[:i]+res[j+1:]
+                i = j
+            else:
+                print("Erreur parsing [], manque ] !")
+                start = i +1
             #print(res)
-            i = j
         i = res.find("[", start)
     return res
 

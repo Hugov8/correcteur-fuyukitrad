@@ -65,8 +65,8 @@ def getCorrectedSheet():
         if row.title==request.args['idSheet']:
             try:
                 return make_response(jsonify(correcteur.checkSheet(row)), 200)
-            except:
-                return make_response(jsonify({"messageErreur":"erreur inconnue"}), 400)
+            except Exception as e:
+                return make_response(jsonify({"messageErreur":"erreur inconnue : " + str(e)}), 400)
     return make_response(jsonify({"messageErreur": "Sheet not found"}, 404))
 
 @swag_from('openapi_doc/get-corrected-spreadsheet.yml')
