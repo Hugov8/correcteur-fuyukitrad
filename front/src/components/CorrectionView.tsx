@@ -14,7 +14,7 @@ const CorrectionView = ({ correction, handleClick }: CorrectionViewProps) => {
         <div className="fautes-vue">
             <div>
                 <h2 className="numero-ligne">Ligne {correction.line}</h2>
-                <h3 className="titre-faute">Fautes de grammaire : </h3>
+                {correction.grammar.length!==0 && <h3 className="titre-faute">Fautes de grammaire : </h3>}
                 <ul className="liste-fautes">
                     {correction.grammar.map((grammar, index) => {
                         return (<li className="erreur" key={index}> <GrammarView error={grammar} /> </li>)
@@ -22,7 +22,7 @@ const CorrectionView = ({ correction, handleClick }: CorrectionViewProps) => {
                 </ul>
             </div>
             <div>
-                <h3 className="titre-faute">Fautes d'orthographe : </h3>
+                {correction.spelling.length!==0 && <h3 className="titre-faute">Fautes d'orthographe : </h3>}
                 <ul className="liste-fautes">
                     {correction.spelling.map((elem, index) => {
                         return <li className="erreur" key={index}> <SpellingView error={elem} /> </li>

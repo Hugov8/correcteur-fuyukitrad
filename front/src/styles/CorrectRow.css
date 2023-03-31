@@ -6,6 +6,10 @@
     border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.correct-row {
+    padding: 1rem;
+}
+
 .ras-container {
     align-items: center;
     justify-content: center;

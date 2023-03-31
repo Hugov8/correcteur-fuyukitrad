@@ -56,7 +56,7 @@ const CorrectRow = ({ idSheet, spreadSheetLink }: CorrectRowProps) => {
     return (
         <div>
             <div className="boutton-container"><button className="boutton-re" onClick={() => loadCorrection()}>Recharger la sheet</button> </div>
-            <div className="scroll-content">
+            <div className="correct-row">
                 {
                     correctedSheet.recordsLine.length === 0 ?
                         <div className="ras-container">

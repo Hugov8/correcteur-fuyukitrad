@@ -30,7 +30,6 @@ const ModifierView = ({line, defaultText, onClick} : ModifierViewProps) => {
     
     return (
         <div className="zone-correction">
-            <label className="text-zone" htmlFor={idTextArea}>Zone de correction : </label>
             <textarea 
             className="correction-modif-zone"
             id={idTextArea} 
@@ -41,7 +40,7 @@ const ModifierView = ({line, defaultText, onClick} : ModifierViewProps) => {
             onChange={(event) => {
                 changeCorrection(event.target.value.trim())
             }}></textarea>
-            <input className="boutton-envoyer"
+            <input id="send-correction" className="boutton-envoyer"
             onClick={() => {
                 handleClick()
             }}
