@@ -12,11 +12,11 @@
 .correction-modif-zone {
   width: 80%;
   height: auto;
-  padding: 6px 10px;
+  padding: 0px 0.5rem;
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 4px;
   background-color: #f8f8f8;
-  font-size: 14px;
+  font-size: 0.9rem;
   resize: none;
 }

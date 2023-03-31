@@ -27,11 +27,9 @@ class App extends React.Component<{}, { url: Link }> {
   render() {
     return (
       <div className="app">
-        <h1 className="main-title">Correcteur FuyukiTrad</h1>
+
         {this.state.url ?
           (<div>
-            <CorrectSpreadsheet urlSheet={this.state.url} />
-
             <div className="boutton-container">
               <button className="boutton-re" onClick={() => {
                 deleteCookie("idSheet")
@@ -40,11 +38,15 @@ class App extends React.Component<{}, { url: Link }> {
               }}>Revenir au choix du lien
               </button>
             </div>
+            <CorrectSpreadsheet urlSheet={this.state.url} />
           </div>)
 
-          : <FormLink onClick={(s: Link) => {
-            this.handleClickForm(s)
-          }} />}
+          : <div>
+            <h1 className="main-title">Correcteur FuyukiTrad</h1>
+            <FormLink onClick={(s: Link) => {
+              this.handleClickForm(s)
+            }} />
+          </div>}
 
       </div>
     );
