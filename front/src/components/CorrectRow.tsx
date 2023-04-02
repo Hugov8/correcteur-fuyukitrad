@@ -7,6 +7,7 @@ import Loader from "./Loader";
 import "../styles/CorrectRow.css"
 import '../styles/Boutton.css'
 import ErreurView from "./ErreurView";
+import scroll_top from '../assets/scroll_top.svg'
 
 type CorrectRowProps = {
     idSheet: String,
@@ -55,13 +56,15 @@ const CorrectRow = ({ idSheet, spreadSheetLink }: CorrectRowProps) => {
 
     return (
         <div>
-            <div className="boutton-container"><button className="boutton-re" onClick={() => loadCorrection()}>Recharger la sheet</button> </div>
-            <div className="correct-row">
+            <div id="scrollable-row" className="correct-row scroll-content">
+                <div className="boutton-container">
+                    <button className="boutton-re" onClick={() => loadCorrection()}>Recharger la sheet</button>
+                </div>
                 {
                     correctedSheet.recordsLine.length === 0 ?
                         <div className="ras-container">
                             <h1 className="ras-text">RAS</h1>
-                            <img id="saber" src={require('../assets/saber-fatestaynight.gif')}/>
+                            <img id="saber" src={require('../assets/saber-fatestaynight.gif')} />
                         </div>
                         :
                         <ul className="correct-row-all-lines">
@@ -70,6 +73,7 @@ const CorrectRow = ({ idSheet, spreadSheetLink }: CorrectRowProps) => {
                             })}
                         </ul>
                 }
+                <img onClick={()=>{document.getElementById("scrollable-row")?.scrollTo(0, 0)}} src={scroll_top} alt="Remonter vers le haut" id="scroll_to_top"/>
             </div>
         </div>
 
