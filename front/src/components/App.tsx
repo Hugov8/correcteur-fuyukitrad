@@ -32,7 +32,7 @@ class App extends React.Component<{}, { url: Link }> {
           (<div>
             <CorrectSpreadsheet urlSheet={this.state.url} />
 
-            <div className="boutton-container">
+            <div id="retour-choix-lien-container" className="boutton-container">
               <button className="boutton-re" onClick={() => {
                 deleteCookie("idSheet")
                 deleteCookie("urlSheet")
