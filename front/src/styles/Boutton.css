@@ -37,6 +37,7 @@
 }
 
 .boutton-envoyer {
+    max-width: 15vw;
     margin: 6px 2px 6px 6px;
     appearance: none;
     background-color: #FAFBFC;
@@ -59,7 +60,7 @@
     -webkit-user-select: none;
     touch-action: manipulation;
     vertical-align: middle;
-    white-space: nowrap;
+    white-space: normal;
     word-wrap: break-word;
   }
   

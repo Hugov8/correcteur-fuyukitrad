@@ -10,6 +10,7 @@
 }
 
 .correction-modif-zone {
+  min-width: 70%;
   width: 80%;
   height: auto;
   padding: 0px 0.5rem;
