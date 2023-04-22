@@ -79,6 +79,9 @@ def preprocessPhraseAndErrorBalise(p):
 
             # Si on a trouvé une balise fermante
             if(j<len(res) and res[j]==']'):
+                # Si on est à la fin du texte et qu'on finit par un [line x], on ajoute un . pour éviter de lever
+                # l'alerte dur le point final. (le plus rapide à faire, à voir si on garde comme)
+                if(res[i+1:i+5]=="line" and j==len(res)-1): res+='.'
                 # On enlève la balise du texte
                 res = res[:i]+res[j+1:]
                 i = j
