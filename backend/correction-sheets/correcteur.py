@@ -32,6 +32,7 @@ def checkOrthographePhrase(texte):
 
 ERREUR_MANQUE_BALISE = "Erreur parsing [], manque le ] ! Revérifier la correction après avoir résolu le problème"
 ERREUR_MANQUE_2PARTIE = "Attention [] : deuxième partie manquante"
+ERREUR_BALISE_MASTER = "Attention erreur dans la balise [%1]"
 def preprocessPhraseAndErrorBalise(p):
     res = p.replace("[%1]", "Fujimaru")
     #res = res.replace('[r]', "\n")
@@ -40,7 +41,12 @@ def preprocessPhraseAndErrorBalise(p):
     start = 0
     while(i!=-1):
         debutBalise = i
-        if res[i+1]=='&' or res[i+1]=="#":
+        if res[i+1]=='%': 
+            if res[i+2]!='1' or res[i+3]!=']':
+                correctionBalise.append(ERREUR_BALISE_MASTER)
+            start = i + 1
+
+        elif res[i+1]=="#" or res[i+1]=='&':
             i+=1
             # On parcourt la première partie de la balise
             while(res[i]!=":"): 
