@@ -35,7 +35,6 @@ ERREUR_MANQUE_2PARTIE = "Attention [] : deuxième partie manquante"
 ERREUR_BALISE_MASTER = "Attention erreur dans la balise [%1]"
 def preprocessPhraseAndErrorBalise(p):
     res = p.replace("[%1]", "Fujimaru")
-    #res = res.replace('[r]', "\n")
     correctionBalise = []
     i = res.find("[")
     start = 0
@@ -90,6 +89,7 @@ def preprocessPhraseAndErrorBalise(p):
                 start = i + 1
             
         i = res.find("[", start)
+    res = res.replace('[r]', "\n")
     return res, correctionBalise
 
 def writeLog(dataCorrection):
