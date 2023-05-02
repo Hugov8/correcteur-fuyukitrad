@@ -1,0 +1,9 @@
+name: "Build Docker Workflow"
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build the docker
+        run: docker-compose up -d && ((docker ps -q $1 | wc -l) | grep -q -v 4 && exit 1)
