@@ -6,4 +6,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build the docker
-        run: docker-compose up --build -d && sleep 5s && (if [ $(docker ps -q $1 | wc -l) -ne 4 ]; then exit 1 ;fi)
+        run: docker-compose up --build -d && (if [ $(docker ps -q $1 | wc -l) -ne 4 ]; then exit 1 ;fi)
