@@ -155,7 +155,7 @@ HOMEPAGE = """
 """
 
 
-TESTPAGE = True
+TESTPAGE = False
 
 
 def genUserId ():
