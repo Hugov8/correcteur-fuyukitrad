@@ -6,3 +6,4 @@ tqdm==4.64.1
 flask-cors==3.0.10
 waitress==2.1.2
 flasgger==0.9.5
+werkzeug==2.3.7
