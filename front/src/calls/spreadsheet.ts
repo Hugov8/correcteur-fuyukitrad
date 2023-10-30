@@ -13,10 +13,10 @@ export const getIdSheets: (s: String) => Promise<SpreadSheetIds|Erreur> = async 
         return v.data
     }).catch((e)=>{
         console.log(e)
-        return e.response ?
+        return e.response.data.messageErreur ?
             {status: e.response.status, messageErreur: e.response.data.messageErreur}
         :
-            {status: 502, messageErreur: "Axios: "+e.message}
+            {status: 502, messageErreur: e.message}
     
     })
 }
@@ -31,7 +31,7 @@ export const getCorrectedSheet = async (id: String, link: String): Promise<Corre
         return rep.data
     }).catch((e)=>{
         console.log(e)
-         return e.response ?
+         return e.response.data.messageErreur ?
             {status: e.response.status, messageErreur: e.response.data.messageErreur}
         :
             {status:502, messageErreur:"Axios erreur: "+e.message}
