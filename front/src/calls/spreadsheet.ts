@@ -2,19 +2,21 @@ import axios from "axios"
 import { CorrectionSheet, SpreadSheetIds, Erreur } from "./correctionType"
 
 const URL_CONNECTEUR = window.location.origin+"/connecteur"//"http://localhost:3030"
+const URL_SHEET = "http://localhost:9000"
 
 export const getIdSheets: (s: String) => Promise<SpreadSheetIds|Erreur> = async (link: String) => {
-    return await axios.get<SpreadSheetIds>(URL_CONNECTEUR+'/getIdSheet', {
+    return await axios.get<{response: String[]}>(URL_SHEET+'/sheetIds', {
         headers: {
-            "urlSheet": link.toString(),
+            "lienSpreadsheet": link.toString(),
 
         }
     }).then((v) => {
-        return v.data
+        console.log(v)
+        return {sheets: v.data.response}
     }).catch((e)=>{
         console.log(e)
         return e.response.data.messageErreur ?
-            {status: e.response.status, messageErreur: e.response.data.messageErreur}
+            {status: e.response.status, messageErreur: e.response.data.message}
         :
             {status: 502, messageErreur: e.message}
     
@@ -41,13 +43,13 @@ export const getCorrectedSheet = async (id: String, link: String): Promise<Corre
 
 export const sendToDrive = async (value: String, line: number, idSheet: String, link: String): Promise<boolean> => {
     
-    return await axios.post(URL_CONNECTEUR+'/modifySheet?idSheet='+idSheet, {
+    return await axios.put(URL_SHEET+'/writeCell', {
+        lienSpreadsheet: link.toString(),
+        nameSheet: idSheet,
         value: value,
-        line: line,
-    }, {headers:{
-        "urlSheet": link.toString(),
-    }}).then((data)=>{
-        return data.status===202
+        cell: "H"+line,
+    }).then((data)=>{
+        return data.status===200
     }).catch((e)=>{
         console.log(e)
         return false

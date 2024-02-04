@@ -11,7 +11,7 @@ import { Link } from "./App"
 type CorrectSpreadsheetProps = { urlSheet: Link }
 
 const CorrectSpreadsheet = (props: CorrectSpreadsheetProps) => {
-    const [spreadSheet, setSpreadSheet] = React.useState<SpreadSheetIds>({ title: "na", sheets: ["0"] })
+    const [spreadSheet, setSpreadSheet] = React.useState<SpreadSheetIds>({ sheets: ["0"] })
     const [finish, setFinish] = React.useState<boolean>(false)
     const [currentSheet, setCurrentSheet] = React.useState<String>(getCookie("idSheet", spreadSheet.sheets[0]) as String)
     const [error, setError] = React.useState<boolean>(false)

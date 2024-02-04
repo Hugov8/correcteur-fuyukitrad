@@ -11,7 +11,6 @@ export interface CorrectionSheet {
 }
 
 export interface SpreadSheetIds {
-    title: String,
     sheets: String[],
 }
 
