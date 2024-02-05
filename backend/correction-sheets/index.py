@@ -48,9 +48,10 @@ def getCorrectedSheet():
         return make_response(jsonify({"messageErreur": "Fournir une id sheet"}), 400)
     try:
         values = requests.get(URL_SHEET_MANAGER+"getColumn/"+request.args["idSheet"]+"/H", headers={"lienSpreadsheet": request.headers["urlSheet"]})
+        return make_response(jsonify(correcteur.checkSentences(values.json()["response"])), 200)
     except:
         return make_response(jsonify({"messageErreur": "Vérifier le lien fourni"}))
-    return make_response(jsonify(correcteur.checkSentences(values.json()["response"])), 200)
+    
 
 
 if __name__ == "__main__":
