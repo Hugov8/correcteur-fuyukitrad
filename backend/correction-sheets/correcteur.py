@@ -1,6 +1,6 @@
 import requests
 
-URL_CORRECTEUR = "http://localhost/correcteur/"
+URL_CORRECTEUR = "http://correcteur:8080/"
 
 with open("options.json", "r") as f:
     option_correcteur = f.read()
