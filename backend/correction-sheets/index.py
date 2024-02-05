@@ -31,7 +31,7 @@ Swagger(app)
 
 PORT = 3030
 HOST = '0.0.0.0'
-URL_SHEET_MANAGER = "http://localhost:9000/"
+URL_SHEET_MANAGER = "http://localhost/api/"
 
 @swag_from('./openapi_doc/home.yml')
 @app.route("/", methods=['GET'])
