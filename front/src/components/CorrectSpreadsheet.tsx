@@ -4,7 +4,6 @@ import CorrectRow from "./CorrectRow"
 import SheetTabs from "./TabsSheet"
 import { Erreur, SpreadSheetIds, determineIsErrorOrNot } from "../calls/correctionType"
 import Loader from "./Loader"
-import { getCookie, setCookie } from "../calls/cookie"
 import ErreurView from "./ErreurView"
 import { Link } from "./App"
 
@@ -51,7 +50,6 @@ const CorrectSpreadsheet = (props: CorrectSpreadsheetProps) => {
         <SheetTabs
             onClick={(sheet: String) => {
                 setCurrentSheet(sheet)
-                //setCookie("idSheet", sheet, 7)
             }}
             sheets={spreadSheet.sheets}
             activeSheet={currentSheet} />
