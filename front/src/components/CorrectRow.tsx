@@ -41,7 +41,7 @@ const CorrectRow = ({ idSheet, spreadSheetLink }: CorrectRowProps) => {
         })
     }
 
-    React.useEffect(loadCorrection, [idSheet])
+    React.useEffect(loadCorrection, [idSheet, spreadSheetLink])
 
     if (!finish) {
         return <Loader />
@@ -63,7 +63,7 @@ const CorrectRow = ({ idSheet, spreadSheetLink }: CorrectRowProps) => {
                     correctedSheet.recordsLine.length === 0 ?
                         <div className="ras-container">
                             <h1 className="ras-text">RAS</h1>
-                            <img id="saber" src={require('../assets/saber-fatestaynight.gif')} />
+                            <img id="saber" src={require('../assets/saber-fatestaynight.gif')} alt="RAS"/>
                         </div>
                         :
                         <ul className="correct-row-all-lines">
