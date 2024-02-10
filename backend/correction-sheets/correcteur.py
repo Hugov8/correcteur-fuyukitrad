@@ -1,11 +1,4 @@
 import requests
-import gspread
-from datetime import datetime
-import os
-import sys
-import time
-import json
-from tqdm import tqdm
 
 URL_CORRECTEUR = "http://correcteur:8080/"
 
@@ -14,12 +7,6 @@ with open("options.json", "r") as f:
 with open("mot_accepte.txt", "r") as f:
     acceptedWord = list(map(lambda x: x.strip("\n"), f.readlines()))
 
-os.makedirs("rapport", exist_ok=True)
-
-def connectionDriveAPI():
-    # use creds to create a client to interact with the Google Drive API
-    gc = gspread.service_account("client_secret.json")
-    return gc
 
 def checkOrthographePhrase(texte):
     data = {'text': texte, 'tf': True, "options":option_correcteur}
@@ -92,47 +79,12 @@ def preprocessPhraseAndErrorBalise(p):
         i = res.find("[", start)
     return res, correctionBalise
 
-def writeLog(dataCorrection):
-    logFile = "rapport/log_"+dataCorrection["title"]+str(datetime.timestamp(datetime.now()))+".txt"
-    with open(logFile, 'w') as f:
-        f.write(dataCorrection["title"]+"\n")
-        for dataSheet in dataCorrection["sheets"]:
-            f.write(dataSheet["id"]+":\n")
-            for dataLine in dataSheet["recordsLine"]:
-                line = dataLine['line']
-                value = dataLine['initialSentence'].replace("\n", " ")
-                grammarList = dataLine["grammar"]
-                spellingList = dataLine["spelling"]
-                f.write(f"\tLigne {line} :\n")
-                f.write(f"\t\t{value}\n")
-
-                if len(grammarList)!=0:
-                    f.write("\t\tGrammaire :\n")
-                    for error in grammarList:
-                        bilan = "["+ error["sType"] + "] "+"[de "+str(error["nStart"])+" à "+str(error["nEnd"])+"] "+error["sMessage"] +"\n\t\t\tSuggestions : "+ str(error["aSuggestions"])
-                        f.write(f"\t\t\t{bilan}\n")
-                if len(spellingList) !=0:
-                    f.write("\t\tSpelling :\n")
-                    for error in spellingList:
-                        bilan = "["+error["sType"] + "] "+error["sValue"]
-                        f.write(f"\t\t\t{bilan}\n")
 
 
-def checkSheet(sheet):
-    data = {"id": sheet.title, "recordsLine": []}    
-    flag = True
-    # Récupération sur la sheet
-    while(flag):
-        try:
-            values = sheet.col_values(8)[2:]
-            flag = False
-        except gspread.exceptions.APIError:
-            print("Dodo")
-            time.sleep(70)
-            print("Reveil")
-    
+def checkSentences(values):
+    data = {"recordsLine": []}  
     line = 2
-    for value in values:
+    for value in values[2:]:
         line +=1
         recordLine = {"line": line, "initialSentence": value}
         prep, correctionBalise = preprocessPhraseAndErrorBalise(value)
@@ -160,35 +112,3 @@ def checkSheet(sheet):
 
     return data
 
-def getWorksheet(url):
-    client = connectionDriveAPI()
-    return client.open_by_url(url)
-
-def checkOrthographeWorksheet(url):
-    print("====Connexion et récupération des scripts====")
-    wksheet = getWorksheet(url)
-    
-    data = {"title": wksheet.title, "sheets": []}
-
-    print("====Success====")
-    print("====Correction de la sheet====")
-    rows = wksheet.worksheets()[1:]
-    for row in tqdm(filter(lambda r: r.title!="Template" and r.title!="Names", rows), total=len(rows)-1):
-        data["sheets"].append(checkSheet(row))
-    print(f"====Terminé !====")
-    return data
-
-
-if __name__=="__main__":
-    URL_CORRECTEUR = "http://localhost:8080/"
-    if(len(sys.argv) != 2):
-        print("Please provide the link of the google sheet.")
-    elif(sys.argv[1]=="--all"):
-        with open("lien.txt") as f:
-            links = f.readlines()
-            for url in links: checkOrthographeWorksheet(url)
-    else:
-        data = checkOrthographeWorksheet(sys.argv[1])
-        writeLog(data)
-        with open("rapport/test.json", 'w') as f:
-            json.dump(data, f)

@@ -3,13 +3,12 @@ import FormLink from "./FormLink";
 import CorrectSpreadsheet from "./CorrectSpreadsheet";
 import '../styles/App.css'
 import '../styles/Boutton.css'
-import { deleteCookie, getCookie, setCookie } from "../calls/cookie";
 
 export type Link = String | null
 class App extends React.Component<{}, { url: Link }> {
 
   state: { url: Link } = {
-    url: getCookie("urlSheet", null)
+    url: null
   }
 
   handleClickForm(s: Link) {
@@ -17,7 +16,6 @@ class App extends React.Component<{}, { url: Link }> {
       this.setState({
         url: s,
       })
-      setCookie("urlSheet", s, 7)
     } else {
       alert('Champ vide')
     }
@@ -34,8 +32,6 @@ class App extends React.Component<{}, { url: Link }> {
 
             <div id="retour-choix-lien-container" className="boutton-container">
               <button className="boutton-re" onClick={() => {
-                deleteCookie("idSheet")
-                deleteCookie("urlSheet")
                 this.setState({ url: null })
               }}>Revenir au choix du lien
               </button>
