@@ -21,6 +21,7 @@ ERREUR_MANQUE_BALISE = "Erreur parsing [], manque le ] ! Revérifier la correcti
 ERREUR_MANQUE_2PARTIE = "Attention [] : deuxième partie manquante."
 ERREUR_BALISE_MASTER = "Attention erreur dans la balise [%1]."
 ERREUR_ESPACE_SUPPLEMENTAIRE = "Deux espaces se suivent."
+ERREUR_PRESENCE_SLASH = "Détection d'un /, vérifiez s'il est pertinent."
 def preprocessPhraseAndErrorBalise(p):
     res = p.replace("[%1]", "Fujimaru")
     res = res.replace('[r]', "\n")
@@ -101,6 +102,7 @@ def checkSentences(values):
         
         # Ajout des erreurs non comprise dans le correcteur
         if('"' in value): spellingList.append({"sType": "CHEVRON", "sValue":'"', "nStart": value.find('"'), "nEnd": value.find('"')})
+        if('/' in value): spellingList.append({"sType": "SLASH", "sValue":ERREUR_PRESENCE_SLASH, "nStart": value.find('/'), "nEnd": value.find('/')})
         if("  " in value): spellingList.append({"sType": "ESPACE", "sValue": ERREUR_ESPACE_SUPPLEMENTAIRE, "nStart" : value.find("  "), "nEnd": value.find("  ")+2})
         # Ajout des erreurs de balise
         for balise in correctionBalise:
