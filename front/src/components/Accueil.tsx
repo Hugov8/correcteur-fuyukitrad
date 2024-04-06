@@ -42,6 +42,7 @@ class Accueil extends React.Component<{token: string}, { url: StringOrNull }> {
           : <div>
             <h1 className="main-title">Correcteur FuyukiTrad</h1>
             <FormLink placeholder="https://docs.google.com/"
+             typeInput="url"
              message={"Veuillez entrer le lien de la sheet : "} 
              onClick={(s: StringOrNull) => {
               this.handleClickForm(s)

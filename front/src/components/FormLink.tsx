@@ -2,7 +2,7 @@ import { useState } from "react"
 import { StringOrNull } from "./App"
 import '../styles/FormLink.css'
 
-const FormLink = ({onClick, message, placeholder}: {onClick: (s:StringOrNull)=>void, message: string, placeholder: string}) => {
+const FormLink = ({onClick, message, placeholder, typeInput}: {onClick: (s:StringOrNull)=>void, message: string, placeholder: string, typeInput: string}) => {
 
     const [url, changeUrl] = useState<StringOrNull>("")
     return (
@@ -12,7 +12,7 @@ const FormLink = ({onClick, message, placeholder}: {onClick: (s:StringOrNull)=>v
                 if (e.key==="Enter"){
                     onClick(url)
                 }
-            }} className="url-input" type="url" id="sheet_link" placeholder={placeholder} onChange={(e)=>{changeUrl(e.target.value)}}/>
+            }} className="url-input" type={typeInput} id="sheet_link" placeholder={placeholder} onChange={(e)=>{changeUrl(e.target.value)}}/>
             <button id="boutton-link" className="boutton-envoyer" onClick={() => onClick(url)}> Envoyer </button>
         </div>
     )

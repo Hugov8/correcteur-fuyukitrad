@@ -48,7 +48,7 @@ class App extends React.Component<{}, { token: StringOrNull, loading: boolean, c
             
             {this.state.token && !this.state.correctToken ? <p>Mot de passe incorrect</p> : <div></div>}
             
-            <FormLink placeholder="" message={"Entrez le mot de passe"} onClick={(s: StringOrNull) => {
+            <FormLink typeInput="password" placeholder="" message={"Entrez le mot de passe"} onClick={(s: StringOrNull) => {
               this.handleClickForm(s)
             }} />
           </div>)
