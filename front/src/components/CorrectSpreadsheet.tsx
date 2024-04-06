@@ -5,9 +5,9 @@ import SheetTabs from "./TabsSheet"
 import { Erreur, SpreadSheetIds, determineIsErrorOrNot } from "../calls/correctionType"
 import Loader from "./Loader"
 import ErreurView from "./ErreurView"
-import { Link } from "./App"
+import { StringOrNull } from "./App"
 
-type CorrectSpreadsheetProps = { urlSheet: Link }
+type CorrectSpreadsheetProps = { urlSheet: StringOrNull, token: string }
 
 const CorrectSpreadsheet = (props: CorrectSpreadsheetProps) => {
     const [spreadSheet, setSpreadSheet] = React.useState<SpreadSheetIds>({ sheets: ["0"] })
@@ -18,7 +18,7 @@ const CorrectSpreadsheet = (props: CorrectSpreadsheetProps) => {
 
     React.useEffect(() => {
         setFinish(false)
-        getIdSheets(props.urlSheet as String).then((value) => {
+        getIdSheets(props.urlSheet as string, props.token as string).then((value) => {
             if (determineIsErrorOrNot<SpreadSheetIds>(value)) {
                 console.log(value.status)
                 setError(true)
@@ -37,7 +37,7 @@ const CorrectSpreadsheet = (props: CorrectSpreadsheetProps) => {
             setMessageError({ status: err.response.status, messageErreur: err.data.messageErreur })
             setFinish(true)
         })
-    }, [props.urlSheet])
+    }, [props.urlSheet, props.token])
 
     if (!finish) {
         return <Loader />
@@ -53,7 +53,7 @@ const CorrectSpreadsheet = (props: CorrectSpreadsheetProps) => {
             }}
             sheets={spreadSheet.sheets}
             activeSheet={currentSheet} />
-        <CorrectRow idSheet={currentSheet} spreadSheetLink={props.urlSheet as String} />
+        <CorrectRow idSheet={currentSheet} spreadSheetLink={props.urlSheet as string} token={props.token} />
     </div>
     )
 }

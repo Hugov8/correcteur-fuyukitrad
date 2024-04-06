@@ -9,6 +9,13 @@ parameters:
       description: Title of the spreadsheet
     required: true
 
+  - in: header
+    name: token
+    schema:
+      type: string
+      description: Token to sheet manager api
+    required: true
+
   - in: query
     name: idSheet
     schema:
