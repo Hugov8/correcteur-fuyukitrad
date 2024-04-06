@@ -1,51 +1,59 @@
 import React from "react";
 import FormLink from "./FormLink";
-import CorrectSpreadsheet from "./CorrectSpreadsheet";
 import '../styles/App.css'
 import '../styles/Boutton.css'
+import Accueil from "./Accueil";
+import { verifyToken } from "../calls/spreadsheet";
+import Loader from "./Loader";
 
-export type Link = String | null
-class App extends React.Component<{}, { url: Link }> {
+export type StringOrNull = string | null
+class App extends React.Component<{}, { token: StringOrNull, loading: boolean, correctToken: boolean }> {
 
-  state: { url: Link } = {
-    url: null
+  state: { token: StringOrNull, loading: boolean, correctToken: boolean } = {
+    token: null,
+    loading: false,
+    correctToken: false
   }
 
-  handleClickForm(s: Link) {
+  handleClickForm(s: StringOrNull) {
     if (s && s.length !== 0) {
       this.setState({
-        url: s,
+        loading: true,
+        token: s,
+        correctToken: false
+      })
+      verifyToken(s).then(bool => {
+        this.setState({
+          token: s,
+          loading: false,
+          correctToken: bool
+        })
       })
     } else {
       alert('Champ vide')
     }
-
   }
 
   render() {
     return (
       <div className="app">
-
-        {this.state.url ?
-          (<div>
-            <CorrectSpreadsheet urlSheet={this.state.url} />
-
-            <div id="retour-choix-lien-container" className="boutton-container">
-              <button className="boutton-re" onClick={() => {
-                this.setState({ url: null })
-              }}>Revenir au choix du lien
-              </button>
-
-            </div>
-          </div>)
-
-          : <div>
+      {
+        this.state.loading ? (
+          <Loader />
+         ) :(this.state.correctToken && this.state.token ? (
+          <Accueil token={this.state.token as string} />
+          ) : (
+          <div>
             <h1 className="main-title">Correcteur FuyukiTrad</h1>
-            <FormLink onClick={(s: Link) => {
+            
+            {this.state.token && !this.state.correctToken ? <p>Mot de passe incorrect</p> : <div></div>}
+            
+            <FormLink placeholder="" message={"Entrez le mot de passe"} onClick={(s: StringOrNull) => {
               this.handleClickForm(s)
             }} />
-          </div>}
-
+          </div>)
+          )
+        }
       </div>
     );
   }
