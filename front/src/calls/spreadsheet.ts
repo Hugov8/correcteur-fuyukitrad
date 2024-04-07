@@ -11,7 +11,6 @@ export const getIdSheets: (s: string, token: string) => Promise<SpreadSheetIds|E
             "token": token,
         }
     }).then((v) => {
-        console.log(v)
         return {sheets: v.data.response}
     }).catch((e)=>{
         console.log(e)
