@@ -1,8 +1,7 @@
-import gspread
+import requests
 from datetime import datetime
 import os
 import sys
-import time
 import json
 from tqdm import tqdm
 import correcteur
@@ -18,18 +17,10 @@ os.makedirs("rapport", exist_ok=True)
 ###################################
 
 def checkSheet(sheet):  
-    flag = True
+    # TODO Connecter à l'api sheet manager
     # Récupération sur la sheet
-    while(flag):
-        try:
-            values = sheet.col_values(8)
-            flag = False
-        except gspread.exceptions.APIError:
-            print("Dodo")
-            time.sleep(70)
-            print("Reveil")
     
-    return correcteur.checkSentences(values)
+    return correcteur.checkSentences(sheet)
 
 
 def writeLog(dataCorrection):
@@ -58,24 +49,16 @@ def writeLog(dataCorrection):
                         f.write(f"\t\t\t{bilan}\n")
 
 
-def connectionDriveAPI():
-    # use creds to create a client to interact with the Google Drive API
-    gc = gspread.service_account("client_secret.json")
-    return gc
-
-def getWorksheet(url):
-    client = connectionDriveAPI()
-    return client.open_by_url(url)
-
 def checkOrthographeWorksheet(url):
     print("====Connexion et récupération des scripts====")
-    wksheet = getWorksheet(url)
+    #TODO Associer à l'api sheet manager
+    wksheet = url
     
     data = {"title": wksheet.title, "sheets": []}
 
     print("====Success====")
     print("====Correction de la sheet====")
-    rows = wksheet.worksheets()[1:]
+    rows = requests.get("http://localhost:8080/") 
     for row in tqdm(filter(lambda r: r.title!="Template" and r.title!="Names", rows), total=len(rows)-1):
         data["sheets"].append(checkSheet(row))
     print(f"====Terminé !====")
