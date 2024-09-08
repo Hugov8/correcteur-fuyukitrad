@@ -10,5 +10,7 @@ jobs:
       image: catthehacker/ubuntu:act-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Install docker
+        run: sudo apt-get install docker-compose-plugin
       - name: Build the docker
         run: docker-compose up --build -d && sleep 10 && (if [ $(docker ps -q $1 | wc -l) -ne 4 ]; then exit 1 ;fi)
