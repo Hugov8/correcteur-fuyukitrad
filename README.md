@@ -34,3 +34,32 @@ Voir [ici](./front/README.md) pour la page web et [ici](./backend/README.md) pou
 
 # Attention
 Pour fonctionner, il faut mettre un fichier client_secret.json dans le dossier [correction-sheets](/backend/correction-sheets/). Celui-ci peut être généré en passant par [la console cloud google](https://console.cloud.google.com)
+
+# Création certificat
+```bash
+openssl req -x509 -newkey rsa:2048 -nodes   -keyout key.pem -out cert.pem -days 365 -config san.cnf
+```
+
+avec la conf
+```
+[req]
+default_bits = 2048
+distinguished_name = dn
+req_extensions = req_ext
+x509_extensions = v3_ca
+prompt = no
+
+[dn]
+CN = <IP>
+
+[req_ext]
+subjectAltName = @alt_names
+
+[v3_ca]
+subjectAltName = @alt_names
+basicConstraints = critical,CA:true
+
+[alt_names]
+IP.1 = <IP>
+EOF
+```
