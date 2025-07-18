@@ -1,6 +1,7 @@
 import requests
 
 URL_CORRECTEUR = "http://correcteur:8080/"
+CERT_PATH = "cert_serveur.pem"
 
 with open("options.json", "r") as f:
     option_correcteur = f.read()
@@ -10,7 +11,7 @@ with open("mot_accepte.txt", "r") as f:
 
 def checkOrthographePhrase(texte):
     data = {'text': texte, 'tf': True, "options":option_correcteur}
-    rep = requests.post(URL_CORRECTEUR+"gc_text/fr", data=data)
+    rep = requests.post(URL_CORRECTEUR+"gc_text/fr", data=data, verify=CERT_PATH)
     correction = rep.json()
     if(len(correction["error"])!=0):
         print(correction["error"])
