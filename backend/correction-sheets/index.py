@@ -32,6 +32,7 @@ Swagger(app)
 PORT = 3030
 HOST = '0.0.0.0'
 URL_SHEET_MANAGER = "http://152.228.135.213/api/"
+CERT_PATH = "cert_serveur.pem"
 
 @swag_from('./openapi_doc/home.yml')
 @app.route("/", methods=['GET'])
@@ -49,7 +50,7 @@ def getCorrectedSheet():
     if 'token' not in request.headers:
         return make_response(jsonify({"messageErreur": "Fournir un token"}), 400)
     try:
-        values = requests.get(URL_SHEET_MANAGER+"getColumn/"+request.args["idSheet"]+"/H", headers={"lienSpreadsheet": request.headers["urlSheet"], "token": request.headers["token"]})
+        values = requests.get(URL_SHEET_MANAGER+"getColumn/"+request.args["idSheet"]+"/H", headers={"lienSpreadsheet": request.headers["urlSheet"], "token": request.headers["token"]}, verify=CERT_PATH)
         return make_response(jsonify(correcteur.checkSentences(values.json()["response"])), 200)
     except Exception as e:
         return make_response(jsonify({"messageErreur": "Vérifier le lien fourni : "+e.__str__()}), 501)
