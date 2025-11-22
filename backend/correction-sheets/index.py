@@ -31,7 +31,7 @@ Swagger(app)
 
 PORT = 3030
 HOST = '0.0.0.0'
-URL_SHEET_MANAGER = "http://152.228.135.213/api/"
+URL_SHEET_MANAGER = "https://zoltraak.ovh/api/"
 CERT_PATH = "cert_serveur.pem"
 
 @swag_from('./openapi_doc/home.yml')
