@@ -1,10 +1,10 @@
-import React from "react";
-import FormLink from "./FormLink";
+import React from "react"
+import FormLink from "./FormLink"
 import '../styles/App.css'
 import '../styles/Boutton.css'
-import Accueil from "./Accueil";
-import { verifyToken } from "../calls/spreadsheet";
-import Loader from "./Loader";
+import Accueil from "./Accueil"
+import { verifyToken } from "../calls/spreadsheet"
+import Loader from "./Loader"
 
 export type StringOrNull = string | null
 class App extends React.Component<{}, { token: StringOrNull, loading: boolean, correctToken: boolean }> {

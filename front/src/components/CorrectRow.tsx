@@ -1,12 +1,13 @@
-import React from "react";
+import React from "react"
 import CorrectionView from './CorrectionView'
-import { CorrectionSheet, Erreur, determineIsErrorOrNot } from "../calls/correctionType";
-import { getCorrectedSheet } from "../calls/spreadsheet";
-import { sendToDrive } from "../calls/spreadsheet";
-import Loader from "./Loader";
+import { CorrectionSheet } from "../calls/correctionType";
+import { Erreur, determineIsErrorOrNot } from "../calls/commonType"
+import { getCorrectedSheet } from "../calls/spreadsheet"
+import { sendToDrive } from "../calls/spreadsheet"
+import Loader from "./Loader"
 import "../styles/CorrectRow.css"
 import '../styles/Boutton.css'
-import ErreurView from "./ErreurView";
+import ErreurView from "./ErreurView"
 
 type CorrectRowProps = {
     idSheet: String,

@@ -1,6 +1,6 @@
-import React from "react";
-import FormLink from "./FormLink";
-import CorrectSpreadsheet from "./CorrectSpreadsheet";
+import React from "react"
+import FormLink from "./FormLink"
+import CorrectSpreadsheet from "./CorrectSpreadsheet"
 import {StringOrNull} from './App'
 import '../styles/App.css'
 import '../styles/Boutton.css'

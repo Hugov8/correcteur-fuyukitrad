@@ -1,4 +1,4 @@
-import { Erreur } from "../calls/correctionType"
+import { Erreur } from "../calls/commonType"
 
 type ErreurProps = {
     messageError: Erreur
