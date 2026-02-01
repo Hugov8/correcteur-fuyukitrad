@@ -3,6 +3,8 @@ import { AuthInfos, PickerInfos } from "./authType"
 import { Erreur } from "./commonType"
 
 const URL_AUTH_SERVICE = window.location.origin + "/dev/auth/"
+export const URL_LOGIN = URL_AUTH_SERVICE +  "oauth/login/google"
+export const URL_LOGOUT = URL_AUTH_SERVICE + "logout"
 
 export const authMe: () => Promise<AuthInfos|Erreur> = async () => {
     return await axios.get(URL_AUTH_SERVICE + 'me', {withCredentials: true}).then((v) => {

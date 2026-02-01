@@ -1,12 +1,13 @@
+import { URL_LOGIN, URL_LOGOUT } from "../calls/authService"
 import { StringOrNull } from "../calls/commonType"
 import { Boutton } from "./Boutton"
 
 export const LoginView = ({user}: {user: StringOrNull}) => {
     const login = () => {
-        window.location.replace("http://localhost:8080/oauth/login/google")
+        window.location.replace(URL_LOGIN)
     }
     const logout = () => {
-        window.location.replace("http://localhost:8080/logout")
+        window.location.replace(URL_LOGOUT)
     }
 
     if(user == null) return <div style={{display: "flex", gap: "1px", justifyContent: "flex-end", padding: "0 16px"}}>
