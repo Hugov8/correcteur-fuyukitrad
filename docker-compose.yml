@@ -1,25 +1,25 @@
 version: "3.3"
 services:
-  correcteur:
-    container_name: grammalecte
+  correcteur-dev:
+    container_name: grammalecte-dev
     build: ./backend/correcteur
     ports:
       - "8080:8080"
 
-  connecteur:
-    container_name: connecteur-sheets
+  connecteur-dev:
+    container_name: connecteur-sheets-dev
     build: ./backend/correction-sheets
     ports:
       - "3030:3030"
 
-  client:
-    container_name: react_app
+  client-dev:
+    container_name: react_app-dev
     build: ./front
     ports:
       - "3000:3000"
   
-  nginx:
-    container_name: nginx
+  nginx-dev:
+    container_name: nginx-dev
     depends_on:
       - connecteur
       - correcteur
