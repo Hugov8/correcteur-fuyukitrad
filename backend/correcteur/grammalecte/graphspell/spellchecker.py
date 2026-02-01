@@ -291,6 +291,9 @@ class SpellChecker ():
             elif sWord.istitle() and sWord.lower() in self.lexicographer.dSugg:
                 lSuggs = self.lexicographer.dSugg[sWord.lower()].split("|")
                 yield list(map(lambda sSugg: sSugg[0:1].upper()+sSugg[1:], lSuggs))
+            elif sWord.isupper() and sWord.lower() in self.lexicographer.dSugg:
+                lSuggs = self.lexicographer.dSugg[sWord.lower()].split("|")
+                yield list(map(lambda sSugg: sSugg.upper(), lSuggs))
             else:
                 lSuggs = self.oMainDic.suggest(sWord, nSuggLimit, True)
                 lSuggs = [ sSugg  for sSugg in lSuggs  if self.lexicographer.isValidSugg(sSugg, self) ]

@@ -203,6 +203,7 @@ def suggestGet (token):
         return '{"error": "Executor broken. The server failed."}'
     return '{"error": "Fatal error. The server failed."}'
 
+
 # POST
 @app.route("/gc_text/fr", method="POST")
 def gcText ():
@@ -317,7 +318,11 @@ def main (sHost="localhost", nPort=8080, dOptions=None, bTestPage=False, nMultiC
     if dOptions:
         oGCE.setOptions(dOptions)
 
-    
+    # Python version
+    print("Python: " + sys.version)
+    if sys.version_info < (3, 7):
+        print("Python 3.7+ required")
+        return
     # Grammalecte
     echo("Grammalecte v{}".format(oGCE.version))
     oGCE.displayOptions()

@@ -14,7 +14,6 @@ import time
 import json
 import binascii
 import importlib
-from collections import OrderedDict
 from math import floor
 
 #import logging
@@ -44,58 +43,48 @@ class SuggResult:
     def __init__ (self, sWord, nSuggLimit=10, nDistLimit=-1):
         self.sWord = sWord
         self.sSimplifiedWord = st.simplifyWord(sWord)
-        self.nDistLimit = nDistLimit  if nDistLimit >= 0  else  (len(sWord) // 3) + 1
+        self.nDistLimit = nDistLimit  if nDistLimit >= 0  else  (len(sWord) // 3) + 1 # maximum accepted distance, used in suggest()
         self.nMinDist = 1000
         # Temporary sets
         self.aAllSugg = set()   # All suggestions, even the one rejected
-        self.dGoodSugg = {}     # Acceptable suggestions
-        self.dBestSugg = {}     # Best suggestions
+        self.dAccSugg = {}      # Accepted suggestions
         # Parameters
-        self.nSuggLimit = nSuggLimit
-        self.nSuggLimitExt = nSuggLimit + 2             # we add few entries in case suggestions merge after casing modifications
-        self.nBestSuggLimit = floor(nSuggLimit * 2)     # n times the requested limit
-        self.nGoodSuggLimit = nSuggLimit * 15           # n times the requested limit
+        self.nSuggLimit = nSuggLimit            # number of returned suggestions
+        self.nTempSuggLimit = nSuggLimit * 6    # limit of accepted suggestions (ends search over this limit)
 
     def addSugg (self, sSugg, nDeep=0):
-        "add a suggestion"
+        "add a suggestion to the suggestion list"
         if sSugg in self.aAllSugg:
             return
         self.aAllSugg.add(sSugg)
-        nDistJaro = 1 - st.distanceJaroWinkler(self.sSimplifiedWord, st.simplifyWord(sSugg))
-        nDist = floor(nDistJaro * 10)
-        if nDist < self.nMinDist:
-            self.nMinDist = nDist
-        #logging.info((nDeep * "  ") + "__" + sSugg + "__ " + str(round(nDistJaro*1000)))
-        if nDistJaro < .11:     # Best suggestions
-            self.dBestSugg[sSugg] = round(nDistJaro*1000)
-            if len(self.dBestSugg) > self.nBestSuggLimit:
-                self.nDistLimit = -1  # make suggest() to end search
-        elif nDistJaro < .33:   # Good suggestions
-            self.dGoodSugg[sSugg] = round(nDistJaro*1000)
-            if len(self.dGoodSugg) > self.nGoodSuggLimit:
-                self.nDistLimit = -1  # make suggest() to end search
+        nSimDist = st.distanceSift4(self.sSimplifiedWord, st.simplifyWord(sSugg))
+        #st.showDistance(self.sSimplifiedWord, st.simplifyWord(sSugg))
+        if nSimDist < self.nMinDist:
+            self.nMinDist = nSimDist
+        if nSimDist <= (self.nMinDist + 1):
+            nDist = min(st.distanceDamerauLevenshteinX(self.sWord, sSugg), st.distanceDamerauLevenshteinX(self.sSimplifiedWord, st.simplifyWord(sSugg)))
+            #print(">", end="")
+            #st.showDistance(self.sWord, sSugg)
+            self.dAccSugg[sSugg] = nDist  if " " not in sSugg  else nDist+1
+            if len(self.dAccSugg) > self.nTempSuggLimit:
+                self.nDistLimit = -1  # suggest() ends searching when this variable = -1
         self.nDistLimit = min(self.nDistLimit, self.nMinDist+1)
 
     def getSuggestions (self):
         "return a list of suggestions"
-        # we sort the better results with the original word
+        # sort according to distance
         lRes = []
-        if len(self.dBestSugg) > 0:
-            # sort only with simplified words
-            lResTmp = sorted(self.dBestSugg.items(), key=lambda x: x[1])
-            for i in range(min(self.nSuggLimitExt, len(lResTmp))):
-                lRes.append(lResTmp[i][0])
-        if len(lRes) < self.nSuggLimitExt:
-            # sort with simplified words and original word
-            lResTmp = sorted(self.dGoodSugg.items(), key=lambda x: ((1-st.distanceJaroWinkler(self.sWord, x[0]))*10, x[1]))
-            for i in range(min(self.nSuggLimitExt, len(lResTmp))):
-                lRes.append(lResTmp[i][0])
+        lResTmp = sorted(self.dAccSugg.items(), key=lambda x: (x[1], x[0]))
+        #print("\n>", lResTmp)
+        for i in range(min(self.nSuggLimit, len(lResTmp))):
+            lRes.append(lResTmp[i][0])
+            #st.showDistance(self.sWord, lResTmp[i][0])
         # casing
         if self.sWord.isupper():
-            lRes = list(OrderedDict.fromkeys(map(lambda sSugg: sSugg.upper(), lRes))) # use dict, when Python 3.6+
+            lRes = list(dict.fromkeys(map(lambda sSugg: sSugg.upper(), lRes)))
         elif self.sWord[0:1].isupper():
-            # dont’ use <.istitle>
-            lRes = list(OrderedDict.fromkeys(map(lambda sSugg: sSugg[0:1].upper()+sSugg[1:], lRes))) # use dict, when Python 3.6+
+            # don’t use <.istitle>
+            lRes = list(dict.fromkeys(map(lambda sSugg: sSugg[0:1].upper()+sSugg[1:], lRes)))
         return lRes[:self.nSuggLimit]
 
 
@@ -264,7 +253,7 @@ class IBDAWG:
 
     def _suggest (self, oSuggResult, sRemain, nMaxSwitch=0, nMaxDel=0, nMaxHardRepl=0, nMaxJump=0, nDist=0, nDeep=0, iAddr=0, sNewWord="", bAvoidLoop=False):
         # recursive function
-        #logging.info((nDeep * "  ") + sNewWord + ":" + sRemain)
+        #logging.info((nDeep * "  ") + f"{sNewWord}:{sRemain} nMaxSwitch:{nMaxSwitch} nMaxDel:{nMaxDel} nMaxHardRepl:{nMaxHardRepl} nMaxJump:{nMaxJump} | nDist:{nDist} / {oSuggResult.nDistLimit}")
         if self.lByDic[iAddr] & self._finalNodeMask:
             if not sRemain:
                 oSuggResult.addSugg(sNewWord, nDeep)
@@ -279,7 +268,7 @@ class IBDAWG:
         if nDist > oSuggResult.nDistLimit:
             return
         cCurrent = sRemain[0:1]
-        for cChar, jAddr in self._getCharArcs(iAddr):
+        for cChar, jAddr in self._getCharArcs(iAddr, cCurrent):
             if cChar in cp.d1to1.get(cCurrent, cCurrent):
                 self._suggest(oSuggResult, sRemain[1:], nMaxSwitch, nMaxDel, nMaxHardRepl, nMaxJump, nDist, nDeep+1, jAddr, sNewWord+cChar)
             elif not bAvoidLoop:
@@ -321,11 +310,17 @@ class IBDAWG:
             return True
         return sChars in self.a2grams
 
-    def _getCharArcs (self, iAddr):
+    def _getCharArcs (self, iAddr, cChar=""):
         "generator: yield all chars and addresses from node at address <iAddr>"
+        lStack = []
         for nVal, jAddr in self._getArcs(iAddr):
             if nVal <= self.nChar:
-                yield (self.dCharVal[nVal], jAddr)
+                if self.dCharVal[nVal] in cp.d1to1.get(cChar, cChar):
+                    yield (self.dCharVal[nVal], jAddr)
+                else:
+                    lStack.append((self.dCharVal[nVal], jAddr))
+        while lStack:
+            yield lStack.pop(0)
 
     def _getTails (self, iAddr, sTail="", n=2):
         "return a list of suffixes ending at a distance of <n> from <iAddr>"

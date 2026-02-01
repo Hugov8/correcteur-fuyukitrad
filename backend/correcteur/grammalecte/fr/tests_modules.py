@@ -43,15 +43,15 @@ class TestDictionary (unittest.TestCase):
             self.assertFalse(self.oSpellChecker.lookup(sWord), sWord)
 
     def test_isvalidtoken (self):
-        for sWord in ["Branche", "branche", "BRANCHE", "Émilie", "ÉMILIE", "aujourd'hui", "aujourd’hui", "Aujourd'hui", "Aujourd’hui", "je-suis-vraiment-fatigué", ""]:
+        for sWord in ["Branche", "branche", "BRANCHE", "Émilie", "ÉMILIE", "aujourd'hui", "aujourd’hui", "Aujourd'hui", "Aujourd’hui", "je-suis-vraiment-fatigué", "donne-m’en", "tiens-t’y"]:
             self.assertTrue(self.oSpellChecker.isValidToken(sWord), sWord)
 
     def test_isvalid (self):
-        for sWord in ["Branche", "branche", "BRANCHE", "Émilie", "ÉMILIE", "aujourd’hui", "Aujourd’hui"]:
+        for sWord in ["Branche", "branche", "BRANCHE", "Émilie", "ÉMILIE", "aujourd’hui", "Aujourd’hui", "M’EN", "T’Y"]:
             self.assertTrue(self.oSpellChecker.isValid(sWord), sWord)
 
     def test_isvalid_failed (self):
-        for sWord in ["BranchE", "BRanche", "BRAnCHE", "émilie", "éMILIE", "émiLie", "aujourd'hui", "Aujourd'hui", ]:
+        for sWord in ["BranchE", "BRanche", "BRAnCHE", "émilie", "éMILIE", "émiLie", "aujourd'hui", "Aujourd'hui"]:
             self.assertFalse(self.oSpellChecker.isValid(sWord), sWord)
 
     def test_suggest (self):
@@ -67,17 +67,21 @@ class TestDictionary (unittest.TestCase):
             ("email", "courriel"),
             ("fatiqué", "fatigué"),
             ("coeur", "cœur"),
-            ("trèèèèèèèèès", "très"),
+            ("triiiiicheuuuur", "tricheur"),
             ("vraaaaiiiimeeeeennnt", "vraiment"),
+            ("oeil", "œil"),
+            ("Oeil", "Œil"),
+            ("OEIL", "ŒIL"),
             ("apele", "appel"),
             ("Co2", "CO₂"),
             ("emmppâiiiller", "empailler"),
             ("testt", "test"),
             ("apelaion", "appellation"),
             ("exsepttion", "exception"),
-            ("sintaxik", "syntaxique"),
             ("ebriete", "ébriété"),
-            ("ennormmement", "énormément")
+            ("ennormmement", "énormément"),
+            ("maîtnesse", "maîtresse"),
+            ("sintaxik", "syntaxique")
         ]:
             #with timeblock(sWord):
             for lSugg in self.oSpellChecker.suggest(sWrong):
@@ -137,7 +141,7 @@ class TestPhonet (unittest.TestCase):
             ["ces", "saie", "saies", "ses", "sais", "sait"],
             ["cet", "cette", "sept", "set", "sets"],
             ["dé", "dés", "dès", "dais", "des"],
-            ["don", "dons", "dont"],
+            ["don", "dons", "dont", "Don"],
             ["été", "étaie", "étaies", "étais", "était", "étai", "étés", "étaient"],
             ["faire", "fer", "fers", "ferre", "ferres", "ferrent"],
             ["fois", "foi", "foie", "foies"],
@@ -169,7 +173,7 @@ class TestMasFemSingPlur (unittest.TestCase):
     @classmethod
     def setUpClass (cls):
         cls.lPlural = [
-            ("travail", ["travaux"]),
+            ("travail", ["travaux", "travails"]),
             ("vœu", ["vœux"]),
             ("gentleman", ["gentlemans", "gentlemen"])
         ]
