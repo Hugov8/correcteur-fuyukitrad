@@ -1,5 +1,6 @@
 {
   "name": "correcteur_fgo_web",
+  "homepage": "/correcteur",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
