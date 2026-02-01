@@ -3,14 +3,13 @@ import React from "react"
 import CorrectRow from "./CorrectRow"
 import SheetTabs from "./TabsSheet"
 import { SpreadSheetIds } from "../calls/correctionType"
-import { Erreur, determineIsErrorOrNot } from "../calls/commonType"
+import { Erreur, StringOrNull, determineIsErrorOrNot } from "../calls/commonType"
 import Loader from "./Loader"
 import ErreurView from "./ErreurView"
-import { StringOrNull } from "./App"
 
-type CorrectSpreadsheetProps = { urlSheet: StringOrNull, token: string }
+type CorrectSpreadsheetProps = { urlSheet: StringOrNull }
 
-const CorrectSpreadsheet = (props: CorrectSpreadsheetProps) => {
+const CorrectSpreadsheet = ({ urlSheet }: CorrectSpreadsheetProps) => {
     const [spreadSheet, setSpreadSheet] = React.useState<SpreadSheetIds>({ sheets: ["0"] })
     const [finish, setFinish] = React.useState<boolean>(false)
     const [currentSheet, setCurrentSheet] = React.useState<String>(spreadSheet.sheets[0] as String)
@@ -19,7 +18,7 @@ const CorrectSpreadsheet = (props: CorrectSpreadsheetProps) => {
 
     React.useEffect(() => {
         setFinish(false)
-        getIdSheets(props.urlSheet as string, props.token as string).then((value) => {
+        getIdSheets(urlSheet as string).then((value) => {
             if (determineIsErrorOrNot<SpreadSheetIds>(value)) {
                 console.log(value.status)
                 setError(true)
@@ -38,7 +37,7 @@ const CorrectSpreadsheet = (props: CorrectSpreadsheetProps) => {
             setMessageError({ status: err.response.status, messageErreur: err.data.messageErreur })
             setFinish(true)
         })
-    }, [props.urlSheet, props.token])
+    }, [urlSheet])
 
     if (!finish) {
         return <Loader />
@@ -54,7 +53,7 @@ const CorrectSpreadsheet = (props: CorrectSpreadsheetProps) => {
             }}
             sheets={spreadSheet.sheets}
             activeSheet={currentSheet} />
-        <CorrectRow idSheet={currentSheet} spreadSheetLink={props.urlSheet as string} token={props.token} />
+        <CorrectRow idSheet={currentSheet} spreadSheetLink={urlSheet as string} />
     </div>
     )
 }

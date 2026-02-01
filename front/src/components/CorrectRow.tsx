@@ -11,11 +11,10 @@ import ErreurView from "./ErreurView"
 
 type CorrectRowProps = {
     idSheet: String,
-    spreadSheetLink: String,
-    token: string
+    spreadSheetLink: String
 }
 
-const CorrectRow = ({ idSheet, spreadSheetLink, token }: CorrectRowProps) => {
+const CorrectRow = ({ idSheet, spreadSheetLink }: CorrectRowProps) => {
     const [correctedSheet, changeCorrectedSheet] = React.useState<CorrectionSheet>({ id: "0000", recordsLine: [] })
     const [finish, setFinish] = React.useState<boolean>(false)
     const [error, setError] = React.useState<boolean>(false)
@@ -23,7 +22,7 @@ const CorrectRow = ({ idSheet, spreadSheetLink, token }: CorrectRowProps) => {
 
     const loadCorrection = () => {
         setFinish(false)
-        getCorrectedSheet(idSheet, spreadSheetLink, token).then((res) => {
+        getCorrectedSheet(idSheet, spreadSheetLink).then((res) => {
             if (determineIsErrorOrNot<CorrectionSheet>(res)) {
                 setError(true)
                 setMessageError(res)
@@ -43,7 +42,7 @@ const CorrectRow = ({ idSheet, spreadSheetLink, token }: CorrectRowProps) => {
         })
     }
 
-    React.useEffect(loadCorrection, [idSheet, spreadSheetLink, token])
+    React.useEffect(loadCorrection, [idSheet, spreadSheetLink])
 
     if (!finish) {
         return <Loader />
@@ -70,7 +69,7 @@ const CorrectRow = ({ idSheet, spreadSheetLink, token }: CorrectRowProps) => {
                         :
                         <ul className="correct-row-all-lines">
                             {correctedSheet.recordsLine.map((corr, index) => {
-                                return <li key={index}> <CorrectionView handleClick={(value: String, line: number) => sendToDrive(value, line, idSheet, spreadSheetLink, token)} correction={corr} /> </li>
+                                return <li key={index}> <CorrectionView handleClick={(value: String, line: number) => sendToDrive(value, line, idSheet, spreadSheetLink)} correction={corr} /> </li>
                             })}
                         </ul>
                 }
