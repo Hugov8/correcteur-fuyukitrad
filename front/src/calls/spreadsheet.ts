@@ -1,8 +1,8 @@
 import axios from "axios"
 import { CorrectionSheet, SpreadSheetIds, Erreur } from "./correctionType"
 
-const URL_CONNECTEUR = window.location.origin+"/connecteur"//"http://localhost:3030"
-const URL_SHEET = window.location.origin+"/api"
+const URL_CONNECTEUR = window.location.origin+"/correcteur/connecteur"//"http://localhost:3030"
+const URL_SHEET = window.location.origin+"/correcteur/api"
 
 export const getIdSheets: (s: string, token: string) => Promise<SpreadSheetIds|Erreur> = async (link: string, token: string) => {
     return await axios.get<{response: String[]}>(URL_SHEET+'/sheetIds', {
