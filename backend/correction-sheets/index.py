@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, make_response
 import requests
 
 import correcteur
+import os
 from flask_cors import CORS, cross_origin
 from flasgger import swag_from, Swagger
 
@@ -31,7 +32,7 @@ Swagger(app)
 
 PORT = 3030
 HOST = '0.0.0.0'
-URL_SHEET_MANAGER = "https://zoltraak.ovh/dev/correcteur/api/"
+URL_SHEET_MANAGER = os.getenv("URL_SHEET_MANAGER")
 
 @swag_from('./openapi_doc/home.yml')
 @app.route("/", methods=['GET'])
