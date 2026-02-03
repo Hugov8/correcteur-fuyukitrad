@@ -32,6 +32,7 @@ services:
       - JWT_GENERATOR_SECRET=
       - JWT_COOKIE_NAME=ZOLTRAAK_JWT
       - JWT_COOKIE_PATH="/"
+      - APP_CONTEXT_PATH=/auth/
 
   sheet-manager:
     image: ghcr.io/hugov8/ggle-sheet-manager:2.0-arm64
