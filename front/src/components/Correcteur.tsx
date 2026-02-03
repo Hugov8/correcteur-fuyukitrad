@@ -4,6 +4,7 @@ import '../styles/App.css'
 import '../styles/Boutton.css'
 import { StringOrNull } from "../calls/commonType"
 import { GooglePicker } from "./GooglePicker"
+import { SheetTitle } from "./SheetTitle"
 
 export const Correcteur = () => {
     const [url, setUrl] = useState<StringOrNull>(null)
@@ -19,9 +20,9 @@ export const Correcteur = () => {
 
     return (
       <div className="app">
-        <p>{sheetName} : {url}</p>
         {url ?
           (<div>
+            <SheetTitle url={url} sheetName={sheetName} />
             <CorrectSpreadsheet urlSheet={url} />
 
             <div id="retour-choix-lien-container" className="boutton-container">
