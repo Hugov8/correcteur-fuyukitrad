@@ -46,7 +46,7 @@ def getCorrectedSheet():
         return make_response(jsonify({"messageErreur": "Fournir le lien de la sheet"}), 400)
     if 'idSheet' not in request.args:
         return make_response(jsonify({"messageErreur": "Fournir une id sheet"}), 400)
-    if 'ZOLTRAAK_JWT' in request.cookies:
+    if 'ZOLTRAAK_JWT' not in request.cookies:
         return make_response(jsonify({"messageErreur": "Non authentifié"}), 401)
     try:
         values = requests.get(URL_SHEET_MANAGER+"getColumn/"+request.args["idSheet"]+"/H", headers={"lienSpreadsheet": request.headers["urlSheet"]}, cookies={'ZOLTRAAK_JWT': request.cookies.get('ZOLTRAAK_JWT')})
