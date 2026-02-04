@@ -9,6 +9,7 @@ import Accueil from "./Accueil"
 
 const App = () => {
     const [user, setUser] = React.useState<StringOrNull>(null)
+    const [expires, setExpires] = React.useState<StringOrNull>(null)
     const [erreur, setErreur] = React.useState<boolean>(false)
 
     const isLoggedIn = () => {
@@ -18,17 +19,19 @@ const App = () => {
         } else {
           setErreur(false)
           setUser(res.user)
+          setExpires(res.expires)
         }
       }).catch((e) => {
         console.error(e)
         setErreur(true)
         setUser(null)
+        setExpires(null)
       })
     }
     React.useEffect(isLoggedIn, [])
 
     if(user == null && !erreur) return <Loader />
-    return <div><LoginView user={user}/><Accueil user={user}/></div>
+    return <div><LoginView user={user} expires={expires}/><Accueil user={user}/></div>
 }
 
 export default App;
