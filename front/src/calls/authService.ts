@@ -2,7 +2,7 @@ import axios from "axios"
 import { AuthInfos, PickerInfos } from "./authType"
 import { Erreur } from "./commonType"
 
-const URL_AUTH_SERVICE = window.location.origin + "/dev/correcteur/auth/"
+const URL_AUTH_SERVICE = window.location.origin + "/correcteur/auth/"
 export const URL_LOGIN = URL_AUTH_SERVICE +  "oauth/login/google"
 export const URL_LOGOUT = URL_AUTH_SERVICE + "logout"
 
