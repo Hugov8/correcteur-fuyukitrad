@@ -1,0 +1,48 @@
+.form-link {
+    display:grid;
+}
+
+.label-link{
+    padding: 16px;
+    font-size: large;
+}
+
+input[type="url"] {
+    font-size: 1.1em;
+    width: 70%;
+    padding: 0.25em 0.375em;
+    margin: 10px auto;
+    background-color: #fdfdfd;
+    border: 0.0625em solid;
+    border-color: #ccc;
+    box-shadow: inset 0 0.0625em 0.125em rgba(0, 0, 0, .2);
+    opacity: .75;
+}
+
+input[type="url"]:focus {
+    outline: none;
+    background-color: #fff;
+    border-color: rgba(28, 126, 194, .8);
+    box-shadow: inset 0 0.0625em 0.125em rgba(0, 0, 0, .2), 0 0 0.125em rgba(28, 126, 194, .8);
+    opacity: 1;
+}
+
+input[type="password"] {
+    font-size: 1.1em;
+    width: 70%;
+    padding: 0.25em 0.375em;
+    margin: 10px auto;
+    background-color: #fdfdfd;
+    border: 0.0625em solid;
+    border-color: #ccc;
+    box-shadow: inset 0 0.0625em 0.125em rgba(0, 0, 0, .2);
+    opacity: .75;
+}
+
+input[type="password"]:focus {
+    outline: none;
+    background-color: #fff;
+    border-color: rgba(28, 126, 194, .8);
+    box-shadow: inset 0 0.0625em 0.125em rgba(0, 0, 0, .2), 0 0 0.125em rgba(28, 126, 194, .8);
+    opacity: 1;
+}

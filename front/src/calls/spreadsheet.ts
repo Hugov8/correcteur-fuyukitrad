@@ -1,14 +1,15 @@
 import axios from "axios"
-import { CorrectionSheet, SpreadSheetIds, Erreur } from "./correctionType"
+import { CorrectionSheet, SpreadSheetIds } from "./correctionType"
+import { Erreur } from "./commonType"
 
-const URL_CONNECTEUR = window.location.origin+"/correcteur/connecteur"//"http://localhost:3030"
-const URL_SHEET = window.location.origin+"/correcteur/api"
+const URL_CONNECTEUR = window.location.origin+"/correcteur/api/connecteur"
+const URL_SHEET = window.location.origin+"/correcteur/api/sheets"
 
-export const getIdSheets: (s: string, token: string) => Promise<SpreadSheetIds|Erreur> = async (link: string, token: string) => {
+export const getIdSheets: (s: string) => Promise<SpreadSheetIds|Erreur> = async (link: string) => {
     return await axios.get<{response: String[]}>(URL_SHEET+'/sheetIds', {
+        withCredentials: true,
         headers: {
             "lienSpreadsheet": link,
-            "token": token,
         }
     }).then((v) => {
         return {sheets: v.data.response}
@@ -22,28 +23,12 @@ export const getIdSheets: (s: string, token: string) => Promise<SpreadSheetIds|E
     })
 }
 
-export const verifyToken: (token: string) => Promise<boolean> = async (token: string) => {
-    return await axios.get<{state: string}>(URL_SHEET+'/testToken', {
-        headers: {
-            "token": token,
-        }, 
-        validateStatus: function (status) {
-            return status < 500; // Resolve only if the status code is less than 500
-        }
-    }).then(v => {
-        return v.status===200
-    }).catch(e=>{
-        console.log(e)
-        return false
-    })
-}
-
-export const getCorrectedSheet = async (id: String, link: String, token: string): Promise<CorrectionSheet|Erreur> => {
+export const getCorrectedSheet = async (id: String, link: String): Promise<CorrectionSheet|Erreur> => {
 
     return await axios.get<CorrectionSheet|Erreur>(URL_CONNECTEUR+'/getCorrectedSheet?idSheet=' + id, {
+        withCredentials: true,
         headers: {
             "urlSheet": link.toString(),
-            "token": token,
         }
     }).then((rep) => {
         return rep.data
@@ -57,14 +42,14 @@ export const getCorrectedSheet = async (id: String, link: String, token: string)
     })
 }
 
-export const sendToDrive = async (value: String, line: number, idSheet: String, link: String, token: string): Promise<boolean> => {
+export const sendToDrive = async (value: String, line: number, idSheet: String, link: String): Promise<boolean> => {
     
     return await axios.put(URL_SHEET+'/writeCell', {
         lienSpreadsheet: link.toString(),
         nameSheet: idSheet,
         value: value,
         cell: "H"+line,
-    }, {headers:{"token": token}}).then((data)=>{
+    }, { withCredentials: true }).then((data)=>{
         return data.status===200
     }).catch((e)=>{
         console.log(e)

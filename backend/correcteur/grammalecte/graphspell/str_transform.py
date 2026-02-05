@@ -8,6 +8,23 @@ import unicodedata
 import re
 
 from .char_player import distanceBetweenChars, dDistanceBetweenChars
+from .echo import echo
+
+
+# import time
+# from functools import wraps
+#
+# def timethis (func):
+#     "decorator for the execution time"
+#     @wraps(func)
+#     def wrapper (*args, **kwargs):
+#         "something to prevent pylint whining"
+#         fStart = time.perf_counter_ns()
+#         result = func(*args, **kwargs)
+#         fEnd = time.perf_counter_ns()
+#         print(func.__name__, fEnd - fStart)
+#         return result
+#     return wrapper
 
 
 #### N-GRAMS
@@ -31,12 +48,12 @@ def spellingNormalization (sWord):
 
 
 _xTransCharsForSimplification = str.maketrans({
-    'à': 'a',  'é': 'é',  'î': 'i',  'ô': 'o',  'û': 'u',  'ÿ': 'y',
-    'â': 'a',  'è': 'é',  'ï': 'i',  'ö': 'o',  'ù': 'u',  'ŷ': 'y',
-    'ä': 'a',  'ê': 'é',  'í': 'i',  'ó': 'o',  'ü': 'u',  'ý': 'y',
-    'á': 'a',  'ë': 'é',  'ì': 'i',  'ò': 'o',  'ú': 'u',  'ỳ': 'y',
-    'ā': 'a',  'ē': 'é',  'ī': 'i',  'ō': 'o',  'ū': 'u',  'ȳ': 'y',
-    'ç': 'c',  'ñ': 'n',
+    'à': 'a',  'é': 'e',  'î': 'i',  'ô': 'o',  'û': 'u',  'ÿ': 'i', 'y': 'i',
+    'â': 'a',  'è': 'e',  'ï': 'i',  'ö': 'o',  'ù': 'u',  'ŷ': 'i',
+    'ä': 'a',  'ê': 'e',  'í': 'i',  'ó': 'o',  'ü': 'u',  'ý': 'i',
+    'á': 'a',  'ë': 'e',  'ì': 'i',  'ò': 'o',  'ú': 'u',  'ỳ': 'i',
+    'ā': 'a',  'ē': 'e',  'ī': 'i',  'ō': 'o',  'ū': 'u',  'ȳ': 'i',
+    'ç': 'c',  'ñ': 'n',  'k': 'q',
     'œ': 'oe',  'æ': 'ae',
     'ſ': 's',  'ﬃ': 'ffi',  'ﬄ': 'ffl',  'ﬀ': 'ff',  'ﬅ': 'ft',  'ﬁ': 'fi',  'ﬂ': 'fl',  'ﬆ': 'st',
     "⁰": "0", "¹": "1", "²": "2", "³": "3", "⁴": "4", "⁵": "5", "⁶": "6", "⁷": "7", "⁸": "8", "⁹": "9",
@@ -52,7 +69,7 @@ def simplifyWord (sWord):
     for i, c in enumerate(sWord, 1):
         if c != sWord[i:i+1] or (c == 'e' and sWord[i:i+2] != "ee"):  # exception for <e> to avoid confusion between crée / créai
             sNewWord += c
-    return sNewWord.replace("eau", "o").replace("au", "o").replace("ai", "éi").replace("ei", "é").replace("ph", "f")
+    return sNewWord.replace("eau", "o").replace("au", "o").replace("ei", "e").replace("ai", "ei").replace("ph", "f")
 
 
 def cleanWord (sWord):
@@ -90,6 +107,76 @@ def longestCommonSubstring (s1, s2):
     return s1[nLongestX-nLongest : nLongestX]
 
 
+llMatrix = [
+    [  0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41 ],
+    [  1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [  2,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [  3,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [  4,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [  5,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [  6,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [  7,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [  8,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [  9,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 10,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 11,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 12,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 13,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 14,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 15,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 16,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 17,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 18,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 19,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 20,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 21,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 22,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 23,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 24,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 25,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 26,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 27,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 28,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 29,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 30,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 31,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 32,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 33,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 34,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 35,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 36,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 37,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 38,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 39,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 40,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ],
+    [ 41,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 ]
+]
+
+#@timethis
+def distanceDamerauLevenshteinX (s1, s2):
+    "distance of Damerau-Levenshtein between <s1> and <s2>"
+    # https://fr.wikipedia.org/wiki/Distance_de_Damerau-Levenshtein
+    if s1 == s2:
+        return 0
+    nLen1 = len(s1)
+    nLen2 = len(s2)
+    if nLen1 > 40 or nLen2 > 40:
+        return distanceDamerauLevenshtein(s1, s2)
+    for i in range(1, nLen1+1):
+        for j in range(1, nLen2+1):
+            #nCost = 0  if s1[i-1] == s2[j-1]  else 1
+            nCost = distanceBetweenChars(s1[i-1], s2[j-1])
+            llMatrix[i][j] = min(
+                llMatrix[i-1][j]   + 1,        # Deletion
+                llMatrix[i][j-1]   + 1,        # Insertion
+                llMatrix[i-1][j-1] + nCost,    # Substitution
+            )
+            if i > 1 and j > 1 and s1[i-1] == s2[j-2] and s1[i-2] == s2[j-1]:
+                llMatrix[i][j] = min(llMatrix[i][j], llMatrix[i-2][j-2] + nCost)     # Transposition
+    #_showLLMatrix(s1, s2)
+    return llMatrix[nLen1][nLen2]
+
+#@timethis
 def distanceDamerauLevenshtein (s1, s2):
     "distance of Damerau-Levenshtein between <s1> and <s2>"
     # https://fr.wikipedia.org/wiki/Distance_de_Damerau-Levenshtein
@@ -102,22 +189,55 @@ def distanceDamerauLevenshtein (s1, s2):
         d[-1, j] = j + 1
     for i in range(nLen1):
         for j in range(nLen2):
-            #nCost = 0  if s1[i] == s2[j]  else 1
-            nCost = distanceBetweenChars(s1[i], s2[j])
+            #nCost = distanceBetweenChars(s1[i], s2[j])
+            # We don’t use distanceBetweenChars to speed up the calc,
+            # as we use this function only for very long words.
+            nCost = 0  if s1[i] == s2[j]  else 1
             d[i, j] = min(
                 d[i-1, j]   + 1,        # Deletion
                 d[i,   j-1] + 1,        # Insertion
-                d[i-1, j-1] + nCost,    # Substitution
+                d[i-1, j-1] + nCost     # Substitution
             )
             if i and j and s1[i] == s2[j-1] and s1[i-1] == s2[j]:
                 d[i, j] = min(d[i, j], d[i-2, j-2] + nCost)     # Transposition
+    #_showMatrix(s1, s2, d)
     return d[nLen1-1, nLen2-1]
 
+def _showMatrix (s1, s2, dMatrix):
+    "display the matrix for Damerau-Levenshtein distance calculation"
+    nLen1 = len(s1)
+    nLen2 = len(s2)
+    print("\n  ", end="")
+    for j in range(-1, nLen2+1):
+        print(f"{s2[j:j+1]:>4}", end="")
+    print("")
+    for i in range(-1, nLen1+1):
+        print(f"{s1[i:i+1]:2}", end="")
+        for j in range(-1, nLen2+1):
+            print(f"{dMatrix.get((i, j),'   ·'):4}", end="")
+        print("")
 
+def _showLLMatrix (s1, s2):
+    "display the matrix for fast Damerau-Levenshtein distance calculation"
+    nLen1 = len(s1)
+    nLen2 = len(s2)
+    print("\n  ", end="")
+    for j in range(-1, nLen2+1):
+        print(f"{s2[j:j+1]:>4}", end="")
+    print("")
+    for i in range(0, nLen1+2):
+        print(f"{s1[i-1:i]:2}", end="")
+        for v in llMatrix[i][:nLen2+2]:
+            print(f"{v:4}", end="")
+        print("")
+
+
+#@timethis
 def distanceJaroWinkler (sWord1, sWord2, fBoost = .666):
     "distance of Jaro-Winkler between <sWord1> and <sWord2>, returns a float"
     # https://github.com/thsig/jaro-winkler-JS
-    #if (sWord1 == sWord2): return 1.0
+    if (sWord1 == sWord2):
+        return 1.0
     nLen1 = len(sWord1)
     nLen2 = len(sWord2)
     nMax = max(nLen1, nLen2)
@@ -192,9 +312,11 @@ def distanceJaroWinkler (sWord1, sWord2, fBoost = .666):
     return fWeight
 
 
+#@timethis
 def distanceSift4 (s1, s2, nMaxOffset=5):
     "implementation of general Sift4."
-    # https://siderite.blogspot.com/2014/11/super-fast-and-accurate-string-distance.html
+    # faster than Damerau-Levenshtein and Jaro-Winkler
+    # https://siderite.dev/blog/super-fast-and-accurate-string-distance.html
     if not s1:
         return len(s2)
     if not s2:
@@ -254,11 +376,12 @@ def distanceSift4 (s1, s2, nMaxOffset=5):
 
 
 def showDistance (s1, s2):
-    "display Damerau-Levenshtein distance and Sift4 distance between <s1> and <s2>"
-    print("Jaro-Winkler: " + s1 + "/" + s2 + " = " + distanceJaroWinkler(s1, s2))
-    print("Damerau-Levenshtein: " + s1 + "/" + s2 + " = " + distanceDamerauLevenshtein(s1, s2))
-    print("Sift4:" + s1 + "/" + s2 + " = " + distanceSift4(s1, s2))
-
+    "display distances between <s1> and <s2>"
+    nDL = distanceDamerauLevenshtein(s1, s2)
+    fDLX = float(distanceDamerauLevenshteinX(s1, s2))
+    nS4 = distanceSift4(s1, s2)
+    fJW = distanceJaroWinkler(s1, s2)
+    echo(f"{s1:22} ≠ {s2:22} \tDL: {nDL:2}\tDLX: {fDLX:2.2}\tS4: {nS4:2}\tJW: {fJW}")
 
 
 
