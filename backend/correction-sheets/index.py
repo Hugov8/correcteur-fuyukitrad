@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, make_response
 import requests
 
 import correcteur
+import os
 from flask_cors import CORS, cross_origin
 from flasgger import swag_from, Swagger
 
@@ -31,7 +32,7 @@ Swagger(app)
 
 PORT = 3030
 HOST = '0.0.0.0'
-URL_SHEET_MANAGER = "https://zoltraak.ovh/correcteur/api/"
+URL_SHEET_MANAGER = os.getenv("URL_SHEET_MANAGER")
 
 @swag_from('./openapi_doc/home.yml')
 @app.route("/", methods=['GET'])
@@ -46,14 +47,13 @@ def getCorrectedSheet():
         return make_response(jsonify({"messageErreur": "Fournir le lien de la sheet"}), 400)
     if 'idSheet' not in request.args:
         return make_response(jsonify({"messageErreur": "Fournir une id sheet"}), 400)
-    if 'token' not in request.headers:
-        return make_response(jsonify({"messageErreur": "Fournir un token"}), 400)
+    if 'ZOLTRAAK_JWT' not in request.cookies:
+        return make_response(jsonify({"messageErreur": "Non authentifié"}), 401)
     try:
-        values = requests.get(URL_SHEET_MANAGER+"getColumn/"+request.args["idSheet"]+"/H", headers={"lienSpreadsheet": request.headers["urlSheet"], "token": request.headers["token"]})
+        values = requests.get(URL_SHEET_MANAGER+"getColumn/"+request.args["idSheet"]+"/H", headers={"lienSpreadsheet": request.headers["urlSheet"]}, cookies={'ZOLTRAAK_JWT': request.cookies.get('ZOLTRAAK_JWT')})
         return make_response(jsonify(correcteur.checkSentences(values.json()["response"])), 200)
     except Exception as e:
         return make_response(jsonify({"messageErreur": "Vérifier le lien fourni : "+e.__str__()}), 501)
-    
 
 
 if __name__ == "__main__":

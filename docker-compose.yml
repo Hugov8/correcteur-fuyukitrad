@@ -1,25 +1,47 @@
-version: "3.3"
 services:
   correcteur:
     build: ./backend/correcteur
-    ports:
-      - "8080:8080"
 
   connecteur:
     build: ./backend/correction-sheets
-    ports:
-      - "3030:3030"
+    environment:
+      - URL_SHEET_MANAGER=http://sheet-manager:9000/
+      - URL_CORRECTEUR=http://correcteur:8080/
 
   client:
     build: ./front
-    ports:
-      - "3000:3000"
-  
+
+  oauth-service:
+    image: ghcr.io/hugov8/authentification-oauth-service:1.0
+    container_name: auth-service
+    environment:
+      - JDBC_URL=
+      - JDBC_USER=
+      - JDBC_PASSWORD=
+      - GOOGLE_CLIENT_ID=
+      - GOOGLE_CLIENT_SECRET=
+      - ENCRYPTION_SECRET=
+      - GOOGLE_API_KEY=
+      - LOGIN_LOGOUT_REDIRECT=https://zoltraak.ovh/correcteur
+      - JWT_GENERATOR_SECRET=
+      - JWT_COOKIE_NAME=ZOLTRAAK_JWT
+      - JWT_COOKIE_PATH="/"
+      - APP_CONTEXT_PATH=/auth/
+
+  sheet-manager:
+    image: ghcr.io/hugov8/ggle-sheet-manager:2.0-arm64
+    environment:
+      - APPLICATION_SECRET=
+      - OAUTH_ROUTE=http://oauth-service:8080/auth/google/api/token
+      - JWT_COOKIE_NAME=ZOLTRAAK_JWT
+
   nginx:
     depends_on:
       - connecteur
       - correcteur
       - client
+      - sheet-manager
+      - oauth-service
     restart: always
     build:
       dockerfile: Dockerfile

@@ -112,7 +112,7 @@ class TestGrammarChecking (unittest.TestCase):
                               "\n  found:    " + sFoundSuggs + \
                               "\n  errors:   \n" + sListErr)
                         nUnexpectedErrors += 1
-            print("Tests with expected errors:", nTestWithExpectedError, " and suggestions:", nTestWithExpectedErrorAndSugg, "> {:.4} %".format(nTestWithExpectedErrorAndSugg/nTestWithExpectedError*100))
+            print("Tests with expected errors:", nTestWithExpectedError, " and suggestions:", nTestWithExpectedErrorAndSugg, "> Success: {:.4} %".format(nTestWithExpectedErrorAndSugg/nTestWithExpectedError*100))
             if nUnexpectedErrors:
                 print("Unexpected errors:", nUnexpectedErrors)
             self._showUntestedRules()

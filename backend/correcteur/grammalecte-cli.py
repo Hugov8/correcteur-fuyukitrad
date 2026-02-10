@@ -16,6 +16,7 @@ import grammalecte
 import grammalecte.text as txt
 import grammalecte.graphspell.str_transform as strt
 from grammalecte.graphspell.echo import echo
+import grammalecte.fr.thesaurus as thes
 
 
 _EXAMPLE = "Quoi ? Racontes ! Racontes-moi ! Bon sangg, parles ! Oui. Il y a des menteur partout. " \
@@ -29,8 +30,9 @@ Analysis commands:
     !word                               spelling suggestion
     >word                               draw path of word in the word graph
     =[filter1][=[filter2]]              show entries which fit to filters (filter1 for word, filter2 for morphology)
-    ≠word|word|…                        show distance between words
+    ≠word1 word2 [word3] ...            show distance between words
     $some_text                          show sentences and tokens of text
+    #word1 [word2] ...                  get synonyms of words
 
 Other commands:
     /help                       /h      show this text
@@ -132,8 +134,8 @@ def getCommand ():
 
 def main ():
     "launch the CLI (command line interface)"
-    if sys.version_info < (3, 5):
-        print("Python 3.5+ required")
+    if sys.version_info < (3, 7):
+        print("Python 3.7+ required")
         return
 
     xParser = argparse.ArgumentParser()
@@ -274,6 +276,7 @@ def main ():
         sText = _getText(sInputText)
         while True:
             if sText.startswith("?"):
+                # morphologies
                 for sWord in sText[1:].strip().split():
                     if sWord:
                         echo("* " + sWord)
@@ -282,13 +285,22 @@ def main ():
                             for sMorph, sMeaning in aRes:
                                 echo("      {:<40}  {}".format(sMorph, sMeaning))
             elif sText.startswith("!"):
+                # spelling suggestions
                 for sWord in sText[1:].strip().split():
                     if sWord:
+                        print(sWord)
                         for lSugg in oSpellChecker.suggest(sWord):
                             echo(" | ".join(lSugg))
+                            if xArgs.debug:
+                                for sSugg in lSugg:
+                                    nDist = strt.distanceDamerauLevenshteinX(sWord, sSugg)
+                                    echo(f"{sSugg:30} {nDist}")
+                        print()
             elif sText.startswith(">"):
+                # path in the word graph
                 oSpellChecker.drawPath(sText[1:].strip())
             elif sText.startswith("="):
+                # search in dictionnary
                 sSearch = sText[1:].strip()
                 if "=" in sSearch:
                     nCut = sSearch.find("=")
@@ -300,10 +312,24 @@ def main ():
                 for aRes in oSpellChecker.select(sFlexPattern, sTagsPattern):
                     echo("{:<30} {:<30} {}".format(*aRes))
             elif sText.startswith("≠"):
-                lWords = sText[1:].split("|")
+                # distances calculation
+                lWords = sText[1:].split()
                 for s1, s2 in itertools.combinations(lWords, 2):
-                    nDist = strt.distanceDamerauLevenshtein(s1, s2)
-                    print(f"{s1} ≠ {s2}: {nDist}")
+                    strt.showDistance(s1, s2)
+                    if xArgs.debug:
+                        strt.showDistance(strt.simplifyWord(s1), strt.simplifyWord(s2))
+                        echo("")
+            elif sText.startswith("#"):
+                # synonyms
+                lWords = sText[1:].split()
+                for sWord in lWords:
+                    lSyns = thes.getSyns(sWord)
+                    if lSyns:
+                        echo(f"\n{sWord}")
+                        for sCat, lSyn in lSyns:
+                            echo(f"> {sCat} : " + " | ".join(lSyn))
+                    else:
+                        echo(f"\n{sWord}: pas de synonymes trouvés")
             elif sText.startswith("/o+ "):
                 oGrammarChecker.gce.setOptions({ opt:True  for opt in sText[3:].strip().split()  if opt in oGrammarChecker.gce.getOptions() })
                 echo("done")
