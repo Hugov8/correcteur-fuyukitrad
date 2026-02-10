@@ -2,7 +2,7 @@ requests==2.32.5
 flask==2.2.5
 gspread==5.7.2
 tqdm==4.66.3
-flask-cors==4.0.1
-waitress==2.1.2
+waitress==3.0.1
+flask-cors==6.0.0
 flasgger==0.9.5
-werkzeug==3.0.3
+werkzeug==3.1.5
