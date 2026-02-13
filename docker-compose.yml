@@ -6,10 +6,7 @@ services:
     build: ./backend/correction-sheets
     environment:
       - URL_SHEET_MANAGER=http://sheet-manager:9000/
-      - URL_CORRECTEUR=http://correcteur:8080/
-
-  client:
-    build: ./front
+      - URL_CORRECTEUR=http://correcteur:8080/
 
   oauth-service:
     image: ghcr.io/hugov8/authentification-oauth-service:1.0
@@ -39,7 +36,6 @@ services:
     depends_on:
       - connecteur
       - correcteur
-      - client
       - sheet-manager
       - oauth-service
     restart: always
