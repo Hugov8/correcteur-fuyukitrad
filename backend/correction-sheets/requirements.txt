@@ -1,4 +1,4 @@
-requests==2.32.5
+requests==2.33.0
 flask==2.2.5
 gspread==5.7.2
 tqdm==4.66.3
