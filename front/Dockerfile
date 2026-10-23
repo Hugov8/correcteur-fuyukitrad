@@ -1,4 +1,5 @@
-FROM node:current-slim
+FROM node:26.12.1-alpine
+
 ENV NODE_ENV production
 WORKDIR /app
 
